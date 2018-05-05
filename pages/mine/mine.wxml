@@ -3,7 +3,7 @@
   <view class='header'>
     <image src='http://www.wsspha.cn/images/avatar.jpg' class='avatar'></image>
     <view class="orgname">新街口街道机关工委支部</view>
-    <image src='/images/set.png' class='set'></image>
+    <image catchtap='goSet' src='/images/set.png' class='set'></image>
   </view>
   <view class='org-list'>
     <view>
@@ -52,11 +52,11 @@
       <image src='/images/dcsj.png'></image>
       <view>导出数据</view>
     </navigator>
-    <navigator url='/pages/mine/mymessage/mymessage"' open-type='navigate' hover-class="none">
+    <navigator url='/pages/mine/mymessage/mymessage' open-type='navigate' hover-class="none">
       <image src='/images/xxtz.png'></image>
       <view>消息通知</view>
     </navigator>
-    <navigator open-type='navigate' hover-class="none">
+    <navigator url='/pages/mine/about/about' open-type='navigate' hover-class="none">
       <image src='/images/gyzbb.png'></image>
       <view>关于支部宝</view>
     </navigator>

@@ -1,4 +1,4 @@
-// pages/mine/mine.js
+// pages/mine/set/set.js
 Page({
 
   /**
@@ -49,11 +49,7 @@ Page({
   onPullDownRefresh: function () {
   
   },
-  goSet(){
-    wx.navigateTo({
-      url: '/pages/mine/set/set'
-    })
-  },
+
   /**
    * 页面上拉触底事件的处理函数
    */

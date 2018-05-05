@@ -1,0 +1,18 @@
+<!--pages/group/setting/changepwd/changepwd.wxml-->
+<view class='changepwd'>
+  <form bindsubmit="onSave">
+    <view class="info">
+      <label>旧密码：</label>
+      <input type='password' placeholder='请输入旧密码' name="oldPassword"></input>
+    </view>
+    <view class="info">
+      <label>新密码：</label>
+      <input type='password' placeholder='请输入新密码' name="password"></input>
+    </view>
+    <view class="info">
+      <label>新密码：</label>
+      <input type='password' placeholder='请再次输入新密码' name="password1"></input>
+    </view>
+    <button class="btn" formType="submit">提交</button>
+  </form>
+</view>

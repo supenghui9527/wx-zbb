@@ -1,27 +1,27 @@
-/* pages/mine/parties/parties.wxss */
-.parties{
+/* pages/mine/set/set.wxss */
+.set{
   width: 100%;
-  border-top:2px solid #f0f0f0;
   padding: 0 20rpx;
+  border-top:1px solid #f0f0f0;
   box-sizing: border-box;
 }
-.time{
-  padding: 50rpx 0 15rpx 0;
+.set>navigator{
   display: flex;
-  border-bottom: 1px solid #f0f0f0;
+  align-items: center;
+  font-size: 36rpx;
+  padding: 50rpx 0 15rpx 0;
   justify-content: space-between;
+  border-bottom: 1px solid #f0f0f0;
 }
-.time label{
-  font-size: 34rpx;
-  color:#323232;
-  font-weight:500;
+.set>navigator:nth-child(1){
+  padding: 50rpx 0 15rpx 0;
 }
-.time view{
-  color:#646464;
-  font-size:32rpx;
+.set>navigator:nth-child(2){
+  padding: 30rpx 0 25rpx 0;
 }
-input{
-  text-align: right;
+image{
+  width: 30rpx;
+  height: 20rpx;
 }
 .btn{
   width: 650rpx;

@@ -1,17 +1,20 @@
 {
   "pages": [
-    "pages/mine/mywork/mywork",
     "pages/index/index",
+    "pages/mine/set/changepwd/changepwd",
+    "pages/mine/set/changeinfo/changeinfo",
+    "pages/mine/set/set",
+    "pages/mine/about/about",
+    "pages/mine/parties/parties",
+    "pages/mine/mywork/mywork",
     "pages/mine/myReward/myReward",
     "pages/index/publish/publish",
     "pages/mine/exportdata/exportdata",
     "pages/mine/mypostings/mypostings",
     "pages/detail/detail",
     "pages/mine/mine",
-    
     "pages/mine/mymessage/mymessage",
     "pages/mine/myintegral/myintegral",
-    "pages/mine/parties/parties",
     "pages/login/login",
     "pages/activity/activity"
   ],

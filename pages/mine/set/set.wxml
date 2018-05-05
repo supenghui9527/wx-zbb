@@ -1,0 +1,12 @@
+<!--pages/mine/set/set.wxml-->
+<view class='set'>
+  <navigator url='/pages/mine/set/changeinfo/changeinfo' open-type='navigate' hover-class="none">
+    <text>信息修改</text>
+    <image src='/images/arrow_left.png'></image>
+  </navigator>
+  <navigator url='/pages/mine/set/changepwd/changepwd' open-type='navigate' hover-class="none">
+    <text>密码修改</text>
+    <image src='/images/arrow_left.png'></image>
+  </navigator>
+  <button class='btn'>退出当前账号</button>
+</view>
