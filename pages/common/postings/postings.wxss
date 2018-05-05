@@ -1,0 +1,132 @@
+/* pages/common/postings/postings.wxss */
+.postings-list{
+  width: 100%;
+  box-sizing: border-box;
+}
+.item{
+  padding-top:20rpx;  
+}
+.item>view:nth-child(1){
+  display: flex;
+  padding: 0 25rpx;
+  line-height: 45rpx;
+  justify-content: space-between;
+}
+.item .avatar{
+  width:80rpx;
+  height: 80rpx;
+  margin-right: 15rpx;
+  border-radius: 50%;
+}
+.title{
+  font-size:32rpx;
+  font-weight: bold;
+}
+.time{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.time text{
+  font-size: 30rpx;
+  font-weight: normal !important;
+  color:#868686 !important;
+}
+.content{
+  width: 600rpx;
+  font-size: 30rpx;
+}
+.content view text:nth-child(1){
+  font-weight: bold;
+  color:#323232;
+}
+.content view text:nth-child(2){
+  color:#323232;
+}
+.content view:nth-child(8){
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+}
+.go-detail{
+  padding: 20rpx 0;
+  font-size: 32rpx;
+  color:#3c94df;
+}
+.imgs{
+  width: 100%;
+  padding-bottom: 10rpx;
+}
+.imgs image{
+  width: 190rpx;
+  height: 190rpx;
+  margin-right:15rpx;
+}
+.img-active{
+  margin-right: 0 !important;
+}
+.address{
+  display: flex;
+  align-items: center;
+}
+.address text{
+  color: #323232;
+  font-size: 28rpx;
+}
+.address image{
+  width: 20rpx;
+  height: 30rpx;
+  margin-right: 20rpx;
+}
+.user-do{
+  width:100%;
+  height: 80rpx;
+  margin-top: 20rpx;
+  padding: 0 !important;
+  display: flex;
+  border-bottom:1px solid #e8e8e8;
+  align-items: center;
+  color:#8d8d8d;
+}
+.postings-share{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none !important;
+  font-size: 30rpx !important; 
+  background-color: transparent;
+  color:#8d8d8d;
+  padding: 0;
+  margin: 0;
+}
+button::after {
+  border: none;
+}
+.user-do>view{
+  width:33.33%;
+  height: 100%;
+  text-align: center;
+  font-size:30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.user-do>view view{
+  width:100%;
+  height: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid #e8e8e8;
+}
+.user-do>view:nth-child(3) view{
+  border:none;
+}
+.user-do image{
+  width:50rpx;
+  height: 50rpx;
+  margin-right:10rpx;
+}

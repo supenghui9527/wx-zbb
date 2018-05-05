@@ -1,0 +1,88 @@
+/* pages/mine/mine.wxss */
+.header{
+  width: 100%;
+  height: 300rpx;
+  position: relative;
+  text-align: center;
+  background-color: #ca4341;
+}
+.avatar{
+  margin:20rpx 0;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+.orgname{
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #fff;
+}
+.set{
+  width: 50rpx;
+  height: 50rpx;
+  position: absolute;
+  right: 60rpx;
+  top:30rpx;
+}
+.org-list{
+  width: 660rpx;
+  height: 330rpx;
+  background-color: #fff;
+  border-radius: 6px;
+  position: relative;
+  z-index: 666;
+  top:-60rpx;
+  margin: 0 auto;
+  box-shadow: 0 0 10rpx rgba(0,0,0,0.2);
+}
+.org-list>view:nth-child(1){
+  padding: 60rpx 0 40rpx 0;
+  display: flex;
+}
+.org-list>view image{
+  width: 1px;
+  height: 57rpx;
+}
+.org-list>view>view{
+  width: 25%;
+  background: url('http://www.wsspha.cn/images/division.png') no-repeat center right;
+  text-align: center;
+  background-size:1px 57rpx;
+}
+.org-list>view>view:nth-child(4){
+  background: #fff !important;
+}
+.tel{
+  margin-bottom: 20rpx;
+}
+.tel,.address{
+  text-align: center;
+  font-size: 32rpx;
+  color:#323232;
+}
+.nub{
+  color:#323232;
+}
+.name{
+  font-size: 32rpx;
+  font-weight: bold;
+  color:#323232;
+}
+.nav{
+  width: 660rpx;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap:wrap;
+}
+.nav navigator{
+  width: 25%;
+  padding-bottom: 30rpx;
+  text-align: center;
+  font-size: 32rpx;
+  color: #323232;
+  font-weight: bold;
+}
+navigator image{
+  width: 50rpx;
+  height: 50rpx;
+}

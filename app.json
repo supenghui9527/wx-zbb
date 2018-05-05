@@ -1,0 +1,47 @@
+{
+  "pages": [
+    "pages/mine/mypostings/mypostings",
+    "pages/index/index",
+    "pages/detail/detail",
+    "pages/mine/mine",
+    "pages/mine/mywork/mywork",
+    "pages/mine/myReward/myReward",
+    "pages/mine/mymessage/mymessage",
+    "pages/mine/exportdata/exportdata",
+    "pages/mine/myintegral/myintegral",
+    "pages/mine/parties/parties",
+    "pages/login/login",
+    "pages/activity/activity"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "backgroundColor": "#f0f0f0",
+    "color": "#323232",
+    "selectedColor": "#323232",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "三会一课",
+        "iconPath": "images/home_normal.png",
+        "selectedIconPath": "images/home_selected.png"
+      },
+      {
+        "pagePath": "pages/activity/activity",
+        "text": "党日活动",
+        "iconPath": "images/activity_normal.png",
+        "selectedIconPath": "images/activity_selected.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "images/mine_normal.png",
+        "selectedIconPath": "images/mine_selected.png"
+      }
+    ]
+  }
+}

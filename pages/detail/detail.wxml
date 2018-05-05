@@ -1,0 +1,123 @@
+<!--pages/detail/detail.wxml-->
+<view class='item'>
+  <view>
+    <image src='http://www.wsspha.cn/images/avatar.jpg' class='avatar'></image>
+    <view class='content'>
+      <view class='title'>新街口街道机关工委</view>
+      <view class='time'>
+        <text>2018-04-11 11：18</text>
+        <text>党员大会</text>
+      </view>
+      <view>
+        <text>时间：</text>
+        <text>2018-04-10</text>
+      </view>
+      <view>
+        <text>主持人：</text>
+        <text>李青</text>
+      </view>
+      <view>
+        <text>应到人数：</text>
+        <text>30</text>
+      </view>
+      <view>
+        <text>实到人数：</text>
+        <text>20</text>
+      </view>
+      <view>
+        <text>主题：</text>
+        <text>建设凝聚力强的组织</text>
+      </view>
+      <view>
+        <text>内容：</text>
+        <text>新建项目选择小程序项目，选择代码存放的硬盘路径，填入刚刚申请到的小程序的 AppID，给你的项目起一个好听的名字，最后，勾选 "创建 QuickStart 项目" (注意: 你要选择一个空的目录才会有这个选项)，点击确定，你就得到了你的第一个小程序了，点击顶部菜单编译就可以在 IDE 预览你的第一个小程序。</text>
+      </view>
+      <view class='imgs'>
+        <image class="{{(index+1)%3==0?'img-active':''}}" wx:for="{{3}}" src='http://www.wsspha.cn/images/avatar.jpg'></image>
+      </view>
+      <view class='address'>
+        <image src='/images/IconPin.png'></image>
+        <text>南京鼓楼区金碧路</text>
+      </view>
+    </view>
+  </view>
+  <view class='sign-list'>
+    <view>
+      <image src='/images/sign.png'></image>
+    </view>
+    <view>
+      <text wx:for="{{10}}">苏朋辉；</text>
+    </view>
+  </view>
+  <view class='share-comment'>
+    <view class='share-comment-title'>
+      <view catchtap='changeTab' data-index="0">
+        <text class="{{active==0?'active':''}}">分享{{detail.shares}}</text>
+      </view>
+      <view catchtap='changeTab' data-index="1">
+        <text class="{{active==1?'active':''}}">评论{{detail.comments}}</text>
+      </view>
+      <view catchtap='changeTab' data-index="2">
+        <text class="{{active==2?'active':''}}">赞{{detail.likes}}</text>
+      </view>
+    </view>
+    <view hidden='{{active!=0}}'>
+      <view wx:for="{{detail.sharesDetail}}" wx:key="index" class='share-content'>
+        <image wx:if="{{item.avatar}}" class='avatar-img' src='{{detail.imgUrl+item.avatar}}'></image>
+        <image class='avatar-img' wx:else src="/images/img.png"></image>
+        <view>
+          <view class='share-name'>{{item.name}}</view>>
+          <view class='share-time'>
+            <text>{{item.date}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view hidden='{{active!=1}}'>
+      <view wx:for="{{detail.commentsDetail}}" wx:key="index" class='comment-content'>
+        <image wx:if="{{item.avatar}}" class='avatar-img' src='{{detail.imgUrl+item.avatar}}'></image>
+        <image class='avatar-img' wx:else src="/images/img.png"></image>
+        <view>
+          <view class='user-name'>{{item.name.substring(0,2)}}**</view>
+          <view class='user-comment'>{{item.comments}}</view>
+          <view class='comment-time'>
+            <text>{{item.date}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view hidden='{{active!=2}}'>
+      <view wx:for="{{detail.likesDetail}}" wx:key="index" class='like-content'>
+        <image wx:if="{{item.avatar}}" class='avatar-img' src='{{detail.imgUrl+item.avatar}}'></image>
+        <image class='avatar-img' wx:else src="/images/img.png"></image>
+        <view class='like-name'>{{item.name}}</view>
+      </view>
+    </view>
+  </view>
+  <view style='width:100%;height:100rpx;'></view>
+  <view class='user-do'>
+    <view>
+      <button class='postings-share' catchtap='getActid' data-actid="{{item.id}}" open-type='share'>
+        <view>
+          <image src='/images/share.png'></image>
+          <text>分享{{item.shares}}</text>
+        </view>
+      </button>
+    </view>
+    <view data-actid="{{item.id}}" data-islike="{{item.islike}}" catchtap='goDetail'>
+      <view>
+        <image src='/images/comment.png'></image>
+        <text>评论</text>
+        <text>{{item.comments}}</text>
+      </view>
+    </view>
+    <view data-id="{{item.id}}" data-islike="{{item.islike}}" catchtap='clickLikes'>
+      <view>
+        <image src="/images/fabulous_normal.png"></image>
+        <image wx:if="{{item.islike==1}}" src='/images/fabulous_selected.png'></image>
+        <text>赞</text>
+        <text>{{item.likes}}</text>
+      </view>
+    </view>
+  </view>
+</view>

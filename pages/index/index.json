@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "支部宝",
+  "usingComponents": {
+    "postings": "/pages/common/postings/postings"
+  }
+}

@@ -1,0 +1,48 @@
+/* pages/login/login.wxss */
+.login{
+  width: 100%;
+  height: 100%;
+  background: url('http://www.wsspha.cn/images/loading_bg.jpg') no-repeat center center;
+  background-size:100%;
+}
+form{
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  display: block;
+  padding-top: 340rpx;
+}
+.login view{
+  width: 650rpx;
+  height: 86rpx;
+  position: relative;
+  margin: 0 auto;
+  margin-bottom:50rpx;
+  border: 1px solid #aaa;
+  border-radius: 12rpx;
+}
+.login image{
+  width:50rpx;
+  height: 50rpx;
+  position: absolute;
+  top:50%;
+  left: 20rpx;
+  margin-top: -25rpx;
+}
+.password{
+  margin-bottom:150rpx !important;
+}
+.login input{
+  width: 100%;
+  height: 100%;
+  font-size:32rpx;
+  padding-left: 84rpx;
+  box-sizing: border-box;
+}
+.btn{
+  width:650rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  background-color: #ca4341;
+  color:#fff;
+}

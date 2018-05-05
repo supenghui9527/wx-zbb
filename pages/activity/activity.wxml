@@ -1,0 +1,5 @@
+<!--pages/activity/activity.wxml-->
+<view class='activity'>
+  <view style='border-top:6rpx solid #e8e8e8'></view>
+  <postings />
+</view>

@@ -1,0 +1,127 @@
+/* pages/detail/detail.wxss */
+@import '../common/postings/postings.wxss';
+.item{
+  border-top:6rpx solid #f0f0f0;
+}
+.sign-list{
+  width: 100%;
+  padding: 0 25rpx;
+  padding-bottom: 10rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content:space-between;
+  border-top:1px solid #f0f0f0;
+  margin-top: 30rpx;
+  border-bottom:4px solid #f0f0f0;
+}
+.content view:nth-child(8){
+  display: -webkit-box;
+  padding-bottom: 30rpx;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp:100;
+  overflow: auto !important;
+}
+.sign-list text{
+  color: #323232;
+  font-size: 28rpx;
+}
+.sign-list>view:nth-child(1){
+  width: 95rpx;
+  text-align: center;
+}
+.sign-list>view:nth-child(2){
+  width:600rpx;
+  text-align: left;
+}
+.sign-list image{
+  width: 50rpx;
+  height: 50rpx;
+  margin-top: 10rpx;
+}
+.user-do{
+  position: fixed;
+  background-color: #fff;
+  left: 0;
+  bottom: 0;
+  z-index: 666;
+}
+.share-comment{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 25rpx;
+}
+.comment-content,.share-content{
+  display: flex;
+  padding-top: 25rpx;
+}
+.share-comment-title{
+  width:100%;
+  position: relative;
+  height: 70rpx;
+  line-height: 70rpx;
+  display: flex;
+  font-size:32rpx;
+   border-bottom:1px solid #f0f0f0; 
+}
+.share-comment-title view text{
+  padding: 0 10rpx;
+}
+.share-comment-title view{
+  padding: 0 10rpx;
+  color:#646464;
+}
+.share-comment-title view:nth-child(1){
+  padding: 0 10rpx;
+}
+.share-comment-title view:nth-child(2){
+  padding: 0 10rpx;
+  margin-left:95rpx;
+}
+.share-comment-title view:nth-child(3){
+  padding: 0 10rpx;
+  position: absolute;
+  right: 80rpx;
+}
+.active{
+  border-bottom:1px solid #ffb849;
+}
+.share-name{
+  font-size:32rpx;
+  color:#323232;
+}
+.share-time{
+  font-size: 30rpx;
+  color: #646464;
+}
+.comment-content>view,.share-content>view{
+  width:624rpx;
+  padding-left: 20rpx;
+  padding-bottom: 20rpx;
+  border-bottom:1px solid #f0f0f0;
+}
+.user-name{
+  font-size:32rpx;
+  font-weight: bold;
+  padding-top: 4rpx;
+  padding-bottom: 20rpx;
+}
+.user-comment,.comment-time{
+  font-size: 30rpx;
+  color:#646464;
+}
+.comment-time{
+  font-size: 30rpx;
+  padding-top: 20rpx;
+  color: #646464;
+}
+.like-content{
+  width: 100%;
+  height: 90rpx;
+  line-height: 90rpx;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #f0f0f0;
+}
+.like-name{
+  padding-left: 20rpx;
+}

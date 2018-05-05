@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "党日活动",
+  "usingComponents": {
+    "postings": "/pages/common/postings/postings"
+  }
+}

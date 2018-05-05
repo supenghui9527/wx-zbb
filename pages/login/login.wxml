@@ -1,0 +1,14 @@
+<!--pages/login/login.wxml-->
+<view class='login'>
+  <form bindsubmit='login'>
+    <view>
+      <image src='/images/name.png'></image>
+      <input type='text' placeholder='请输入账号' name="userName" placeholder-style='color:#909090'></input>
+    </view>
+    <view class='password'>
+      <image src='/images/password.png'></image>
+      <input type='password' placeholder='请输入密码' name="password" placeholder-style='color:#909090'></input>
+    </view>
+    <button form-type='submit' class="btn">登录</button>
+  </form>
+</view>
