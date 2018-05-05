@@ -1,0 +1,66 @@
+<!--pages/index/publish/publish.wxml-->
+<view class='publish'>
+  <form>
+    <view class='type'>
+      <view catchtap='changeNav' class="{{active==index?'active':''}}" data-index="{{index}}" wx:for="{{actType}}">{{item}}</view>
+    </view>
+    <view class="section">
+      <view class="section__title">日期：</view>
+      <picker style='width:80%' mode="date" value="{{date}}" start="2015-09-01" end="2100-09-01" bindchange="bindDateChange">
+        <view class="picker">{{date}}</view>
+      </picker>
+    </view>
+    <view class="section">
+      <view class="section__title">时间：</view>
+      <picker style='width:80%' mode="time" value="{{time}}" start="02:01" end="23:59" bindchange="bindTimeChange">
+        <view class="picker">{{time}}</view>
+      </picker>
+    </view>
+    <view class='tit'>
+      <label>主题：</label>
+      <input placeholder='请输入会议主题'></input>
+    </view>
+    <view class='tit'>
+      <label>主持：</label>
+      <input placeholder='请输入主持姓名'></input>
+    </view>
+    <view class='tit'>
+      <label>应到：</label>
+      <input placeholder='请输入人数'></input>
+    </view>
+    <view class='sign'>
+      <label>实到：</label>
+      <view class='nosign'>请扫码签到</view>
+      <view wx:if="{{false}}" class='signname'>
+        <text wx:for="{{6}}">苏朋辉;</text>
+      </view>
+      <view wx:if="{{false}}" class='number'>6</view>
+      <image class='gosign' src='/images/scanning.png'></image>
+    </view>
+    <view class="content">
+      <textarea class='font-color' name="pubContent" placeholder="请输入精彩内容..." />
+      <view class="imgcontainer">
+        <block wx:for="{{tempFilePaths}}" wx:key="*this">
+          <view class="up">
+            <image data-index="{{index}}" catchtap="delPictrue" class="del" src="/images/del.png"></image>
+            <image aspectFill src="{{item}}"></image>
+          </view>
+        </block>
+        <image hidden="{{tempFilePaths==''}}" catchtap="upLoad" class="plus" src="/images/plus2.png"></image>
+      </view>
+      <image catchtap="upLoad" class="picture" src="/images/pic.png"></image>
+    </view>
+    <view class='place'>
+      <image catchtap='getPlace' src='/images/place.png'></image>
+      <input class='font-color' value='{{address}}' name="location" placeholder='我的位置'></input>
+    </view>
+    <view class='ispublish'>
+      <checkbox-group bindchange="checkboxChange">
+        <label>
+          <checkbox style='zoom:60%' value="" checked=""/>不公开发布
+        </label>
+      </checkbox-group>
+    </view>
+    <button class='btn' form-type='submit'>发布</button>
+  </form>
+</view>

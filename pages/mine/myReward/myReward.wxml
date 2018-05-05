@@ -1,2 +1,23 @@
 <!--pages/mine/myReward/myReward.wxml-->
-<text>pages/mine/myReward/myReward.wxml</text>
+<view class='reward'>
+  <view class='tab'>
+    <view wx:for="{{tab}}">
+      <view catchtap='changeNav' data-index="{{index}}" class="item {{active==index?'active':''}}">{{item}}</view>
+    </view>
+  </view>
+  <view wx:for="{{lists}}" wx:key="index" class='lists-item'>
+    <view wx:if="{{index+1==lists.length}}" class='line'></view>
+    <view class='year'>{{item.year}}</view>
+    <view wx:for="{{item.month}}" wx:for-item="month" wx:key="idx" wx:for-index="idx" class='month'>
+      <view class='line'></view>
+      <view class='days'>
+        <image src='/images/offer.png'></image>
+        <view class='content'>
+          <view>5月5日</view>
+          <view>{{month.content}}</view>
+        </view>
+        <view class="time">+10分</view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,1 +1,72 @@
 /* pages/mine/myReward/myReward.wxss */
+.tab{
+  width: 100%;
+  height: 90rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f0f0f0;
+}
+.tab>view:nth-child(1){
+  width: 300rpx;
+  height: 75rpx;
+  line-height: 75rpx;
+  display: flex;
+  justify-content:flex-end;
+}
+.tab>view:nth-child(2){
+  width: 300rpx;
+  height: 75rpx;
+  line-height: 75rpx;
+  display: flex;
+  justify-content:flex-start;
+}
+.tab>view:nth-child(1) view{
+  text-align: right;
+}
+.item{
+  padding: 0 20rpx;
+  font-size: 34rpx;
+}
+.active{
+  color:#323232;
+  font-weight: bold;
+  border-bottom:6rpx solid #ca4341;
+}
+.lists-item{
+  width: 100%;
+  padding: 0 25rpx;
+  box-sizing: border-box;
+}
+image{
+  width: 50rpx;
+  height: 50rpx;
+}
+.line{
+  margin-left:24rpx;
+  width:2px;
+  min-height:54rpx;
+  background-color:#f0f0f0;
+}
+.days{
+  display: flex;
+  font-size:32rpx;
+  position: relative;
+}
+.days .content{
+  width:500rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  padding:6rpx 0 0 40rpx;
+  color:#646464;
+}
+.time{
+  font-size: 28rpx;
+  position: absolute;
+  font-weight: bold;
+  right: 0;
+  padding-top:6rpx;
+  color:#646464;
+}

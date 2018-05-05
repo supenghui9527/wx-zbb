@@ -1,13 +1,15 @@
 {
   "pages": [
-    "pages/mine/mypostings/mypostings",
+    "pages/mine/mywork/mywork",
     "pages/index/index",
+    "pages/mine/myReward/myReward",
+    "pages/index/publish/publish",
+    "pages/mine/exportdata/exportdata",
+    "pages/mine/mypostings/mypostings",
     "pages/detail/detail",
     "pages/mine/mine",
-    "pages/mine/mywork/mywork",
-    "pages/mine/myReward/myReward",
+    
     "pages/mine/mymessage/mymessage",
-    "pages/mine/exportdata/exportdata",
     "pages/mine/myintegral/myintegral",
     "pages/mine/parties/parties",
     "pages/login/login",

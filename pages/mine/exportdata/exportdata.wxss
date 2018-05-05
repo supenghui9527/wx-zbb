@@ -1,1 +1,33 @@
 /* pages/mine/exportdata/exportdata.wxss */
+.exportdata{
+  width: 100%;
+  border-top:4rpx solid #f0f0f0;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+.section{
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #f0f0f0;
+}
+.section__title{
+  font-size: 34rpx;
+  color:#323232;
+}
+.section .picker{
+  font-size: 32rpx;
+  color:#909090;
+}
+.btn{
+  width: 650rpx;
+  height: 90rpx;
+  margin-top:150rpx;
+  line-height: 90rpx;
+  font-size:36rpx;
+  background-color: #ca4341;
+  color:#fff;
+  border-radius: 10rpx;
+}

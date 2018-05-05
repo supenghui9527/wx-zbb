@@ -1,2 +1,17 @@
 <!--pages/mine/mywork/mywork.wxml-->
-<text>pages/mine/mywork/mywork.wxml</text>
+<view class='work'>
+  <view class='tab'>
+    <view wx:for="{{tab}}">
+      <view catchtap='changeNav' data-index="{{index}}" class="item {{active==index?'active':''}}">{{item}}</view>
+    </view>
+  </view>
+  <view class='lists'>
+    <view wx:for="{{6}}" class='lists-item'>
+      <view>4-12</view>
+      <view>
+        <view>中选中项发生改变是触发 change 事件，detail = {value:[选中的checkbox的value的数组]}</view>
+        <view class='complete'>去完成</view>
+      </view>
+    </view>
+  </view>
+</view>
