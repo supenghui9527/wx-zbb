@@ -2,16 +2,17 @@
 Page({
   data: {
   },
-  onLoad: function (options) {
+  onLoad(options) {
     // 修改党组织信息获取党组织原来的信息
+    let userInfo = wx.getStorageSync('userInfo');
     this.setData({
-      orgName: options.orgName,
-      contactTel: options.contactTel,
-      contactName: options.contactName,
-      orgID: wx.getStorageSync('userID'),
-      secretary: options.secretary,
-      secretaryTel: options.secretaryTel,
-      contactPosition: options.contactPosition,
+      orgName: userInfo.orgName,
+      contactTel: userInfo.contactTel,
+      contactName: userInfo.contactName,
+      orgID: userInfo.orgID,
+      secretary: userInfo.secretary,
+      secretaryTel: userInfo.secretaryTel,
+      contactPosition: userInfo.contactPosition,
     })
   },
   //保存党组织信息

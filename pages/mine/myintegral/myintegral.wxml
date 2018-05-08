@@ -1,2 +1,54 @@
 <!--pages/mine/myintegral/myintegral.wxml-->
-<text>pages/mine/myintegral/myintegral.wxml</text>
+<view class='integral'>
+  <view class='header'>
+    <view>
+      <image class='avatar' src='http://www.wsspha.cn/images/avatar.jpg'></image>
+      <image class='gift' src='/images/gift.png'></image>
+      <view class='content'>
+        <view class='title'>新街口街道机关工委</view>
+        <view class='score'>
+          <view><text>总积分</text>680</view>
+          <view><text>排名</text>48</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='rank'>
+    <image src='/images/trophy.png'></image>
+    <text>排行榜</text>
+  </view>
+  <view class='time'>
+    <view>
+      <text>开始时间：</text>
+      <picker mode="date" value="{{date}}" start="2015-09-01" end="2100-09-01" bindchange="bindDateChange">
+        <view class="picker">{{date}}</view>
+      </picker>
+    </view>
+    <view>
+      <text>结束时间：</text>
+      <picker mode="date" value="{{date}}" start="2015-09-01" end="2100-09-01" bindchange="bindDateChange">
+        <view class="picker">{{date}}</view>
+      </picker>
+    </view>
+    <view class='rule'>积分规则</view>
+  </view>
+  <view class='list-content'>
+    <view class='select'>
+      <view class='item'>
+        <text class='active'>党支部</text>
+      </view>
+      <view class='item1'>党工委</view>
+      <image class='sort' src='/images/sort.png'></image>
+    </view>
+    <view class='lists'>
+      <view wx:for="{{8}}" class='list-item'>
+        <image wx:if="{{index==0}}" src='/images/gold.png'></image>
+        <image wx:elif="{{index==1}}" src='/images/silver.png'></image>
+        <image wx:elif="{{index==2}}" src='/images/gold.png'></image>
+        <view wx:else class='item-rank'>{{index+1}}</view>
+        <view class='orgname'>樱驼花园社区第一党支部</view>
+        <text class='sores'>1024分</text>
+      </view>
+    </view>
+  </view>
+</view>

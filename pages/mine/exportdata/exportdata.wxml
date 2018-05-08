@@ -3,14 +3,14 @@
   <form>
     <view class="section">
       <view class="section__title">开始时间</view>
-      <picker mode="date" value="{{date}}" start="2015-09-01" end="2100-09-01" bindchange="bindDateChange">
-        <view class="picker">{{date}}</view>
+      <picker mode="date" value="{{date}}" start="2015-09-01" end="2100-09-01" bindchange="startDateChange">
+        <view class="picker">{{startDate}}</view>
       </picker>
     </view>
     <view class="section">
       <view class="section__title">结束时间</view>
-      <picker mode="date" value="{{date}}" start="2015-09-01" end="2100-09-01" bindchange="bindDateChange">
-        <view class="picker">{{date}}</view>
+      <picker mode="date" value="{{date}}" start="2015-09-01" end="2100-09-01" bindchange="endDateChange">
+        <view class="picker">{{endDate}}</view>
       </picker>
     </view>
     <view class="section">

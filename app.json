@@ -1,6 +1,8 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/login/login",
+    "pages/mine/myintegral/myintegral",
     "pages/mine/set/changepwd/changepwd",
     "pages/mine/set/changeinfo/changeinfo",
     "pages/mine/set/set",
@@ -14,8 +16,6 @@
     "pages/detail/detail",
     "pages/mine/mine",
     "pages/mine/mymessage/mymessage",
-    "pages/mine/myintegral/myintegral",
-    "pages/login/login",
     "pages/activity/activity"
   ],
   "window": {

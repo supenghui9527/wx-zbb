@@ -1,4 +1,5 @@
 /* pages/common/postings/postings.wxss */
+/* 帖子内容 */
 .postings-list{
   width: 100%;
   box-sizing: border-box;
@@ -68,7 +69,7 @@
 }
 .address{
   display: flex;
-  align-items: center;
+  /* align-items: center; */
 }
 .address text{
   color: #323232;
@@ -78,7 +79,9 @@
   width: 20rpx;
   height: 30rpx;
   margin-right: 20rpx;
+  margin-top: 10rpx;
 }
+/* 分享点赞评论 */
 .user-do{
   width:100%;
   height: 80rpx;

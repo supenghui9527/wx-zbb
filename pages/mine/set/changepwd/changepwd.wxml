@@ -1,6 +1,6 @@
 <!--pages/group/setting/changepwd/changepwd.wxml-->
 <view class='changepwd'>
-  <form bindsubmit="onSave">
+  <form bindsubmit="submit">
     <view class="info">
       <label>旧密码：</label>
       <input type='password' placeholder='请输入旧密码' name="oldPassword"></input>

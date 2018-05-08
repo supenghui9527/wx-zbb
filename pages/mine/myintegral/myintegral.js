@@ -1,11 +1,13 @@
 // pages/mine/myintegral/myintegral.js
+const util = require('../../../utils/util.js');
+const date = new Date();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    date: util.formatTime(date).substring(0, 10),
   },
 
   /**

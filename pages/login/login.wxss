@@ -44,5 +44,6 @@ form{
   height: 90rpx;
   line-height: 90rpx;
   background-color: #ca4341;
+  font-weight: bold;
   color:#fff;
 }

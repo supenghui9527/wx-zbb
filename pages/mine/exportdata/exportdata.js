@@ -3,7 +3,8 @@ const util = require('../../../utils/util.js');
 const date = new Date();
 Page({
   data: {
-    date: util.formatTime(date).substring(0, 10),
+    startDate: util.formatTime(date).substring(0, 10),
+    endDate: util.formatTime(date).substring(0, 10),
     array: ['党员大会', '支委会', '党小组会','党课'],
     type: '请选择导出类型'
   },
@@ -16,7 +17,12 @@ Page({
   onShow: function () {
   
   },
-  bindDateChange: function (e) {
+  startDateChange(e) {
+    this.setData({
+      date: e.detail.value
+    })
+  },
+  endDateChange(e) {
     this.setData({
       date: e.detail.value
     })

@@ -1,1 +1,169 @@
 /* pages/mine/myintegral/myintegral.wxss */
+.header{
+  width: 100%;
+  height: 350rpx;
+  position: relative;
+}
+.header>view{
+  width: 660rpx;
+  height: 300rpx;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-left:-330rpx;
+  z-index: 6;
+  border-radius: 10rpx;
+  background-color: #ca4341; 
+}
+.gift{
+  width: 60rpx;
+  height: 60rpx;
+  position: absolute;
+  top:30rpx;
+  z-index: 666;
+  right: 35rpx;
+}
+.avatar{
+  width: 100rpx;
+  height: 100rpx;
+  position: absolute;
+  top:-20rpx;
+  left: 50%;
+  margin-left: -50rpx;
+  z-index: 666;
+  border: 2px solid #fff;
+  border-radius:50%;
+}
+.content{
+  margin-top: 130rpx;
+}
+.title{
+  text-align: center;
+  font-size:36rpx;
+  color:#fff;
+}
+.score{
+  padding-top: 50rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.score view{
+  width: 280rpx;
+  color:#fff;
+  font-size: 32rpx;
+}
+.score view text{
+  font-weight: bold;
+  padding-right: 30rpx;
+}
+.score view:nth-child(1){
+  text-align: right;
+}
+.score view:nth-child(2){
+  text-align: left;
+}
+.rank{
+  display: flex;
+  padding: 20rpx 0 15rpx 0;
+  align-items: center;
+  justify-content: center;
+  font-size: 34rpx;
+  color:#323232;
+  font-weight: bold;
+}
+.rank image{
+  width: 70rpx;
+  height: 70rpx;
+}
+.time{
+  width: 100%;
+  padding-left: 20rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.picker{
+  color:#646464;
+}
+.time>view text{
+  font-weight: bold;
+  color:#323232;
+}
+.time>view{
+  display: flex;
+  font-size: 26rpx;
+}
+.rule{
+  border:1px solid #f0f0f0;
+  border-right:none;
+  padding: 10rpx;
+  color:#646464;
+  border-radius: 20px 0 0 20px;
+}
+.select{
+  width: 100%;
+  height: 90rpx;
+  position: relative;
+  padding-top: 30rpx;
+  box-sizing: border-box;
+  margin-top: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  background-color: #f0f0f0;
+}
+.select view{
+  width: 300rpx;
+  font-size: 34rpx;
+  color:#323232;
+}
+.item{
+  text-align: right;
+}
+.item1{
+  text-align: left;
+}
+.sort{
+  width: 50rpx;
+  height: 50rpx;
+  position: absolute;
+  right: 25rpx;
+}
+.active{
+  border-bottom:2rpx solid #ca4341;
+  font-weight: bold;
+}
+.lists{
+  width: 100%;
+  padding: 0 25rpx;
+  box-sizing: border-box;
+}
+.list-item{
+  padding: 35rpx 0 15rpx 0;
+  border-bottom: 1px solid #f0f0f0;
+  position: relative;
+  font-size:34rpx;
+  color:#323232;
+  display: flex;
+  align-items: center;
+}
+.orgname{
+  width: 500rpx;
+}
+.sores{
+  font-size:30rpx;
+  color:#646464;
+  position: absolute;
+  right: 0;
+}
+.list-item image,.item-rank{
+  width: 50rpx;
+  height: 50rpx;
+  margin-right: 20rpx;
+}
+.item-rank{
+  text-align: center;
+  line-height: 50rpx;
+  color:#242424;
+  font-weight: bold;
+}

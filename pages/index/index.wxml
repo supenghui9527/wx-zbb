@@ -2,12 +2,15 @@
 <view class="index">
   <view class='nav'>
     <view catchtap='changeNav' data-index="{{index}}" wx:for="{{nav}}" wx:key="index">
-      <text class="{{active==index?'active':''}}">{{item.item}}</text>
+      <text class="{{currentTab==index?'active':''}}">{{item.item}}</text>
     </view>
     <view class='search'>
       <image src='/images/search.png'></image>
     </view>
   </view>
+  <view catchtap='goPublish' class='go-publish'>
+    <image src='/images/btn.png'></image>
+  </view>
   <view style='width:100%;height:100rpx;'></view>
-  <postings />
+  <postings bind:toIndexActid="toIndexActid" bind:getListData="getListData" lists="{{community}}" />
 </view>

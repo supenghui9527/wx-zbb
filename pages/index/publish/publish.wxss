@@ -80,7 +80,7 @@
   height: 60rpx;
   position: absolute;
   right: 10rpx;
-  bottom:10rpx;
+  bottom:6rpx;
 }
 .nosign{
   font-size:32rpx;

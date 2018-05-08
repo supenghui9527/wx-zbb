@@ -1,5 +1,7 @@
 {
   "navigationBarTitleText": "支部宝",
+  "enablePullDownRefresh": true,
+  "backgroundColor": "#ccc",
   "usingComponents": {
     "postings": "/pages/common/postings/postings"
   }
