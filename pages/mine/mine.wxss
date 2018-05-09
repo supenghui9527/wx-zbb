@@ -69,20 +69,30 @@
   color:#323232;
 }
 .nav{
-  width: 660rpx;
-  margin: 0 auto;
-  display: flex;
-  flex-wrap:wrap;
+  width: 100%;
+  padding: 0 55rpx;
+  box-sizing: border-box;
 }
 .nav navigator{
-  width: 25%;
-  padding-bottom: 30rpx;
-  text-align: center;
+  width: 100%;
+  padding: 50rpx 0 25rpx 0;
+  border-bottom:1px solid #f0f0f0;
+  display: flex;
+  align-items: center;
   font-size: 32rpx;
   color: #323232;
-  font-weight:500;
+}
+.nav navigator:nth-child(1){
+  padding-top: 0;
 }
 navigator image{
   width: 50rpx;
   height: 50rpx;
+  margin-right: 25rpx;
+}
+.arrow{
+  width: 26rpx;
+  height: 30rpx;
+  position: absolute;
+  right: 30rpx;
 }

@@ -1,6 +1,11 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/activity/activity",
+    "pages/mine/mine",
+    "pages/mine/member/member",
+    "pages/mine/myintegral/giftdetail/giftdetail",
+    "pages/mine/myintegral/gift/gift",
     "pages/login/login",
     "pages/mine/myintegral/myintegral",
     "pages/mine/set/changepwd/changepwd",
@@ -14,20 +19,18 @@
     "pages/mine/exportdata/exportdata",
     "pages/mine/mypostings/mypostings",
     "pages/detail/detail",
-    "pages/mine/mine",
-    "pages/mine/mymessage/mymessage",
-    "pages/activity/activity"
+    "pages/mine/mymessage/mymessage"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black"
+    "navigationBarBackgroundColor": "#ca4341",
+    "navigationBarTextStyle": "#fff",
+    "navigationBarTitleText": "WeChat"
   },
   "tabBar": {
     "backgroundColor": "#f0f0f0",
     "color": "#323232",
-    "selectedColor": "#323232",
+    "selectedColor": "#ca4341",
     "list": [
       {
         "pagePath": "pages/index/index",

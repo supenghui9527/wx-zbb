@@ -1,0 +1,81 @@
+/* pages/mine/myintegral/gift/gift.wxss */
+.gift{
+  width: 100%;
+  border-top:1px solid #f0f0f0;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+.title{
+  width: 100%;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  margin-top:20rpx;
+  background-color:#f0f0f0;
+  border-radius: 10rpx;
+  font-size: 34rpx;
+  color:#323232;
+}
+.title image{
+  width: 50rpx;
+  height: 50rpx;
+  margin-right: 20rpx;
+}
+.all text:nth-child(2){
+  font-weight: bold;
+  font-size: 32rpx;
+}
+.already{
+  margin-left: 120rpx;
+}
+.already text:nth-child(2){
+  color:#3c94df;
+  font-weight: bold;
+}
+.giftlist{
+  display: flex;
+  padding-top: 30rpx;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.item{
+  width: 350rpx;
+  height: 432rpx;
+  position: relative;
+  background-color: #fff;
+  border-radius: 10rpx;
+  margin-bottom:10rpx;
+  box-sizing: border-box;
+  border:1px solid #f0f0f0;
+}
+.item image{
+  width: 200rpx;
+  height: 250rpx;
+}
+.bookname{
+  padding-left: 15rpx;
+  padding-bottom: 10rpx;
+  font-size: 34rpx;
+  font-weight: bold;
+  color:#323232;
+}
+.number{
+  padding-left:30rpx;
+  color:#323232;
+  font-size: 32rpx;
+}
+.btn{
+  width: 120rpx;
+  height: 50rpx;
+  position: absolute;
+  bottom: 20rpx;
+  right: 25rpx;
+  line-height: 50rpx;
+  text-align: center;
+  background-color: #ca4341;
+  font-size: 30rpx;
+  color:#fff;
+  border-radius: 10rpx;
+}

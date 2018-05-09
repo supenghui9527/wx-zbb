@@ -1,9 +1,7 @@
-// pages/mine/myintegral/myintegral.js
-const util = require('../../../utils/util.js');
-const date = new Date();
+// pages/mine/member/member.js
 Page({
   data: {
-    date: util.formatTime(date).substring(0, 10),
+  
   },
   onLoad: function (options) {
   
@@ -28,10 +26,5 @@ Page({
   },
   onShareAppMessage: function () {
   
-  },
-  changeGift(){
-    wx.navigateTo({
-      url: '/pages/mine/myintegral/gift/gift',
-    })
   }
 })

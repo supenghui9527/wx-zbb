@@ -10,6 +10,7 @@ Page({
     pageCount: '',
     show: false,
     current: 0,
+    showSelect: true,
     currentTab: 0,
     communityCount: 0,
     nav: [
@@ -41,6 +42,7 @@ Page({
     this.setData({
       currentTab: currentTab
     });
+    this.goSelect();
     this.getPostings(currentTab);
   },
   getListData(){
@@ -63,6 +65,11 @@ Page({
       content: '',
       showCancel: false,
       confirmText: '我知道了'
+    })
+  },
+  goSelect(){
+    this.setData({
+      showSelect: !this.data.showSelect
     })
   },
   // 分享

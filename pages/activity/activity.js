@@ -4,7 +4,7 @@ Page({
   
   },
   onLoad (options) {
-    this.getData(20, -1, -1);
+    // this.getData(20, -1, -1);
   },
   onShow () {
   

@@ -1,16 +1,103 @@
 <!--index.wxml-->
 <view class="index">
   <view class='nav'>
-    <view catchtap='changeNav' data-index="{{index}}" wx:for="{{nav}}" wx:key="index">
-      <text class="{{currentTab==index?'active':''}}">{{item.item}}</text>
+    <navigator url='/pages/mine/mywork/mywork' open-type='navigate' hover-class="none" class='nav-item'>
+      <view>
+        <image src="/images/jqgz.png"></image>
+      </view>
+      <view>近期工作</view>
+    </navigator>
+    <navigator url='/pages/mine/myReward/myReward' open-type='navigate' hover-class="none" class='nav-item'>
+      <view>
+        <image src="/images/jcjl.png"></image>
+      </view>
+      <view>奖惩记录</view>
+    </navigator>
+    <navigator url="/pages/mine/parties/parties" open-type='navigate' hover-class="none" class='nav-item'>
+      <view>
+        <image src="/images/sjdf.png"></image>
+      </view>
+      <view>收缴党费</view>
+    </navigator>
+    <navigator url='/pages/mine/mypostings/mypostings' open-type='navigate' hover-class="none" class='nav-item'>
+      <view>
+        <image src="/images/wdfb.png"></image>
+      </view>
+      <view>我的发布</view>
+    </navigator>
+    <navigator url='/pages/mine/exportdata/exportdata' open-type='navigate' hover-class="none" class='nav-item'>
+      <view>
+        <image src="/images/dcsj.png"></image>
+      </view>
+      <view>导出数据</view>
+    </navigator>
+  </view>
+  <view class='myintegral'>
+    <view>
+      <text>我的积分</text>
     </view>
-    <view class='search'>
+    <view>
+      <view>总积分</view>
+      <view>680分</view>
+    </view>
+    <view>
+      <view>总排名</view>
+      <view>10</view>
+    </view>
+    <view>
+      <view>本月积分</view>
+      <view>120分</view>
+    </view>
+    <view>
+      <view>比上月</view>
+      <view>
+        <image wx:if="{{true}}" class='up-down' src='/images/up.png'></image>
+        <image wx:if="{{false}}" class='up-down' src='/images/down.png'></image>
+        <text>10分</text>
+      </view>
+      <image class='arrow' src='/images/arrow_left.png'></image>
+    </view>
+  </view>
+  <view class='search'>
+    <view catchtap='goSelect'>
+      <text>全部</text>
+      <image src='/images/zk.png'></image>
+    </view>
+    <view>
       <image src='/images/search.png'></image>
+      <input placeholder-style='color:#e4e4e4' placeholder='请输入要搜索内容'></input>
+    </view>
+    <view hidden='{{showSelect}}' class='select'>
+      <view catchtap='changeNav' data-index="{{idx}}" class="{{current==index?'active':''}}" wx:for="{{nav}}" wx:for-index="idx" wx:key="idx">{{item.item}}</view>
+    </view>
+  </view>
+  <view class='lists'>
+    <view wx:for="{{community}}" wx:key="{{item.cID}}" class='lists-item'>
+      <image class='pic' src="{{item.thumbnailPic+item.picNames[0]}}"></image>
+      <view>
+        <view class='title'>
+          <view>{{item.title}}</view>
+          <view class='meeting-type' wx:if="{{item.meetingType==3}}">{{item.type[item.meetingType]}}</view>
+          <view class='meeting-type1' wx:elif="{{item.meetingType==2}}">{{item.type[item.meetingType]}}</view>
+          <view class='meeting-type2' wx:elif="{{item.meetingType==1}}">{{item.type[item.meetingType]}}</view>
+          <view class='meeting-type1' wx:else="{{item.meetingType==0}}">{{item.type[item.meetingType]}}</view>
+        </view>
+        <view class='content'>{{item.content}}</view>
+        <view class='orgname'>
+          <image src='/images/person.png'></image>
+          <text>{{item.org.orgName}}</text>
+        </view>
+        <view class='place'>
+          <view>
+            <image src="/images/pin.png"></image>
+            <view>{{item.meetingLocation}}</view>
+          </view>
+          <view>{{item.createTime}}</view>
+        </view>
+      </view>
     </view>
   </view>
   <view catchtap='goPublish' class='go-publish'>
     <image src='/images/btn.png'></image>
   </view>
-  <view style='width:100%;height:100rpx;'></view>
-  <postings bind:toIndexActid="toIndexActid" bind:getListData="getListData" lists="{{community}}" />
 </view>

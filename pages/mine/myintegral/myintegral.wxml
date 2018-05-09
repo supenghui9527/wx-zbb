@@ -3,7 +3,7 @@
   <view class='header'>
     <view>
       <image class='avatar' src='http://www.wsspha.cn/images/avatar.jpg'></image>
-      <image class='gift' src='/images/gift.png'></image>
+      <image catchtap='changeGift' class='gift' src='/images/gift.png'></image>
       <view class='content'>
         <view class='title'>新街口街道机关工委</view>
         <view class='score'>

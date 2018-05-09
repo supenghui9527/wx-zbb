@@ -1,5 +1,40 @@
 <!--pages/activity/activity.wxml-->
 <view class='activity'>
-  <view style='border-top:6rpx solid #e8e8e8'></view>
-  <postings bind:toIndexActid="toIndexActid" bind:getListData="getListData" lists="{{community}}" />
+  <view class='search'>
+    <view>
+      <image src='/images/search.png'></image>
+      <input placeholder='请输入要搜索内容'></input>
+    </view>
+  </view>
+  <view class='select'>
+    <view>综合</view>
+    <view>评论</view>
+    <view>
+      <text>热度</text>
+      <image style='width:40rpx;height:40rpx;' src='/images/paixu01.png'></image>
+    </view>
+    <view>
+      <text>筛选</text>
+      <image style='width:40rpx;height:40rpx;' src='/images/shaixuan.png'></image>
+    </view>
+  </view>
+  <view class='lists'>
+    <view wx:for="{{9}}" class='lists-item'>
+      <view>
+        <image mode='aspectFill' class='pic' src='http://www.wsspha.cn/images/avatar.jpg'></image>
+      </view>
+      <view>
+        <image class='avatar' src='http://www.wsspha.cn/images/avatar.jpg'></image>
+        <view class='orgname'>新街口街道机关工委</view>
+      </view>
+      <view class='content'>我区召开2018年全区生时</view>
+      <image class='likes' src='/images/zan01.png'></image>
+      <button class='share'>
+        <image src='/images/share1.png'></image>
+      </button>
+    </view>
+  </view>
+  <view catchtap='goPublish' class='go-publish'>
+    <image src='/images/btn.png'></image>
+  </view>
 </view>

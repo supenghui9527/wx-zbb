@@ -1,0 +1,67 @@
+/* pages/mine/myintegral/giftdetail/giftdetail.wxss */
+.detail{
+  width: 100%;
+  border-top:1px solid #f0f0f0;
+}
+.detail>view{
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+.detail>view:nth-child(1){
+  display: flex;
+  padding-top: 30rpx;
+  padding-bottom: 20rpx;
+}
+.detail>view:nth-child(3){
+  padding-top: 20rpx;
+  color:#323232;
+  font-size: 34rpx;
+  text-align: justify;
+}
+.img{
+  width: 250rpx;
+  height: 250rpx;
+  border:1px solid #f0f0f0;
+  border-radius: 10rpx;
+}
+.img image{
+  width: 200rpx;
+  height: 200rpx;
+}
+.content{
+  padding-left: 40rpx;
+}
+.content view:nth-child(1){
+  font-size: 36rpx;
+  padding: 15rpx 0;
+  font-weight: bold;
+}
+.content view:nth-child(2){
+  padding-bottom: 8rpx;
+  font-size: 34rpx;
+  color:#3c94df;
+}
+.content view:nth-child(3),.content view:nth-child(4){
+  padding-bottom: 8rpx;
+  font-size: 34rpx;
+  color:#323232;
+}
+.title{
+  width: 100%;
+  height: 90rpx;
+  line-height: 90rpx;
+  color:#323232;
+  font-size: 36rpx;
+  background-color: #f0f0f0;
+}
+.btn{
+  width:650rpx;
+  height: 90rpx;
+  margin: 100rpx auto;
+  border-radius: 10rpx;
+  line-height: 90rpx;
+  background-color: #ca4341;
+  font-weight: bold;
+  text-align: center;
+  color:#fff;
+}

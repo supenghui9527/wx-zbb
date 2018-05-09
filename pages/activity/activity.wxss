@@ -1,1 +1,145 @@
 /* pages/activity/activity.wxss */
+.search{
+  width: 100%;
+  height: 90rpx;
+  padding: 0 20rpx;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  background-color: #f0f0f0;
+}
+.search view{
+  width: 100%;
+  height: 65rpx;
+  position: relative;
+  font-size: 30rpx;
+  background-color: #fff;
+  border-radius: 10rpx;
+}
+.search image{
+  width: 50rpx;
+  height: 50rpx;
+  position: absolute;
+  top:50%;
+  left: 10rpx;
+  margin-top: -25rpx;
+}
+.search input{
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding-left: 70rpx;
+  border-radius: 10rpx;
+}
+.select{
+  width:100%;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  height: 80rpx;
+  display: flex;
+  justify-content: center;
+}
+.select>view{
+  width: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32rpx;
+}
+.lists{
+  width: 100%;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.lists-item{
+  width: 350rpx;
+  height: 450rpx;
+  position: relative;
+  box-sizing: border-box;
+  margin-bottom:15rpx;
+  border-radius: 6rpx;
+}
+.lists-item>view:nth-child(1){
+  width: 100%;
+  height: 300rpx;
+  text-align: center;
+}
+.pic{
+  width: 300rpx;
+  height: 300rpx;
+  margin-top:25rpx;
+}
+.avatar{
+  width: 64rpx;
+  height: 64rpx;
+  border-radius: 50%;
+}
+.lists-item>view:nth-child(2){
+  width: 280rpx;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  font-size:30rpx;
+  color:#646464;
+}
+.orgname{
+  width: 210rpx;
+  padding-top: 30rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+.content{
+  width: 290rpx;
+  font-size: 32rpx;
+  margin: 0 auto;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+.likes{
+  width: 35rpx;
+  height: 35rpx;
+  position: absolute;
+  bottom: 6rpx;
+  right: 30rpx;
+  z-index: 666;
+}
+.share{
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  padding: 0;
+  right: 30rpx;
+  bottom: 130rpx;
+  background-color:transparent;
+  z-index: 666;
+}
+.share image{
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 667;
+}
+button::after {
+  border: none;
+}
+.go-publish{
+  width: 110rpx;
+  height: 110rpx;
+  position: fixed;
+  right: 30rpx;
+  bottom:200rpx;
+  z-index: 666;
+}
+.go-publish image{
+  width: 110rpx;
+  height: 110rpx;
+}
