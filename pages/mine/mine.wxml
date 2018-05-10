@@ -1,47 +1,47 @@
 <!--pages/mine/mine.wxml-->
 <view class='mine'>
   <view class='header'>
-    <image src='http://www.wsspha.cn/images/avatar.jpg' class='avatar'></image>
-    <view class="orgname">新街口街道机关工委支部</view>
+    <image catchtap="changeAvatar" src='{{userinfo.orgBean.headThumb}}' class='avatar'></image>
+    <view class="orgname">{{userinfo.orgBean.orgName}}</view>
     <!-- <image catchtap='goSet' src='/images/set.png' class='set'></image> -->
   </view>
   <view class='org-list'>
     <view>
       <view>
-        <view class='nub'>40</view>
+        <view class='nub'>{{userinfo.DangYuan}}</view>
         <view class="name">党员</view>
       </view>
       <view>
-        <view class='nub'>40</view>
+        <view class='nub'>{{userinfo.DangGW}}</view>
         <view class="name">党工委</view>
       </view>
       <view>
-        <view class='nub'>40</view>
+        <view class='nub'>{{userinfo.DangW}}</view>
         <view class="name">党委</view>
       </view>
       <view>
-        <view class='nub'>40</view>
+        <view class='nub'>{{userinfo.DangZB}}</view>
         <view class="name">党支部</view>
       </view>
     </view>
-    <view class='tel'>13838383838</view>
-    <view class='address'>南京市鼓楼区金碧路</view>
+    <view data-phonenub="{{userinfo.orgBean.contactTel}}" catchtap="calling" class='tel'>{{userinfo.orgBean.contactTel}}</view>
+    <view class='address'>{{userinfo.orgBean.orgAddress}}</view>
   </view>
   <view class="nav">
     <navigator url='/pages/mine/mymessage/mymessage' open-type='navigate' hover-class="none">
       <image src='/images/message.png'></image>
       <view>消息通知</view>
-      <image class='arrow' src='/images/arrow_left.png'></image>
+      <image class='arrow' src='/images/left.png'></image>
     </navigator>
     <navigator url='/pages/mine/set/set' open-type='navigate' hover-class="none">
       <image src='/images/sz.png'></image>
       <view>设置</view>
-      <image class='arrow' src='/images/arrow_left.png'></image>
+      <image class='arrow' src='/images/left.png'></image>
     </navigator>
     <navigator url='/pages/mine/about/about' open-type='navigate' hover-class="none">
       <image src='/images/gyzbb.png'></image>
       <view>关于支部宝</view>
-      <image class='arrow' src='/images/arrow_left.png'></image>
+      <image class='arrow' src='/images/left.png'></image>
     </navigator>
   </view>
 </view>

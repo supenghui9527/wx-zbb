@@ -49,7 +49,7 @@ Page({
     this.getPostings(this.data.currentTab);
   },
   onLoad: function (options) {
-    this.getData(20, -1, -1);
+    this.getData(20, 0, -1);
     wx.getSystemInfo({
       success: (res) => {
         this.setData({
@@ -67,6 +67,7 @@ Page({
       confirmText: '我知道了'
     })
   },
+  // 筛选
   goSelect(){
     this.setData({
       showSelect: !this.data.showSelect
@@ -152,7 +153,7 @@ Page({
     };
     this.data.pageIndex++;
     if (currentTab == 0) {
-      this.reachData(20, this.data.pageIndex, -1, -1)
+      this.reachData(20, this.data.pageIndex, 0, -1)
     } else if (currentTab == 1) {//党员大会
       this.reachData(20, this.data.pageIndex, 0, 2)
     } else if (currentTab == 2) {//党委会
@@ -214,10 +215,7 @@ Page({
   goPublish(e) {
     let posttype = e.currentTarget.dataset.posttype;
     wx.navigateTo({
-      url: '/pages/index/publish/publish',
-      success: (res) => {
-        this.onAnimate();
-      }
+      url: `/pages/index/publish/publish?shek=true`
     })
   },
   // 点击进入详情

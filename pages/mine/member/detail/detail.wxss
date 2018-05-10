@@ -1,0 +1,28 @@
+/* pages/mine/member/detail/detail.wxss */
+.header{
+  width: 680rpx;
+  height: 320rpx;
+  margin: 0 auto;
+  border-radius: 10rpx;
+  background-color: #ca4341;
+}
+.avatar{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.avatar>view{
+  width: 90rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 50%;
+  font-size: 50rpx;
+  color: #000;
+  font-weight: bold;
+}
+.header image{
+  width: 50rpx;
+  height: 50rpx;
+}

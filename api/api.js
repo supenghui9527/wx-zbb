@@ -1,4 +1,4 @@
-const HOST = 'https://www.jshhfl.com/xwdj/';
+const HOST = 'http://192.168.0.86:8080/'; // https://www.jshhfl.com/xwdj/
 module.exports = {
   loginUrl: `${HOST}login.do`,  // 登录接口
   getPostingsUrl: `${HOST}findCommunityHomePage.do`,  // 获取帖子列表
@@ -7,6 +7,7 @@ module.exports = {
   searchUrl: `${HOST}vagueSearch.do`,  // 帖子搜索
   postingsDetailUrl: `${HOST}findCommunityByCID.do`,  // 帖子详情
   postingsCommentUrl: `${HOST}findComment.do`,  // 查询帖子评论
+  getMembersListUrl: `${HOST}findUSerByOrgID.do`,// 获取党员列表
   postingsLikesUrl: `${HOST}findlikeUserByCID.do`,  // 查询帖子点赞
   savePostingsCommentUrl: `${HOST}releaseCommentToCommunity.do`,  // 保存评论帖子内容
   deletePostingsUrl: `${HOST}deleteComunity.do`,  // 删除帖子

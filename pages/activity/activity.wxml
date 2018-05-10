@@ -7,19 +7,27 @@
     </view>
   </view>
   <view class='select'>
-    <view>综合</view>
-    <view>评论</view>
     <view>
-      <text>热度</text>
-      <image style='width:40rpx;height:40rpx;' src='/images/paixu01.png'></image>
+      <view>综合</view>
+      <view>评论</view>
+      <view>
+        <text>热度</text>
+        <image style='width:40rpx;height:40rpx;' src='/images/paixu01.png'></image>
+      </view>
+      <view catchtap='showSelect'>
+        <text>筛选</text>
+        <image style='width:40rpx;height:40rpx;' src='/images/shaixuan.png'></image>
+      </view>
     </view>
-    <view>
-      <text>筛选</text>
-      <image style='width:40rpx;height:40rpx;' src='/images/shaixuan.png'></image>
+    <view hidden='{{showSelect}}' class='go-select'>
+      <view catchtap='goSelect' data-index='{{item.index}}' wx:for="{{selectLists}}" wx:key="{{item.index}}">
+        <text class="{{active==item.index?'active':''}}">{{item.text}}</text>
+        <image hidden='{{item.index!=active}}' src='/images/yes1.png'></image>
+      </view>
     </view>
   </view>
   <view class='lists'>
-    <view wx:for="{{9}}" class='lists-item'>
+    <view wx:for="{{community}}" class='lists-item'>
       <view>
         <image mode='aspectFill' class='pic' src='http://www.wsspha.cn/images/avatar.jpg'></image>
       </view>

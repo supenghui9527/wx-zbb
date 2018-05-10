@@ -1,7 +1,7 @@
 <!--pages/index/publish/publish.wxml-->
 <view class='publish'>
   <form>
-    <view class='type'>
+    <view wx:if="{{shek}}" class='type'>
       <view catchtap='changeNav' class="{{active==index?'active':''}}" data-index="{{index}}" wx:for="{{actType}}">{{item}}</view>
     </view>
     <view class="section">
@@ -16,25 +16,25 @@
         <view class="picker">{{time}}</view>
       </picker>
     </view>
-    <view class='tit'>
+    <view wx:if="{{shek}}" class='tit'>
       <label>主题：</label>
       <input placeholder='请输入会议主题'></input>
     </view>
-    <view class='tit'>
+    <view wx:if="{{shek}}" class='tit'>
       <label>主持：</label>
       <input placeholder='请输入主持姓名'></input>
     </view>
-    <view class='tit'>
+    <view wx:if="{{shek}}" class='tit'>
       <label>应到：</label>
       <input placeholder='请输入人数'></input>
     </view>
     <view class='sign'>
       <label>实到：</label>
-      <view class='nosign'>请扫码签到</view>
-      <view wx:if="{{false}}" class='signname'>
+      <view wx:if="{{false}}" class='nosign'>请扫码签到</view>
+      <view class='signname'>
         <text wx:for="{{6}}">苏朋辉;</text>
       </view>
-      <view wx:if="{{false}}" class='number'>6</view>
+      <view class='number'>0</view>
       <image class='gosign' src='/images/scanning.png'></image>
     </view>
     <view class="content">

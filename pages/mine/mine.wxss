@@ -91,8 +91,8 @@ navigator image{
   margin-right: 25rpx;
 }
 .arrow{
-  width: 26rpx;
-  height: 30rpx;
+  width: 19.2rpx;
+  height: 31.2rpx;
   position: absolute;
   right: 30rpx;
 }

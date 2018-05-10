@@ -1,9 +1,10 @@
 {
   "pages": [
-    "pages/index/index",
     "pages/activity/activity",
-    "pages/mine/mine",
+    "pages/index/index",
+    "pages/mine/member/detail/detail",
     "pages/mine/member/member",
+    "pages/mine/mine",
     "pages/mine/myintegral/giftdetail/giftdetail",
     "pages/mine/myintegral/gift/gift",
     "pages/login/login",

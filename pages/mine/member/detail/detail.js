@@ -1,31 +1,40 @@
-// pages/index/publish/publish.js
-const util = require('../../../utils/util.js');
-const date = new Date();
+// pages/mine/member/detail/detail.js
 Page({
   data: {
-    active: 0,
-    date: '请选择会议日期',//util.formatTime(date).substring(0, 10)
-    time: '请选择会议时间',//util.formatTime(date).substring(10)
-    tempFilePaths: [],
-    actType:['党员大会','支委会','党小组会','党课']
+  
   },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
   onLoad: function (options) {
-    console.log(options.shek);
+  
   },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
   onReady: function () {
   
   },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
   onShow: function () {
   
   },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
   onHide: function () {
   
   },
-  changeNav(e) {
-    this.setData({
-      active: e.currentTarget.dataset.index
-    })
-  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
   onUnload: function () {
   
   },

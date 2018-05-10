@@ -1,5 +1,5 @@
 <!--index.wxml-->
-<view class="index">
+<view class="index {{showSelect?'':'stop-scroll'}}">
   <view class='nav'>
     <navigator url='/pages/mine/mywork/mywork' open-type='navigate' hover-class="none" class='nav-item'>
       <view>
@@ -55,7 +55,7 @@
         <image wx:if="{{false}}" class='up-down' src='/images/down.png'></image>
         <text>10分</text>
       </view>
-      <image class='arrow' src='/images/arrow_left.png'></image>
+      <image class='arrow' src='/images/left.png'></image>
     </view>
   </view>
   <view class='search'>
@@ -67,13 +67,14 @@
       <image src='/images/search.png'></image>
       <input placeholder-style='color:#e4e4e4' placeholder='请输入要搜索内容'></input>
     </view>
+    <view catchtap='goSelect' hidden='{{showSelect}}' class='fixed'></view>
     <view hidden='{{showSelect}}' class='select'>
       <view catchtap='changeNav' data-index="{{idx}}" class="{{current==index?'active':''}}" wx:for="{{nav}}" wx:for-index="idx" wx:key="idx">{{item.item}}</view>
     </view>
   </view>
   <view class='lists'>
     <view wx:for="{{community}}" wx:key="{{item.cID}}" class='lists-item'>
-      <image class='pic' src="{{item.thumbnailPic+item.picNames[0]}}"></image>
+      <image mode='aspectFill' class='pic' src="{{item.thumbnailPic+item.picNames[0]}}"></image>
       <view>
         <view class='title'>
           <view>{{item.title}}</view>
@@ -82,15 +83,15 @@
           <view class='meeting-type2' wx:elif="{{item.meetingType==1}}">{{item.type[item.meetingType]}}</view>
           <view class='meeting-type1' wx:else="{{item.meetingType==0}}">{{item.type[item.meetingType]}}</view>
         </view>
-        <view class='content'>{{item.content}}</view>
+        <view class='content'>{{item.content||'暂无内容'}}</view>
         <view class='orgname'>
           <image src='/images/person.png'></image>
-          <text>{{item.org.orgName}}</text>
+          <text>{{item.org.orgName||'无'}}</text>
         </view>
         <view class='place'>
           <view>
             <image src="/images/pin.png"></image>
-            <view>{{item.meetingLocation}}</view>
+            <view>{{item.meetingLocation||'无'}}</view>
           </view>
           <view>{{item.createTime}}</view>
         </view>
