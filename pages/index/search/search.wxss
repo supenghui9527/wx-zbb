@@ -1,0 +1,281 @@
+/* pages/index/search/search.wxss */
+.search_list{
+  width:100%;
+  height: 100%;
+}
+.no_lists{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+.search_container{
+  position:fixed;
+  width:100%;
+  height:120rpx;
+  border-top:2px solid #f0f0f0;
+  border-bottom:1px solid #f0f0f0;
+  padding: 0 20rpx 0 30rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  left:0;
+  top:0;
+  z-index: 99999; 
+  background-color:#fff;
+}
+.search_container view{
+  width:600rpx;
+  height:70rpx;
+  position:relative;
+  background-color:#f0f0f0;
+  border-radius: 20px;
+}
+.search_container input{
+  width:600rpx;
+  height:70rpx;
+  background-color: #f0f0f0;
+  border-radius: 20px;
+  padding:0rpx 80rpx;
+  box-sizing: border-box;
+  font-size:26rpx;
+}
+.search_container .search_btn{
+  width:50rpx;
+  height:50rpx;
+  position:absolute;
+  top:50%;
+  margin-top:-25rpx;
+  left:30rpx;
+  z-index:999;
+}
+.search_container .cancel{
+  width:31rpx;
+  height:31rpx;
+  position:absolute;
+  top:50%;
+  margin-top:-15.5rpx;
+  right:16rpx;
+  z-index:999;
+}
+.search_container text{
+  position:absolute;
+  right:10px;
+  font-size:32rpx;
+  color:#323232;
+}
+/* 三会一课 */
+.lists{
+  width: 100%;
+}
+.lists .lists-item{
+  padding: 30rpx 20rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #f0f0f0;
+}
+.lists .lists-item>view{
+  width: 500rpx;
+  height: 160rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.lists .title{
+  display: flex;
+  height: 44rpx;
+  align-items: center;
+  justify-content: space-between;
+  font-size:30rpx;
+  overflow: hidden;
+}
+.lists .title view:nth-child(1){
+  width: 400rpx;
+  font-weight: 500;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+.lists .title view:nth-child(2){
+  width: 150rpx;
+  height: 44rpx;
+  border-radius: 6rpx;
+  line-height: 44rpx;
+  text-align: center;
+  font-size:24rpx;
+  color: #bccee2;
+}
+.meeting-type{
+  background-color: #f0f4ff;
+}
+.meeting-type1{
+  background-color: #effffa;
+  color:#aae3b8 !important;
+}
+.meeting-type2{
+  background-color: #fffdf0;
+  color:#cab389 !important;
+}
+.meeting-type3{
+  background-color: #ffeffc;
+  color:#ee9cc0 !important;
+}
+.lists .content{
+  font-size: 28rpx;
+  color:#646464;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+.lists .pic{
+  width: 200rpx;
+  height: 160rpx;
+}
+.lists .place{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+}
+.lists .place>view{
+  display: flex;
+  align-items: center;
+  color:#646464;
+  font-size: 24rpx;
+}
+.lists .place>view:nth-child(1){
+  width: 280rpx;
+}
+.lists .place>view:nth-child(1) view{
+  width: 100%;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+.lists .place image{
+  width:30rpx;
+  height: 30rpx;
+  padding-right: 6rpx;
+}
+.lists .orgname{
+  display: flex;
+  align-items: center;
+}
+.lists .orgname view{
+  width: 450rpx;
+  font-size: 26rpx;
+  color: #323232;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+.lists .orgname image{
+  width: 30rpx;
+  height: 30rpx;
+  padding-right: 6rpx;
+}
+.go-publish{
+  width: 110rpx;
+  height: 110rpx;
+  position: fixed;
+  right: 30rpx;
+  bottom:200rpx;
+  z-index: 666;
+}
+.go-publish image{
+  width: 110rpx;
+  height: 110rpx;
+}
+/* 党日活动 */
+.party-lists{
+  width: 100%;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.party-lists .lists-item{
+  width: 350rpx;
+  height: 450rpx;
+  position: relative;
+  box-sizing: border-box;
+  margin-bottom:15rpx;
+  border-radius: 6rpx;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}
+.party-lists .lists-item>view:nth-child(1){
+  width: 100%;
+  height: 300rpx;
+  text-align: center;
+}
+.party-lists .pic{
+  width: 300rpx;
+  height: 300rpx;
+  margin-top:25rpx;
+}
+.party-lists .avatar{
+  width: 64rpx;
+  height: 64rpx;
+  border-radius: 50%;
+}
+.party-lists .lists-item>view:nth-child(2){
+  width: 280rpx;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  font-size:30rpx;
+  color:#646464;
+}
+.party-lists .orgname{
+  width: 210rpx;
+  padding-top: 30rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+.party-lists .content{
+  width: 290rpx;
+  font-size: 32rpx;
+  margin: 0 auto;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+.party-lists .likes{
+  width: 35rpx;
+  height: 35rpx;
+  position: absolute;
+  bottom: 6rpx;
+  right: 30rpx;
+  z-index: 666;
+}
+.party-lists .share{
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  padding: 0;
+  right: 30rpx;
+  bottom: 130rpx;
+  background-color:transparent;
+  z-index: 666;
+}
+.party-lists .share image{
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 667;
+}
+button::after {
+  border: none;
+}

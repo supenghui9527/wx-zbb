@@ -63,7 +63,7 @@
       <text>全部</text>
       <image src='/images/zk.png'></image>
     </view>
-    <view>
+    <view catchtap='goSearch'>
       <image src='/images/search.png'></image>
       <input placeholder-style='color:#e4e4e4' placeholder='请输入要搜索内容'></input>
     </view>
@@ -73,7 +73,7 @@
     </view>
   </view>
   <view class='lists'>
-    <view wx:for="{{community}}" wx:key="{{item.cID}}" class='lists-item'>
+    <view wx:for="{{community}}" catchtap='goDetail' data-actid="{{item.cID}}" wx:key="{{item.cID}}" class='lists-item'>
       <image mode='aspectFill' class='pic' src="{{item.thumbnailPic+item.picNames[0]}}"></image>
       <view>
         <view class='title'>
@@ -86,7 +86,7 @@
         <view class='content'>{{item.content||'暂无内容'}}</view>
         <view class='orgname'>
           <image src='/images/person.png'></image>
-          <text>{{item.org.orgName||'无'}}</text>
+          <view>{{item.org.orgName||'无'}}</view>
         </view>
         <view class='place'>
           <view>

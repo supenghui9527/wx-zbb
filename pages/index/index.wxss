@@ -12,7 +12,7 @@
   display: flex;
   box-sizing: border-box;
   align-items: center;
-  border-bottom: 2px solid #f0f0f0;
+  border-bottom: 6px solid #f0f0f0;
 }
 .nav-item{
   width: 20%;
@@ -33,7 +33,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 2px solid #f0f0f0;
+  border-bottom: 6px solid #f0f0f0;
 }
 .myintegral>view:nth-child(1){
   display: flex;
@@ -253,9 +253,14 @@
   display: flex;
   align-items: center;
 }
-.orgname text{
+.orgname view{
+  width: 450rpx;
   font-size: 26rpx;
   color: #323232;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
 }
 .orgname image{
   width: 30rpx;

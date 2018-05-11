@@ -127,8 +127,7 @@ Page({
       };
       this.setData({
         community: data.community,
-        communityCount: data.communityCount,
-        communityTop: data.communityTop
+        communityCount: data.communityCount
       });
     })
   },
@@ -213,17 +212,14 @@ Page({
   },
   //发帖
   goPublish(e) {
-    let posttype = e.currentTarget.dataset.posttype;
     wx.navigateTo({
-      url: `/pages/index/publish/publish?shek=true`
+      url: `/pages/index/publish/publish?cType=0`
     })
   },
   // 点击进入详情
   goDetail(e) {
-    let cType = e.currentTarget.dataset.type,
-      cID = e.currentTarget.dataset.cid;
     wx.navigateTo({
-      url: '/pages/home/detail/detail?cType=' + cType + '&cID=' + cID
+      url: `/pages/detail/detail?cid=${e.currentTarget.dataset.actid}`
     })
   },
   // 获取组件传递id
@@ -232,17 +228,10 @@ Page({
       actID: e.detail
     })
   },
-  // 点击头像回到组织详情
-  gopartydetail(e) {
-    let data = e.currentTarget.dataset;
-    wx.navigateTo({
-      url: '/pages/databases/detail/detail?orgID=' + data.orgid + '&higherOrgID=' + data.higherorgid
-    })
-  },
   // 搜索
-  showSearch() {
+  goSearch() {
     wx.navigateTo({
-      url: '/pages/home/searchList/searchList'
+      url: '/pages/index/search/search?cType=0'
     })
   }
 })

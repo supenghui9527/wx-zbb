@@ -1,13 +1,14 @@
 /* pages/mine/member/detail/detail.wxss */
 .header{
   width: 680rpx;
-  height: 320rpx;
+  height: 350rpx;
   margin: 0 auto;
   border-radius: 10rpx;
   background-color: #ca4341;
 }
 .avatar{
   width: 100%;
+  padding-top: 35rpx;
   display: flex;
   justify-content: center;
 }
@@ -25,4 +26,38 @@
 .header image{
   width: 50rpx;
   height: 50rpx;
+}
+.name{
+  color:#fff;
+  text-align: center;
+  font-size:38rpx;
+  font-weight: bold;
+  padding-top: 30rpx;
+}
+.place{
+  color:#fff;
+  text-align: center;
+  font-size: 30rpx;
+  padding-top: 20rpx;
+}
+.history{
+  width: 100%;
+  height: 50rpx;
+  box-sizing: border-box;
+  padding:0 40rpx;
+  margin-top: 20rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.history>view>view{
+  height: 100%;
+  line-height: 50rpx;
+  display: flex;
+  align-items: center;
+}
+.history>view{
+  display: flex;
+  align-items: center;
+  color:#fff;
+  font-size: 30rpx;
 }

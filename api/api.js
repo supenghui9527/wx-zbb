@@ -2,10 +2,13 @@ const HOST = 'http://192.168.0.86:8080/'; // https://www.jshhfl.com/xwdj/
 module.exports = {
   loginUrl: `${HOST}login.do`,  // 登录接口
   getPostingsUrl: `${HOST}findCommunityHomePage.do`,  // 获取帖子列表
-  getMorePostingUrl: `${HOST}findCommunityMore.do`,  // 下拉加载更多
+  getMorePostingUrl: `${HOST}findCommunityMore.do`,  // 三会一课下拉加载更多
+  getMorePartyUrl: `${HOST}findPartyCommunityMore.do`,//党日活动
   likesUrl: `${HOST}likeCommunity.do`,  // 帖子点赞
   searchUrl: `${HOST}vagueSearch.do`,  // 帖子搜索
+  actSignUrl: `${HOST}communitySign.do`,//扫码签到
   postingsDetailUrl: `${HOST}findCommunityByCID.do`,  // 帖子详情
+  getPartyLists: `${HOST}findPartyCommunityHomePage.do`, // 党日活动
   postingsCommentUrl: `${HOST}findComment.do`,  // 查询帖子评论
   getMembersListUrl: `${HOST}findUSerByOrgID.do`,// 获取党员列表
   postingsLikesUrl: `${HOST}findlikeUserByCID.do`,  // 查询帖子点赞

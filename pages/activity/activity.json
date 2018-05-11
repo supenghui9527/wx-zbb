@@ -1,5 +1,6 @@
 {
   "navigationBarTitleText": "党日活动",
+  "enablePullDownRefresh": true,
   "usingComponents": {
     "postings": "/pages/common/postings/postings"
   }

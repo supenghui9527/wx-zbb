@@ -3,94 +3,75 @@ const util = require('../../utils/util.js');
 Page({
   data: {
     showSelect: true,
-    selectLists:[
-      {
-        text:'一周以内',
-        index: 0
-      },
-      {
-        text: '一个月内',
-        index: 1
-      },
-      {
-        text: '三个月内',
-        index: 2
-      },
-      {
-        text: '一年以内',
-        index: 3
-      },
-      {
-        text: '工委',
-        index: 4
-      },
-      {
-        text: '党委',
-        index: 5
-      },
-      {
-        text: '支部',
-        index: 6
-      }
-    ]
+    selectLists: [{ text: '一周以内', index: 0 }, { text: '一个月内', index: 1 }, { text: '三个月内', index: 2 }, { text: '一年以内', index: 3 }, { text: '党工委', index: 4 }, { text: '党委', index: 5 }, { text: '党支部', index: 6 }],
+    count: null,
+    pageIndex: 2,
+    pageCount: '',
+    pageNub: 20,
+    orderType: 0,
+    dateType: '',
+    orgType: '',
+    active1: 7 // 综合评论点赞
   },
-  onLoad (options) {
-    // this.getData(20, 1, -1);
+  // orderType,dateType,orgType:工委，党委，支部
+  onLoad(options) {
+    this.getData({ orderType: this.data.orderType, dateType: this.data.dateType, orgType: this.data.orgType });
   },
-  onShow () {
-  
+  onShow() {
+
   },
   getLists() {
 
   },
   //获取数据方法
-  getData(pageNub, cType, meetingType) {
+  getData({ orderType, dateType, orgType }) {
     getApp().$ajax({
-      httpUrl: getApp().api.getPostingsUrl,
+      httpUrl: getApp().api.getPartyLists,
       data: {
-        pageNumber: pageNub,
-        cType: cType,
-        meetingType: meetingType
+        orgID: wx.getStorageSync('userInfo').orgID,
+        pageNumber: 20,
+        orderType: orderType,
+        dateType: dateType,
+        orgType: orgType
       }
     }).then(({ data }) => {
       wx.stopPullDownRefresh();
-      for (let i = 0; i < data.community.length; i++) {
-        data.community[i].type = ['党课', '支委会', '党员大会', '党小组会'];
-      };
       this.setData({
         community: data.community,
-        communityCount: data.communityCount,
-        communityTop: data.communityTop
+        count: data.communityCount
       });
     })
   },
   // 显示筛选
   showSelect() {
-    this.setData({
-      showSelect: !this.data.showSelect
-    })
+    this.setData({ showSelect: !this.data.showSelect })
   },
   // 筛选
-  goSelect(e){
+  goSelect(e) {
     const index = e.currentTarget.dataset.index;
-    this.setData({
-      active: e.currentTarget.dataset.index
-    })
-    if (index==0){
-      console.log(this.selectTime(7))
-    }else if(index==1){
-      console.log(this.selectTime(30))
-    }else if (index == 2) {
-      console.log(this.selectTime(90))
-    }else if (index == 3) {
-      console.log(this.selectTime(365))
-    }else if (index == 4) {
-
-    }else if (index == 5) {
-
-    }else{
-
+    this.setData({ active: index });
+    if (index == 0) {
+      this.setData({ dateType: this.selectTime(7), showSelect: !this.data.showSelect });
+    } else if (index == 1) {
+      this.setData({ dateType: this.selectTime(30), showSelect: !this.data.showSelect });
+    } else if (index == 2) {
+      this.setData({ dateType: this.selectTime(90), showSelect: !this.data.showSelect });
+    } else if (index == 3) {
+      this.setData({ dateType: this.selectTime(365), showSelect: !this.data.showSelect });
+    } else if (index == 4) {
+      this.setData({ orgType: '党工委', showSelect: !this.data.showSelect });
+    } else if (index == 5) {
+      this.setData({ orgType: '党委', showSelect: !this.data.showSelect });
+    } else if (index == 6) {
+      this.setData({ orgType: '党支部', showSelect: !this.data.showSelect });
+    } else if (index == 7) {
+      this.setData({ orderType: 0, active: 7 });
+    } else if (index == 8) {
+      this.setData({ orderType: 1, active: 8 });
+    } else if (index == 9) {
+      this.setData({ orderType: 2, active: 9 });
     }
+    this.getData({ orderType: this.data.orderType, dateType: this.data.dateType, orgType: this.data.orgType });
   },
   // 计算筛选时间
   selectTime(nub) {
@@ -100,37 +81,63 @@ Page({
   },
   // 发布活动
   goPublish(e) {
-    let posttype = e.currentTarget.dataset.posttype;
     wx.navigateTo({
-      url: `/pages/index/publish/publish?shek=false`
+      url: `/pages/index/publish/publish?cType=1`
     })
   },
-  getData(pageNub, cType, meetingType) {
+  // 点赞
+  clickLikes(e) {
+    let cID = e.currentTarget.dataset.actid;
     getApp().$ajax({
-      httpUrl: getApp().api.getPostingsUrl,
+      httpUrl: getApp().api.likesUrl,
       data: {
-        pageNumber: pageNub,
-        cType: cType,
-        meetingType: meetingType
+        cID: cID,
+        orgID: wx.getStorageSync('userInfo').orgID
       }
     }).then(({ data }) => {
-      wx.stopPullDownRefresh();
-      for (let i = 0; i < data.community.length; i++) {
-        data.community[i].type = ['党课', '支委会', '党员大会', '党小组会'];
-      };
-      this.setData({
-        community: data.community,
-        communityCount: data.communityCount
-      });
+      this.getData({ orderType: 0, dateType: '', orgType: '' });
     })
   },
   onPullDownRefresh() {
-  
+
   },
-  onReachBottom() {
-  
+  loadMoreList(pageIndex, orderType, dateType, orgType) {
+    getApp().$ajax({
+      httpUrl: getApp().api.getMorePartyUrl,
+      data: {
+        orgID: wx.getStorageSync('userInfo').orgID,
+        pageNumber: 20,
+        pageIndex: pageIndex,
+        orderType: orderType,
+        dateType: dateType,
+        orgType: orgType
+      }
+    }).then(({ data }) => {
+      if (this.data.pageIndex > 1) {
+        var publishs = [...this.data.community, ...data.community];
+      }
+      this.data.pageIndex++;
+      this.setData({
+        community: publishs ? publishs : data.community
+      })
+    });
+  },
+  // 下拉加载更多
+  onReachBottom: function () {
+    const pageCount = this.data.count / 20;
+    this.data.count % 20 != 0 ? this.setData({ pageCount: Math.ceil(pageCount) }) : this.setData({ pageCount: pageCount });
+    //判断页码总数减去当前页码是否还存在下一页
+    if (this.data.pageCount - this.data.pageIndex >= 0) {
+      this.loadMoreList(this.data.pageIndex, this.data.orderType, this.data.dateType, this.data.orgType);
+    }
   },
   onShareAppMessage() {
-  
+
+  },
+  // 搜索
+  goSearch() {
+    wx.navigateTo({
+      url: '/pages/index/search/search?cType=1'
+    })
   }
 })

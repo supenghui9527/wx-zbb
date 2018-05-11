@@ -1,6 +1,3 @@
 {
-  "navigationBarTitleText": "发布",
-  "usingComponents": {
-    "publish": "/pages/common/publish/publish"
-  }
+  "navigationBarTitleText": "发布"
 }

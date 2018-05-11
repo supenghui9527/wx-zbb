@@ -1,0 +1,55 @@
+<view class='search_list'>
+  <image wx:if="{{count==null}}" class='no_lists' src='/images/none.png'></image>
+  <view style='height:120rpx'></view>
+  <view class="search_container">
+    <view>
+      <input bindconfirm="goSearch" type='text' value='{{content}}' placeholder='点击输入要搜索内容' confirm-type="search"></input>
+      <image class='search_btn' catchtap='goSearch' src='/images/search2.png'></image>
+      <image class='cancel' catchtap='deletSearch' src='/images/cancel.png'></image>
+    </view>
+    <text catchtap='hideSearch'>取消</text>
+  </view>
+  <view wx:if="{{cType==0}}" class='lists'>
+    <view wx:for="{{community}}" catchtap='goDetail' data-actid="{{item.cID}}" wx:key="{{item.cID}}" class='lists-item'>
+      <image mode='aspectFill' class='pic' src="{{item.thumbnailPic+item.picNames[0]}}"></image>
+      <view>
+        <view class='title'>
+          <view>{{item.title}}</view>
+          <view class='meeting-type' wx:if="{{item.meetingType==3}}">{{item.type[item.meetingType]}}</view>
+          <view class='meeting-type1' wx:elif="{{item.meetingType==2}}">{{item.type[item.meetingType]}}</view>
+          <view class='meeting-type2' wx:elif="{{item.meetingType==1}}">{{item.type[item.meetingType]}}</view>
+          <view class='meeting-type1' wx:else="{{item.meetingType==0}}">{{item.type[item.meetingType]}}</view>
+        </view>
+        <view class='content'>{{item.content||'暂无内容'}}</view>
+        <view class='orgname'>
+          <image src='/images/person.png'></image>
+          <view>{{item.org.orgName||'无'}}</view>
+        </view>
+        <view class='place'>
+          <view>
+            <image src="/images/pin.png"></image>
+            <view>{{item.geo||'无'}}</view>
+          </view>
+          <view>{{item.createTime}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{cType==1}}" class='party-lists'>
+    <view wx:for="{{community}}" wx:key="{{item.cID}}" class='lists-item'>
+      <view>
+        <image mode='aspectFill' class='pic' src='{{item.thumbnailPic+item.picNames[0]}}'></image>
+      </view>
+      <view>
+        <image class='avatar' src="{{item.headThumb||'/images/people.png'}}"></image>
+        <view class='orgname'>{{item.orgName}}</view>
+      </view>
+      <view class='content'>{{item.content}}</view>
+      <image catchtap='clickLikes' data-actid="{{item.cID}}" wx:if="{{item.isLike==0}}" class='likes' src='/images/zan02.png'></image>
+      <image wx:else catchtap='clickLikes' data-actid="{{item.cID}}" class='likes' src='/images/zan01.png'></image>
+      <button class='share'>
+        <image src='/images/share1.png'></image>
+      </button>
+    </view>
+  </view>
+</view>

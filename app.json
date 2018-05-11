@@ -1,6 +1,8 @@
 {
   "pages": [
+    "pages/index/publish/publish",
     "pages/activity/activity",
+    "pages/index/search/search",
     "pages/index/index",
     "pages/mine/member/detail/detail",
     "pages/mine/member/member",
@@ -16,7 +18,6 @@
     "pages/mine/parties/parties",
     "pages/mine/mywork/mywork",
     "pages/mine/myReward/myReward",
-    "pages/index/publish/publish",
     "pages/mine/exportdata/exportdata",
     "pages/mine/mypostings/mypostings",
     "pages/detail/detail",

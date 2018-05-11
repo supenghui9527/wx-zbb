@@ -6,14 +6,14 @@
     </view>
     <view class='name'>安琪</view>
     <view class='place'>鼓楼区</view>
-    <view class=''>
+    <view class='history'>
       <view>
         <image src='/images/record.png'></image>
-        <text>学习记录</text>
+        <view>学习记录</view>
       </view>
       <view>
         <image src='/images/fee.png'></image>
-        <text>党费收缴 ￥800.00</text>
+        <view>党费收缴 ￥800.00</view>
       </view>
     </view>
   </view>
