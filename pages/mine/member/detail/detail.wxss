@@ -61,3 +61,18 @@
   color:#fff;
   font-size: 30rpx;
 }
+.info{
+  width: 680rpx;
+  margin: 0 auto;
+}
+.info>view{
+  padding: 40rpx 0 20rpx 0;
+  border-bottom: 1px solid #f0f0f0;
+  display: flex;
+  justify-content: space-between;
+  font-size: 32rpx;
+  color:#323232;
+}
+.info>view text:nth-child(2){
+  color:#646464;
+}

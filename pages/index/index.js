@@ -219,7 +219,7 @@ Page({
   // 点击进入详情
   goDetail(e) {
     wx.navigateTo({
-      url: `/pages/detail/detail?cid=${e.currentTarget.dataset.actid}`
+      url: `/pages/detail/detail?cid=${e.currentTarget.dataset.actid}&cType=0`
     })
   },
   // 获取组件传递id

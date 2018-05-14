@@ -134,6 +134,12 @@ Page({
   onShareAppMessage() {
 
   },
+  // 点击进入详情
+  goDetail(e) {
+    wx.navigateTo({
+      url: `/pages/detail/detail?cid=${e.currentTarget.dataset.actid}&cType=1`
+    })
+  },
   // 搜索
   goSearch() {
     wx.navigateTo({

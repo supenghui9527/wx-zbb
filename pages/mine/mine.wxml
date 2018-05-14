@@ -7,7 +7,7 @@
   </view>
   <view class='org-list'>
     <view>
-      <view>
+      <view catchtap='goMembers'>
         <view class='nub'>{{userinfo.DangYuan}}</view>
         <view class="name">党员</view>
       </view>

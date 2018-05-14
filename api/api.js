@@ -1,4 +1,4 @@
-const HOST = 'http://192.168.0.86:8080/'; // https://www.jshhfl.com/xwdj/
+const HOST = 'http://192.168.8.52:8080/'; // https://www.jshhfl.com/xwdj/
 module.exports = {
   loginUrl: `${HOST}login.do`,  // 登录接口
   getPostingsUrl: `${HOST}findCommunityHomePage.do`,  // 获取帖子列表
@@ -8,6 +8,8 @@ module.exports = {
   searchUrl: `${HOST}vagueSearch.do`,  // 帖子搜索
   actSignUrl: `${HOST}communitySign.do`,//扫码签到
   postingsDetailUrl: `${HOST}findCommunityByCID.do`,  // 帖子详情
+  shareUrl: `${HOST}communityToShare.do`,// 分享
+  hideAddUrl: `${HOST}checkIsAddCommunity.do`, //临时退出保存
   getPartyLists: `${HOST}findPartyCommunityHomePage.do`, // 党日活动
   postingsCommentUrl: `${HOST}findComment.do`,  // 查询帖子评论
   getMembersListUrl: `${HOST}findUSerByOrgID.do`,// 获取党员列表

@@ -8,7 +8,16 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    console.log(options)
+    this.setData({
+      firstName: options.username.substring(0,1),
+      username: options.username,
+      gender: options.gender,
+      joindate: options.joindate,
+      idNum: options.idNum,
+      tel: options.tel,
+      position: options.position,
+    })
   },
 
   /**

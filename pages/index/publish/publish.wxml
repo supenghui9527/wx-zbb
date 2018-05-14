@@ -1,48 +1,51 @@
 <!--pages/index/publish/publish.wxml-->
 <view class='publish'>
   <form bindsubmit="save">
-    <input hidden="true" name="orgID" value="{{userID}}" />
+    <input hidden="true" name="orgID" value="{{orgID}}" />
+    <input hidden="true" name="cID" value="{{cID}}" />
     <input hidden="true" name="cType" value="{{cType}}" />
-    <input hidden="true" wx:if="{{cType==0}}" name="meetingTime" value="{{date}}"/>
-    <input wx:if="{{cType==0}}" name="meetingType" value="{{meettype}}" hidden="true" />
+    <input hidden="true" name="actuaAttendance" value="{{signNames.length}}" />
+    <input hidden="true" name="signUserNames" value="{{oldSignName}}" />
+    <input hidden="true" name="meetingTime" value="{{date+' '+time}}"/>
+    <input wx:if="{{cType==0}}" name="meetingType" value="{{active}}" hidden="true" />
     <view wx:if="{{cType==0}}" class='type'>
-      <view catchtap='changeNav' class="{{active==index?'active':''}}" data-index="{{index}}" wx:for="{{actType}}" wx:key="index">{{item}}</view>
+      <view catchtap='changeNav' class="{{active==item.index?'active':''}}" data-index="{{item.index}}" wx:for="{{actType}}" wx:key="{{item.index}}">{{item.text}}</view>
     </view>
     <view class="section">
-      <view class="section__title">日期：</view>
-      <picker style='width:80%' name="meetingDate" mode="date" value="{{date}}" start="2015-09-01" end="2100-09-01" bindchange="bindDateChange">
+      <view class="section__title">日期:</view>
+      <picker style='width:80%' mode="date" value="{{date}}" start="2015-09-01" end="2100-09-01" bindchange="bindDateChange">
         <view class="picker">{{date}}</view>
       </picker>
     </view>
     <view class="section">
-      <view class="section__title">时间：</view>
-      <picker style='width:80%' name="meetingTime" mode="time" value="{{time}}" start="02:01" end="23:59" bindchange="bindTimeChange">
+      <view class="section__title">时间:</view>
+      <picker style='width:80%' mode="time" value="{{time}}" start="02:01" end="23:59" bindchange="bindTimeChange">
         <view class="picker">{{time}}</view>
       </picker>
     </view>
     <view wx:if="{{cType==0}}" class='tit'>
-      <label>主题：</label>
-      <input placeholder='请输入会议主题'></input>
+      <label>主题:</label>
+      <input bindinput='getTitle' name="title" value='{{title}}' placeholder='请输入会议主题'></input>
     </view>
     <view wx:if="{{cType==0}}" class='tit'>
-      <label>主持：</label>
-      <input placeholder='请输入主持姓名'></input>
+      <label>主持:</label>
+      <input bindinput='getPreside' name="preside" value='{{preside}}' placeholder='请输入主持姓名'></input>
     </view>
     <view wx:if="{{cType==0}}" class='tit'>
-      <label>应到：</label>
-      <input placeholder='请输入人数'></input>
+      <label>应到:</label>
+      <input bindinput='getShouldAttendance' name="shouldAttendance" value='{{shouldAttendance}}' type='number' placeholder='请输入人数'></input>
     </view>
     <view class='sign'>
-      <label>实到：</label>
-      <view wx:if="{{false}}" class='nosign'>请扫码签到</view>
-      <view class='signname'>
-        <text wx:for="{{6}}" wx:key="index">苏朋辉;</text>
+      <label>实到:</label>
+      <view wx:if="{{signNames.length==0}}" class='nosign'>请扫码签到</view>
+      <view wx:if="{{signNames.length!=0}}" class='signname'>
+         <text wx:for="{{signNames}}" wx:key="index">{{item}};</text> 
       </view>
-      <view class='number'>0</view>
+      <view class='number'>{{signNames.length}}</view>
       <image catchtap='sign' class='gosign' src='/images/scanning.png'></image>
     </view>
     <view class="content">
-      <textarea class='font-color' name="content" placeholder="请输入精彩内容..." />
+      <textarea bindinput='getContent' class='font-color' name="content" value='{{content}}' placeholder="请输入精彩内容..." />
       <view class="imgcontainer">
         <block wx:for="{{tempFilePaths}}" wx:key="*this">
           <view class="up">
@@ -56,12 +59,12 @@
     </view>
     <view class='place'>
       <image catchtap='getPlace' src='/images/place.png'></image>
-      <input class='font-color' value='{{address}}' name="{{cType==0?'geo':'meetingLocation'}}" placeholder='我的位置'></input>
+      <input bindinput='getAddress' class='font-color' name="{{cType==0?'geo':'meetingLocation'}}" value='{{cType==0?geo:meetingLocation}}' placeholder='我的位置'></input>
     </view>
     <view class='ispublish'>
-      <checkbox-group name="isPublic" bindchange="checkboxChange">
+      <checkbox-group name="isPublic">
         <label>
-          <checkbox style='zoom:60%' value="" checked=""/>不公开发布
+          <checkbox style='zoom:60%' value="1" checked=""/>不公开发布
         </label>
       </checkbox-group>
     </view>

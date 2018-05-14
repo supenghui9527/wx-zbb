@@ -12,7 +12,7 @@
         <text>时间：</text>
         <text>{{item.meetingTime}}</text>
       </view>
-      <view>
+      <view hidden="{{cType==1}}">
         <text>主持人：</text>
         <text>{{item.preside==null?'无':item.preside}}</text>
       </view>
@@ -24,7 +24,7 @@
         <text>实到人数：</text>
         <text>{{item.actuaAttendance==null?'0':item.actuaAttendance}}</text>
       </view>
-      <view>
+      <view hidden="{{cType==1}}">
         <text>主题：</text>
         <text>{{item.title}}</text>
       </view>
@@ -39,7 +39,7 @@
       </view>
       <view class='address'>
         <image src='/images/IconPin.png'></image>
-        <text>{{item.org.orgAddress}}</text>
+        <view>{{item.org.orgAddress}}</view>
       </view>
     </view>
   </view>
@@ -99,7 +99,7 @@
   <view style='width:100%;height:100rpx;'></view>
   <view class='user-do'>
     <view>
-      <button class='postings-share' catchtap='getActid' data-actid="{{item.id}}" open-type='share'>
+      <button class='postings-share' catchtap='getActid' data-actid="{{item.cID}}" open-type='share'>
         <view>
           <image src='/images/share.png'></image>
           <text>分享{{item.shares}}</text>

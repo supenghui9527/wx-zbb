@@ -61,6 +61,7 @@ Page({
   //查看党员详情
   goUser(e) {
     let obj = e.currentTarget.dataset;
+    console.log(obj)
     wx.navigateTo({
       url: '/pages/mine/member/detail/detail?username=' + obj.username + '&position=' + obj.position + '&gender=' + obj.gender + '&joindate=' + obj.joindate + '&tel=' + obj.tel + '&idNum=' + obj.idnum + '&userID=' + obj.userid
     })

@@ -2,9 +2,9 @@
 <view class='detail'>
   <view class='header'>
     <view class='avatar'>
-      <view>安</view>
+      <view>{{firstName}}</view>
     </view>
-    <view class='name'>安琪</view>
+    <view class='name'>{{username}}</view>
     <view class='place'>鼓楼区</view>
     <view class='history'>
       <view>
@@ -15,6 +15,28 @@
         <image src='/images/fee.png'></image>
         <view>党费收缴 ￥800.00</view>
       </view>
+    </view>
+  </view>
+  <view class='info'>
+    <view>
+      <text>性别</text>
+      <text>{{gender}}</text>
+    </view>
+    <view>
+      <text>入党时间</text>
+      <text>{{joindate}}</text>
+    </view>
+    <view>
+      <text>身份证号码</text>
+      <text>{{idNum=='null'&&'暂无'}}</text>
+    </view>
+    <view>
+      <text>手机号</text>
+      <text>{{tel||'暂无'}}</text>
+    </view>
+    <view>
+      <text>党内职务</text>
+      <text>{{position=='null'&&'暂无'}}</text>
     </view>
   </view>
 </view>

@@ -1,11 +1,11 @@
 {
   "pages": [
-    "pages/index/publish/publish",
-    "pages/activity/activity",
-    "pages/index/search/search",
     "pages/index/index",
     "pages/mine/member/detail/detail",
     "pages/mine/member/member",
+    "pages/index/publish/publish",
+    "pages/activity/activity",
+    "pages/index/search/search",
     "pages/mine/mine",
     "pages/mine/myintegral/giftdetail/giftdetail",
     "pages/mine/myintegral/gift/gift",

@@ -3,23 +3,51 @@ const util = require('../../../utils/util.js');
 const date = new Date();
 Page({
   data: {
-    active: 0,
+    active: 2,
+    signCount: 0,
     date: '请选择会议日期',//util.formatTime(date).substring(0, 10)
     time: '请选择会议时间',//util.formatTime(date).substring(10)
     tempFilePaths: [],
-    actType: ['党员大会', '支委会', '党小组会', '党课']
+    actType: [{ text: '党员大会', index: 2 }, { text: '支委会', index: 1 }, { text: '党小组会', index: 3 }, { text: '党课', index: 0 }]
   },
   onLoad: function (options) {
-    this.setData({ cType: options.cType });
+    this.setData({
+      cType: options.cType,
+      orgID: wx.getStorageSync('userInfo').orgID
+    });
   },
   onReady: function () {
 
   },
   onShow: function () {
-
+    this.leaveSave(0);
   },
   onHide: function () {
-
+  },
+  getPreside(e) {
+    this.setData({
+      preside: e.detail.value
+    })
+  },
+  getShouldAttendance(e) {
+    this.setData({
+      shouldAttendance: e.detail.value
+    })
+  },
+  getTitle(e) {
+    this.setData({
+      title: e.detail.value
+    })
+  },
+  getContent(e) {
+    this.setData({
+      content: e.detail.value
+    })
+  },
+  getAddress(e) {
+    this.setData({
+      address: e.detail.value
+    })
   },
   changeNav(e) {
     this.setData({
@@ -27,28 +55,61 @@ Page({
     })
   },
   onUnload: function () {
+    const meetingTime = '';
+    if (this.data.date == '请选择会议日期' && this.data.time == '请选择会议时间') {
 
+    }
+    this.leaveSave(1);
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
+  // 临时保存
+  leaveSave(isOut) {
+    getApp().$ajax({
+      httpUrl: getApp().api.hideAddUrl,
+      isShowLoading: false,
+      hideLoading: false,
+      data: {
+        isOut: isOut,
+        orgID: this.data.orgID,
+        cType: this.data.cType,
+        meetingTime: util.formatTime(date),
+        meetingType: this.data.active,
+        isPublic: 2,
+        title: this.data.title || '',
+        content: this.data.content || '',
+        shouldAttendance: this.data.shouldAttendance || '',
+        preside: this.data.preside || '',
+        meetingLocation: this.data.address || ''
+      }
+    }).then(({ data }) => {
+      let name = data.data.signUserNames;
+      let signNames = '';
+      let arr = [];
+      if (name != ''&&name!=null) {
+        if (name.indexOf(',') != -1) {
+          signNames = name.split(',')
+        } else {
+          arr.push(name);
+          signNames = arr;
+        }
+      }
+      this.setData({
+        cID: data.data.cID,
+        signNames: signNames,
+        oldSignName: name,
+        title: data.data.title,
+        meetingLocation: data.data.meetingLocation,
+        active:data.data.meetingType,
+        preside: data.data.preside,
+        shouldAttendance: data.data.shouldAttendance,
+        content: data.data.content
+      });
+    })
   },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
+  bindDateChange(e) {
+    this.setData({ date: e.detail.value })
   },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  bindTimeChange(e) {
+    this.setData({ time: e.detail.value })
   },
   //选择本地相册中的图片
   upLoad() {
@@ -88,12 +149,12 @@ Page({
         if (i == length) {
           // console.log('总共' + successUp + '张上传成功,' + failUp + '张上传失败！');
           wx.hideLoading();
-          wx.redirectTo({
-            url: '/pages/home/home'
+          wx.switchTab({
+            url: '/pages/index/index'
           })
         }
         else {
-          this.getData(tempFilePaths, successUp, failUp, i, length, cid);
+          this.getData(tempFilePaths, successUp, failUp, i, length, this.data.cID);
         }
       },
     })
@@ -107,8 +168,8 @@ Page({
       i = 0, //第几个
       data = e.detail.value;
     for (let i in data) {
-      if (data[i] == '') {
-        if (i == 'location') continue;
+      if (data[i] == '' || data[i].indexOf('请') != -1) {
+        if (i == 'isPublic') continue;
         wx.showToast({
           title: '请确认信息是否填写完整',
           icon: 'none'
@@ -123,7 +184,7 @@ Page({
       data: data
     }).then((res) => {
       if (length) {
-        this.getData(this.data.tempFilePaths, successUp, failUp, i, length);
+        this.getData(this.data.tempFilePaths, successUp, failUp, i, length, this.data.cID);
       } else {
         wx.switchTab({
           url: '/pages/index/index'
@@ -162,16 +223,20 @@ Page({
     wx.scanCode({
       onlyFromCamera: true,
       success: (res) => {
-        console.log(res)
         getApp().$ajax({
           httpUrl: getApp().api.actSignUrl,
           data: {
-            userID: wx.getStorageSync('userInfo').orgID,
-            cID: 2
+            userID: JSON.parse(res.result).userID, // JSON.parse(res.result).userID
+            cID: this.data.cID
           }
-        }).then(({ data }) => {
+        }).then(({ data, message }) => {
+          console.log(data)
+          this.setData({
+            signNames: data.signNames,
+            signCount: data.countSign
+          })
           wx.showToast({
-            title: '签到成功',
+            title: message,
             icon: 'none'
           })
         })

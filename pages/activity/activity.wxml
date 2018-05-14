@@ -27,7 +27,7 @@
     </view>
   </view>
   <view class='lists'>
-    <view wx:for="{{community}}" wx:key="{{item.cID}}" class='lists-item'>
+    <view wx:for="{{community}}" wx:key="{{item.cID}}" data-actid="{{item.cID}}" catchtap='goDetail' class='lists-item'>
       <view>
         <image mode='aspectFill' class='pic' src='{{item.thumbnailPic+item.picNames[0]}}'></image>
       </view>

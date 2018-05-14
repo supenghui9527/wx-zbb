@@ -49,6 +49,9 @@
   padding: 32rpx 0 18rpx 0;
   border-bottom: 1px solid #f0f0f0;
 }
+.tit label,.sign label{
+  width: 100rpx !important;
+}
 .tit input{
   font-size: 32rpx;
   color:#909090;
@@ -56,7 +59,7 @@
 .sign{
   display: flex;
   position: relative;
-  padding: 25rpx 0 30rpx 0;
+  padding: 20rpx 0 60rpx 0;
   border-bottom: 1px solid #f0f0f0;
 }
 .signname{
@@ -80,9 +83,10 @@
   height: 60rpx;
   position: absolute;
   right: 10rpx;
-  bottom:6rpx;
+  bottom:0rpx;
 }
 .nosign{
+  width: 300rpx;
   font-size:32rpx;
   color:#909090;
 }
