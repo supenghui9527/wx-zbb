@@ -1,4 +1,4 @@
-const HOST = 'http://192.168.8.52:8080/'; // https://www.jshhfl.com/xwdj/
+const HOST = 'http://47.104.6.174:8091/zzb/'; // https://www.jshhfl.com/xwdj/http://47.104.6.174:8091/zzb/  
 module.exports = {
   loginUrl: `${HOST}login.do`,  // 登录接口
   getPostingsUrl: `${HOST}findCommunityHomePage.do`,  // 获取帖子列表
@@ -7,11 +7,15 @@ module.exports = {
   likesUrl: `${HOST}likeCommunity.do`,  // 帖子点赞
   searchUrl: `${HOST}vagueSearch.do`,  // 帖子搜索
   actSignUrl: `${HOST}communitySign.do`,//扫码签到
-  postingsDetailUrl: `${HOST}findCommunityByCID.do`,  // 帖子详情
+  // postingsDetailUrl: `${HOST}findCommunityByCID.do`,  // 帖子详情
+  postingsDetailUrl: `${HOST}toCommunityDetails.do`,  // 帖子详情
   shareUrl: `${HOST}communityToShare.do`,// 分享
   hideAddUrl: `${HOST}checkIsAddCommunity.do`, //临时退出保存
   getPartyLists: `${HOST}findPartyCommunityHomePage.do`, // 党日活动
   postingsCommentUrl: `${HOST}findComment.do`,  // 查询帖子评论
+  studyRecordtUrl: `${HOST}findStudyRecord.do`,//学习记录
+  studyAndPartyPayUrl: `${HOST}studyAndPartyPay.do`,//党费和学习记录总计
+  PartyDeusrRecordUrl: `${HOST}findPartyDeusrRecord.do`,//党费记录
   getMembersListUrl: `${HOST}findUSerByOrgID.do`,// 获取党员列表
   postingsLikesUrl: `${HOST}findlikeUserByCID.do`,  // 查询帖子点赞
   savePostingsCommentUrl: `${HOST}releaseCommentToCommunity.do`,  // 保存评论帖子内容
@@ -23,6 +27,7 @@ module.exports = {
   markeDetailUrl: `${HOST}findPositionDetail.do`,  // 地图marke点详情
   addWorkUrl: `${HOST}addWork.do`,  // 添加近期工作
   findMyPointUrl: `${HOST}findMyPoint.do`,  // 个人积分信息
+  partyDeusPayUrl: `${HOST}partyDeusPay.do`,//缴纳党费
   pointListUrl: `${HOST}findOrgOrder.do`,  // 积分列表
   userInfoUrl: `${HOST}fingByOrgID.do`,  // 个人中心信息
   changeAvatarUrl: `${HOST}modifyAvatar.do`,  // 修改个人头像

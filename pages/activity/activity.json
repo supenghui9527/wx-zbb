@@ -1,6 +1,7 @@
 {
   "navigationBarTitleText": "党日活动",
   "enablePullDownRefresh": true,
+  "backgroundColor": "#ccc",
   "usingComponents": {
     "postings": "/pages/common/postings/postings"
   }

@@ -43,7 +43,6 @@ function $ajax({ isShowLoading = true, hideLoading = true, wxApp = true, httpUrl
 }
 // 点击浏览大图
 function showBigPic(e) {
-  console.log(e)
   let img = e.currentTarget.dataset.img,
     imgUrl = e.currentTarget.dataset.imgurl,
     urls = [];
@@ -67,9 +66,31 @@ function resetData(data) {
   })
   return lists;
 }
+// 组装数据
+function recombinedData(data) {
+  let yearArr = [];
+  data.map(({ content, createTime }) => {
+    let year = createTime.substring(0, 4);
+    let index = -1;
+    let date = createTime.substring(5, 10);
+    yearArr.forEach((e, i) => {
+      if (e.year === year) {
+        index = i;
+        return;
+      }
+    });
+    if (index === -1) {
+      yearArr.push({ year, month: [{ content, date }] });
+    } else {
+      yearArr[index].month.push({ content, date });
+    }
+  });
+  return yearArr;
+}
 module.exports = {
   formatTime,
   $ajax,
+  recombinedData,
   showBigPic,
   resetData
 }

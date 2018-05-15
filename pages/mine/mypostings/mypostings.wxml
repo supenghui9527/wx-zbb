@@ -1,30 +1,31 @@
 <!--pages/mine/mypostings/mypostings.wxml-->
 <view class='postings'>
   <view style='border-top:6rpx solid #f0f0f0'></view>
-  <view wx:for="{{6}}" class='item'>
+  <view catchtap='goDetail' data-actid="{{item.cID}}" data-ctype="{{item.cType}}" wx:for="{{lists}}" wx:key="{{item.cID}}" class='item'>
     <view>
-      <text>09</text>
-      <text>6月</text>
+      <text>{{item.day}}</text>
+      <text>{{item.month}}月</text>
     </view>
     <view>
-      <image class='item-img' src='http://www.wsspha.cn/images/avatar.jpg'></image>
+      <image wx:if="{{item.org.headThumb}}" class='item-img' src='{{item.thumbnailPic+item.picNames[0]}}'></image>
+      <image wx:else class='item-img' src='/images/people.png'></image>
     </view>
     <view>
-      <view class='content'>该系统满足了潍坊市坊子区对于该系统的需求，该系统主要实现了对网站信息的管理，党员信息的管理，党组织活动的管理，党费情况的管理与针对于系统本身的系统管理。</view>
+      <view class='content'>{{item.content}}</view>
       <view class='type'>
-        <view>党课</view>
+        <view wx:if="{{item.cType==0}}">{{item.type[item.meetingType]}}</view>
         <view class='likes-shares'>
           <view>
             <image src='/images/share.png'></image>
-            <text>5</text>
+            <text>{{item.shareCount||0}}</text>
           </view>
           <view>
             <image src='/images/comment.png'></image>
-            <text>10</text>
+            <text>{{item.commentCount||0}}</text>
           </view>
           <view>
             <image src='/images/fabulous_normal.png'></image>
-            <text class='cur'>20</text>
+            <text class='cur'>{{item.likeCount||0}}</text>
           </view>
         </view>
       </view>

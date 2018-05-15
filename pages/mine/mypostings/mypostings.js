@@ -12,7 +12,22 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    getApp().$ajax({
+      httpUrl: getApp().api.getAlreadyPostingsUrl,
+      data: {
+        orgID: wx.getStorageSync('userInfo').orgID,
+        mType: 1
+      }
+    }).then(({ data }) => {
+      data.map((item)=>{
+        item.month = item.createTime.substring(5,7);
+        item.day = item.createTime.substring(8, 10);
+        item.type = ['党课', '支委会', '党员大会', '党小组会'];
+      })
+      this.setData({
+        lists: data
+      })
+    })
   },
 
   /**
@@ -62,5 +77,11 @@ Page({
    */
   onShareAppMessage: function () {
   
-  }
+  },
+  // 点击进入详情
+  goDetail(e) {
+    wx.navigateTo({
+      url: `/pages/detail/detail?cid=${e.currentTarget.dataset.actid}&cType=${e.currentTarget.dataset.ctype}`
+    })
+  },
 })

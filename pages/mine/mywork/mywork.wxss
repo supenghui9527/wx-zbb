@@ -71,3 +71,15 @@
   line-height: 40rpx;
   border: 1rpx solid #ca4341;
 }
+.go-publish{
+  width: 110rpx;
+  height: 110rpx;
+  position: fixed;
+  right: 30rpx;
+  bottom:200rpx;
+  z-index: 666;
+}
+.go-publish image{
+  width: 110rpx;
+  height: 110rpx;
+}

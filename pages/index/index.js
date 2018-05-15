@@ -179,7 +179,7 @@ Page({
         wx.stopPullDownRefresh();
         //区分模版是在详情页面调用还是主页
         for (let i = 0; i < data.community.length; i++) {
-          data.community[i].isDetail = true;
+          data.community[i].type = ['党课', '支委会', '党员大会', '党小组会'];
         }
         const publishs = [...this.data.community, ...data.community];
         this.setData({
@@ -232,6 +232,21 @@ Page({
   goSearch() {
     wx.navigateTo({
       url: '/pages/index/search/search?cType=0'
+    })
+  },
+  // 收缴党费
+  collected(){ 
+    wx.scanCode({
+      onlyFromCamera: true,
+      success: (res) => {
+        wx.setStorageSync('members', JSON.parse(res.result));
+        wx.navigateTo({
+          url: "/pages/mine/parties/parties"
+        })
+      },
+      fail: () => {
+        console.log(1)
+      }
     })
   }
 })

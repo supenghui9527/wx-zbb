@@ -10,8 +10,11 @@
       <view>4-12</view>
       <view>
         <view>中选中项发生改变是触发 change 事件，detail = {value:[选中的checkbox的value的数组]}</view>
-        <view class='complete'>去完成</view>
+        <view class='complete' catchtap='goPublish'>去完成</view>
       </view>
     </view>
+  </view>
+  <view catchtap='publicWork' class='go-publish'>
+    <image src='/images/btn.png'></image>
   </view>
 </view>

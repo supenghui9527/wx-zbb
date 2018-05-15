@@ -62,5 +62,13 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+  signOut(){
+    wx.navigateTo({
+      url: '/pages/login/login',
+      success(){
+        wx.clearStorageSync();
+      }
+    })
   }
 })

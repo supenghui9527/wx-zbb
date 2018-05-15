@@ -23,6 +23,9 @@ Page({
   getLists() {
 
   },
+  onPullDownRefresh(){
+    this.getData({ orderType: this.data.orderType, dateType: this.data.dateType, orgType: this.data.orgType });
+  },
   //获取数据方法
   getData({ orderType, dateType, orgType }) {
     getApp().$ajax({

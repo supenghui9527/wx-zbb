@@ -22,6 +22,14 @@ Page({
   onHide: function () {
   
   },
+  goPublish(e) {
+    wx.navigateTo({
+      url: `/pages/index/publish/publish?cType=0`
+    })
+  },
+  publicWork(){
+
+  },
   onUnload: function () {
   
   },

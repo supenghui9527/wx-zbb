@@ -1,0 +1,17 @@
+<!--pages/mine/member/parties/parties.wxml-->
+<view class='reward'>
+  <view wx:for="{{lists}}" wx:key="index" class='lists-item'>
+    <view wx:if="{{index+1==lists.length}}" class='line'></view>
+    <view class='year'>{{item.year}}</view>
+    <view wx:for="{{item.month}}" wx:for-item="month" wx:key="idx" wx:for-index="idx" class='month'>
+      <view class='line'></view>
+      <view class='days'>
+        <image src='/images/offer.png'></image>
+        <view class='content'>
+          <view>{{month.date}}</view>
+          <view>{{month.content}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -39,6 +39,7 @@ App({
   $ajax: util.$ajax,
   imgUrl: `${api.HOST}`,
   showBigPic: util.showBigPic,
+  recombinedData: util.recombinedData,
   globalData: {
     userInfo: null
   }

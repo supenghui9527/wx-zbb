@@ -1,71 +1,63 @@
 // pages/mine/member/detail/detail.js
 Page({
   data: {
-  
-  },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
+  },
   onLoad: function (options) {
-    console.log(options)
     this.setData({
-      firstName: options.username.substring(0,1),
+      firstName: options.username.substring(0, 1),
       username: options.username,
       gender: options.gender,
       joindate: options.joindate,
       idNum: options.idNum,
       tel: options.tel,
       position: options.position,
+      userID: options.userID
+    });
+    this.getStudyAndpartypay();
+  },
+  onReady: function () {
+
+  },
+  historyLists() {
+    wx.navigateTo({
+      url: `/pages/mine/member/studyLists/studyLists?userID=${this.data.userID}`
     })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
+  partiesLists(){
+    wx.navigateTo({
+      url: `/pages/mine/member/parties/parties?userID=${this.data.userID}`
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
+  getStudyAndpartypay() {
+    getApp().$ajax({
+      httpUrl: getApp().api.studyAndPartyPayUrl,
+      data: {
+        userID: this.data.userID,
+      }
+    }).then(({ data }) => {
+      this.setData({
+        countStudy: data.countStudy,
+        sumPartyPay: data.sumPartyPay
+      })
+    })
+  },
   onShow: function () {
-  
-  },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
+  },
   onHide: function () {
-  
-  },
 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
+  },
   onUnload: function () {
-  
-  },
 
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
+  },
   onPullDownRefresh: function () {
-  
-  },
 
-  /**
-   * 页面上拉触底事件的处理函数
-   */
+  },
   onReachBottom: function () {
-  
-  },
 
-  /**
-   * 用户点击右上角分享
-   */
+  },
   onShareAppMessage: function () {
-  
+
   }
 })

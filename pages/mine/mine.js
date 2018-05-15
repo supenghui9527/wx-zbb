@@ -30,7 +30,6 @@ Page({
         higherOrgID: wx.getStorageSync('userInfo').higherOrgID
       }
     }).then(({ data }) => {
-      console.log(data)
       this.setData({
         userinfo: data
       })

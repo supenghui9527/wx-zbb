@@ -13,12 +13,12 @@
       </view>
       <view>奖惩记录</view>
     </navigator>
-    <navigator url="/pages/mine/parties/parties" open-type='navigate' hover-class="none" class='nav-item'>
+    <view catchtap='collected' class='nav-item'>
       <view>
         <image src="/images/sjdf.png"></image>
       </view>
       <view>收缴党费</view>
-    </navigator>
+    </view>
     <navigator url='/pages/mine/mypostings/mypostings' open-type='navigate' hover-class="none" class='nav-item'>
       <view>
         <image src="/images/wdfb.png"></image>
@@ -81,7 +81,7 @@
           <view class='meeting-type' wx:if="{{item.meetingType==3}}">{{item.type[item.meetingType]}}</view>
           <view class='meeting-type1' wx:elif="{{item.meetingType==2}}">{{item.type[item.meetingType]}}</view>
           <view class='meeting-type2' wx:elif="{{item.meetingType==1}}">{{item.type[item.meetingType]}}</view>
-          <view class='meeting-type1' wx:else="{{item.meetingType==0}}">{{item.type[item.meetingType]}}</view>
+          <view class='meeting-type3' wx:else="{{item.meetingType==0}}">{{item.type[item.meetingType]}}</view>
         </view>
         <view class='content'>{{item.content||'暂无内容'}}</view>
         <view class='orgname'>

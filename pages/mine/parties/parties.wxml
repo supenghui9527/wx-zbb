@@ -1,27 +1,25 @@
 <!--pages/mine/parties/parties.wxml-->
 <view class='parties'>
-  <form>
+  <form bindsubmit="toPay">
+    <input hidden='{{true}}' name="userID" value='{{userID}}'></input>
     <view class='time'>
       <label>时间：</label>
-      <view>
-        <text>2018-04-16</text>
-        <text>09:20</text>
-      </view>
+      <view>{{date}}</view>
     </view>
     <view class='time'>
       <label>姓名：</label>
-      <view>李青</view>
+      <view>{{userName}}</view>
     </view>
     <view class='time'>
       <label>身份证号码：</label>
-      <view>41102415025454514</view>
+      <view>{{uid}}</view>
     </view>
     <view class='time'>
       <label>缴费金额：</label>
       <view>
-        <input placeholder='请输入缴费金额'></input>
+        <input name="payDues" type='number' placeholder='请输入缴费金额'></input>
       </view>
     </view>
-    <button class='btn'>提交</button>
+    <button form-type="submit" class='btn'>提交</button>
   </form>
 </view>

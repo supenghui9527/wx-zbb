@@ -8,5 +8,5 @@
     <text>密码修改</text>
     <image src='/images/arrow_left.png'></image>
   </navigator>
-  <button class='btn'>退出当前账号</button>
+  <button catchtap='signOut' class='btn'>退出当前账号</button>
 </view>

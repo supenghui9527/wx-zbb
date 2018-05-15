@@ -5,15 +5,15 @@
       <view>{{firstName}}</view>
     </view>
     <view class='name'>{{username}}</view>
-    <view class='place'>鼓楼区</view>
+    <view class='place'>{{orgName}}</view>
     <view class='history'>
-      <view>
+      <view catchtap='historyLists'>
         <image src='/images/record.png'></image>
-        <view>学习记录</view>
+        <view>学习记录{{countStudy}}</view>
       </view>
-      <view>
+      <view catchtap='partiesLists'>
         <image src='/images/fee.png'></image>
-        <view>党费收缴 ￥800.00</view>
+        <view>党费收缴 ￥{{sumPartyPay}}</view>
       </view>
     </view>
   </view>

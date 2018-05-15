@@ -38,6 +38,9 @@
   margin-right: 20rpx;
   color:#323232;
 }
+.section__title{
+  width: 100rpx !important;
+}
 .section .picker{
   font-size: 32rpx;
   margin-top: 4rpx;
@@ -72,6 +75,7 @@
   height: 45rpx;
   position: absolute;
   right: 0;
+  border-radius: 10rpx;
   font-size: 32rpx;
   font-weight: bold;
   text-align: center;

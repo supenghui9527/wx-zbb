@@ -32,14 +32,13 @@
         <text>内容：</text>
         <text>{{item.content}}</text>
       </view>
-      <!-- <view catchtap='goDetail' data-actid="{{item.cID}}" class="go-detail">详情</view> -->
       <view class='imgs'>
         <image data-img="{{item.picNames}}" data-index="{{idx}}" data-imgUrl="{{item.thumbnailPic}}" mode="aspectFill" catchtap="showBigPic" class="{{(idx+1)%3==0?'img-active':''}}" wx:for="{{item.picNames}}" src='{{item.thumbnailPic+i}}' wx:for-index="idx" wx:for-item="i"
           wx:key="i"></image>
       </view>
       <view class='address'>
         <image src='/images/IconPin.png'></image>
-        <view>{{item.org.orgAddress}}</view>
+        <view>{{item.geo||item.meetingLocation}}</view>
       </view>
     </view>
   </view>
@@ -48,55 +47,64 @@
       <image src='/images/sign.png'></image>
     </view>
     <view>
-      <text wx:for="{{10}}">苏朋辉；</text>
+      <text>{{item.signUserNames}}</text>
     </view>
   </view>
   <view class='share-comment'>
     <view class='share-comment-title'>
       <view catchtap='changeTab' data-index="0">
-        <text class="{{active==0?'active':''}}">分享{{detail.shares}}</text>
+        <text class="{{active==0?'active':''}}">分享{{item.shareCount||0}}</text>
       </view>
       <view catchtap='changeTab' data-index="1">
-        <text class="{{active==1?'active':''}}">评论{{detail.commentCount}}</text>
+        <text class="{{active==1?'active':''}}">评论{{item.commentCount||0}}</text>
       </view>
       <view catchtap='changeTab' data-index="2">
-        <text class="{{active==2?'active':''}}">赞{{detail.likes}}</text>
+        <text class="{{active==2?'active':''}}">赞{{item.likeCount||0}}</text>
       </view>
     </view>
     <view hidden='{{active!=0}}'>
-      <view wx:for="{{detail.sharesDetail}}" wx:key="index" class='share-content'>
-        <image wx:if="{{item.avatar}}" class='avatar-img' src='{{detail.imgUrl+item.avatar}}'></image>
-        <image class='avatar-img' wx:else src="/images/img.png"></image>
+      <view wx:for="{{item.shareList}}" wx:key="index" wx:for-item="i" class='share-content'>
+        <image wx:if="{{i.headThumb}}" class='avatar-img' src='{{i.headThumb}}'></image>
+        <image class='avatar-img' wx:else src="/images/people.png"></image>
         <view>
-          <view class='share-name'>{{item.name}}</view>>
+          <view class='share-name'>{{i.orgName}}</view>
           <view class='share-time'>
-            <text>{{item.date}}</text>
+            <text>{{i.createTime||'无'}}</text>
           </view>
         </view>
       </view>
     </view>
     <view hidden='{{active!=1}}'>
-      <view wx:for="{{detail.commentsDetail}}" wx:key="index" class='comment-content'>
-        <image wx:if="{{item.avatar}}" class='avatar-img' src='{{detail.imgUrl+item.avatar}}'></image>
+      <view wx:for="{{item.commentList}}" wx:key="index" wx:for-item="i" class='comment-content'>
+        <image wx:if="{{i.headThumb}}" class='avatar-img' src='{{i.headThumb}}'></image>
         <image class='avatar-img' wx:else src="/images/img.png"></image>
         <view>
-          <view class='user-name'>{{item.name.substring(0,2)}}**</view>
-          <view class='user-comment'>{{item.comments}}</view>
+          <view class='user-name'>{{i.orgName}}</view>
+          <view class='user-comment'>{{i.comments}}</view>
           <view class='comment-time'>
-            <text>{{item.date}}</text>
+            <text>{{i.createTime}}</text>
           </view>
         </view>
       </view>
     </view>
     <view hidden='{{active!=2}}'>
-      <view wx:for="{{detail.likesDetail}}" wx:key="index" class='like-content'>
-        <image wx:if="{{item.avatar}}" class='avatar-img' src='{{detail.imgUrl+item.avatar}}'></image>
-        <image class='avatar-img' wx:else src="/images/img.png"></image>
-        <view class='like-name'>{{item.name}}</view>
+      <view wx:for="{{item.attitudeList}}" wx:key="index" wx:for-item="i" class='like-content'>
+        <image wx:if="{{i.headThumb}}" class='avatar-img' src='{{i.headThumb}}'></image>
+        <image class='avatar-img' wx:else src="/images/people.png"></image>
+        <view class='like-name'>{{i.orgName}}</view>
       </view>
     </view>
   </view>
   <view style='width:100%;height:100rpx;'></view>
+  <view hidden='{{showComment}}' bind:touchstart='goComment' class='show-fixed'></view>
+  <view hidden='{{showComment}}' class='comment'>
+    <textarea wx:if='{{!showComment}}' fixed="true" bindconfirm="sureComment" placeholder='请输入评论内容'></textarea>
+    <!-- <checkbox-group class="hide-name">
+      <label>
+        <checkbox value="" style='zoom:70%' checked=""/>是否匿名
+      </label>
+    </checkbox-group> -->
+  </view>
   <view class='user-do'>
     <view>
       <button class='postings-share' catchtap='getActid' data-actid="{{item.cID}}" open-type='share'>
@@ -106,7 +114,7 @@
         </view>
       </button>
     </view>
-    <view data-actid="{{item.id}}" data-islike="{{item.islike}}" catchtap='goDetail'>
+    <view data-actid="{{item.id}}" data-islike="{{item.islike}}" catchtap='goComment'>
       <view>
         <image src='/images/comment.png'></image>
         <text>评论</text>
