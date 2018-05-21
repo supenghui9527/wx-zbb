@@ -11,7 +11,19 @@ Page({
   
   },
   onShow: function () {
-  
+    getApp().$ajax({
+      httpUrl: getApp().api.getWorkListsUrl,
+      data: {
+        orgID:wx.getStorageSync('userInfo').orgID
+      }
+    }).then(({ data }) => {
+      data.map(item => {
+        item.date = item.finishTime.substring(5)
+      })
+      this.setData({
+        lists: data
+      })
+    })
   },
   changeNav(e) {
     console.log(e.currentTarget.dataset.index)
@@ -23,8 +35,23 @@ Page({
   
   },
   goPublish(e) {
-    wx.navigateTo({
-      url: `/pages/index/publish/publish?cType=0`
+    getApp().$ajax({
+      isShowLoading: false,
+      httpUrl: getApp().api.getDownOrgUrl,
+      data: {
+        orgID: wx.getStorageSync('userInfo').orgID,
+      }
+    }).then(({ data }) => {
+      if(data.length==0||data==null){
+        wx.showToast({
+          title: '暂无下级组织，无法发布任务',
+          icon:'none'
+        })
+        return;
+      }
+      wx.navigateTo({
+        url: "/pages/mine/mywork/public/public"
+      })
     })
   },
   publicWork(){

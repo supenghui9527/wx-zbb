@@ -1,0 +1,60 @@
+/* pages/mine/myReward/addReward/addReward.wxss */
+.public{
+  width: 100%;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+.public view{
+  width: 100%;
+  display: flex;
+  padding: 30rpx 0 15rpx 0;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 32rpx;
+}
+.public view:nth-child(1){
+  position: relative;
+}
+.public view:nth-child(1) image{
+  width: 50rpx;
+  height: 50rpx;
+  position: absolute;
+  right: 0;
+}
+.active{
+  color:#868686 !important;
+}
+.picker{
+  font-size: 32rpx !important;
+}
+.public view label,.public view input,.public view text{
+  height: 60rpx;
+  line-height: 60rpx;
+  color:#323232;
+}
+.public view text{
+  font-size: 50rpx;
+}
+.public view textarea{
+  width: 500rpx;
+  padding-top: 12rpx;
+  height: 250rpx;
+}
+.btn{
+  width:650rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  background-color: #ca4341;
+  font-weight: bold;
+  color:#fff;
+}
+.ispublish checkbox-group{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ispublish label{
+  display: flex;
+  align-items: center;
+  color:#909090;
+  font-weight: normal;
+}

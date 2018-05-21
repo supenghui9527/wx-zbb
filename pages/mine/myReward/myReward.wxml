@@ -1,8 +1,8 @@
 <!--pages/mine/myReward/myReward.wxml-->
 <view class='reward'>
   <view class='tab'>
-    <view wx:for="{{tab}}">
-      <view catchtap='changeNav' data-index="{{index}}" class="item {{active==index?'active':''}}">{{item}}</view>
+    <view wx:for="{{tab}}" wx:key="index">
+      <view catchtap='changeNav' data-index="{{item.index}}" class="item {{active==item.index?'active':''}}">{{item.text}}</view>
     </view>
   </view>
   <view wx:for="{{lists}}" wx:key="index" class='lists-item'>
@@ -13,11 +13,15 @@
       <view class='days'>
         <image src='/images/offer.png'></image>
         <view class='content'>
-          <view>5月5日</view>
-          <view>{{month.content}}</view>
+          <view>{{month.date}}</view>
+          <view>{{month.beOrgName}}{{month.content}}</view>
         </view>
-        <view class="time">+10分</view>
+        <view wx:if="{{active==0}}" class="time">-{{month.point}}</view>
+        <view wx:else class="time">+{{month.point}}</view>
       </view>
     </view>
+  </view>
+  <view catchtap='goPublish' class='go-publish'>
+    <image src='/images/btn.png'></image>
   </view>
 </view>

@@ -1,0 +1,35 @@
+/* pages/mine/mywork/lists/lists.wxss */
+.lists{
+  border-top:2px solid #f0f0f0;
+  width: 100%;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+.title,.item{
+  width: 100%;
+  height: 100rpx;
+  position: relative;
+  display: flex;
+  align-items: center;
+  color:#323232;
+  border-bottom: 1px solid #f0f0f0;
+}
+.btn{
+  width:650rpx;
+  height: 90rpx;
+  margin: 0 auto;
+  line-height: 90rpx;
+  background-color: #ca4341;
+  font-weight: bold;
+  color:#fff;
+  border-radius: 10rpx;
+  text-align: center;
+}
+.item image{
+  width: 50rpx;
+  height: 50rpx;
+}
+.select{
+  position: absolute;
+  right: 0;
+}

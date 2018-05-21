@@ -15,10 +15,9 @@ Page({
   },
   // orderType,dateType,orgType:工委，党委，支部
   onLoad(options) {
-    this.getData({ orderType: this.data.orderType, dateType: this.data.dateType, orgType: this.data.orgType });
   },
   onShow() {
-
+    this.getData({ orderType: this.data.orderType, dateType: this.data.dateType, orgType: this.data.orgType });
   },
   getLists() {
 
@@ -68,11 +67,11 @@ Page({
     } else if (index == 6) {
       this.setData({ orgType: '党支部', showSelect: !this.data.showSelect });
     } else if (index == 7) {
-      this.setData({ orderType: 0, active: 7 });
+      this.setData({ orderType: 0, active1: 7 });
     } else if (index == 8) {
-      this.setData({ orderType: 1, active: 8 });
+      this.setData({ orderType: 1, active1: 8 });
     } else if (index == 9) {
-      this.setData({ orderType: 2, active: 9 });
+      this.setData({ orderType: 2, active1: 9 });
     }
     this.getData({ orderType: this.data.orderType, dateType: this.data.dateType, orgType: this.data.orgType });
   },

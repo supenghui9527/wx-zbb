@@ -1,20 +1,23 @@
 <!--pages/mine/mywork/mywork.wxml-->
 <view class='work'>
   <view class='tab'>
-    <view wx:for="{{tab}}">
+    <view wx:for="{{tab}}" wx:key="index">
       <view catchtap='changeNav' data-index="{{index}}" class="item {{active==index?'active':''}}">{{item}}</view>
     </view>
   </view>
   <view class='lists'>
-    <view wx:for="{{6}}" class='lists-item'>
-      <view>4-12</view>
-      <view>
-        <view>中选中项发生改变是触发 change 事件，detail = {value:[选中的checkbox的value的数组]}</view>
-        <view class='complete' catchtap='goPublish'>去完成</view>
+    <view wx:for="{{lists}}" wx:key="index">
+      <view class='lists-item' wx:if="{{item.isFinish==active}}">
+        <view>{{item.date}}</view>
+        <view>
+          <view>{{item.workContent}}</view>
+          <view wx:if="{{item.isFinish==0}}" class='complete' catchtap='goPublish'>去完成</view>
+          <view wx:else class='complete' catchtap='goPublish'>去完成</view>
+        </view>
       </view>
     </view>
   </view>
-  <view catchtap='publicWork' class='go-publish'>
+  <view catchtap='goPublish' class='go-publish'>
     <image src='/images/btn.png'></image>
   </view>
 </view>

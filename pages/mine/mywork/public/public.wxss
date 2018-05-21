@@ -1,0 +1,50 @@
+/* pages/mine/mywork/public/public.wxss */
+.public{
+  width: 100%;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+.public view{
+  width: 100%;
+  display: flex;
+  padding: 30rpx 0 15rpx 0;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 32rpx;
+}
+.public view label,.public view input{
+  height: 60rpx;
+  line-height: 60rpx;
+  color:#323232;
+}
+.public view:nth-child(2){
+  position: relative;
+}
+.public view:nth-child(2) image{
+  width: 50rpx;
+  height: 50rpx;
+  position: absolute;
+  right: 0;
+}
+picker{
+  display: flex;
+  align-items: center;
+}
+.public view textarea{
+  width: 500rpx;
+  padding-top: 12rpx;
+  height: 250rpx;
+}
+.btn{
+  width:650rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  background-color: #ca4341;
+  font-weight: bold;
+  color:#fff;
+}
+.active{
+  color:#868686 !important;
+}
+.picker{
+  font-size: 32rpx !important;
+}

@@ -4,13 +4,13 @@ Page({
   
   },
   onLoad: function (options) {
-    this.getUserinfo()
+    
   },
   onReady: function () {
   
   },
   onShow: function () {
-  
+    this.getUserinfo();
   },
   onHide: function () {
   
@@ -24,6 +24,7 @@ Page({
   //获取个人信息
   getUserinfo() {
     getApp().$ajax({
+      isShowLoading:false,
       httpUrl: getApp().api.userInfoUrl,
       data: {
         orgID: wx.getStorageSync('userInfo').orgID,

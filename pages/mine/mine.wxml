@@ -1,7 +1,8 @@
 <!--pages/mine/mine.wxml-->
 <view class='mine'>
   <view class='header'>
-    <image catchtap="changeAvatar" src='{{userinfo.orgBean.headThumb}}' class='avatar'></image>
+    <image wx:if="{{userinfo.orgBean.headThumb}}" catchtap="changeAvatar" src='{{userinfo.orgBean.headThumb}}' class='avatar'></image>
+    <image wx:else catchtap="changeAvatar" src='/images/people.png' class='avatar'></image>
     <view class="orgname">{{userinfo.orgBean.orgName}}</view>
     <!-- <image catchtap='goSet' src='/images/set.png' class='set'></image> -->
   </view>

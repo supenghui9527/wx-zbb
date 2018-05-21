@@ -1,28 +1,6 @@
-/* pages/mine/myReward/myReward.wxss */
-.tab{
-  width: 100%;
-  height: 90rpx;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: #f0f0f0;
-}
-.tab>view:nth-child(1){
-  width: 300rpx;
-  height: 75rpx;
-  line-height: 75rpx;
-  display: flex;
-  justify-content:flex-end;
-}
-.tab>view:nth-child(2){
-  width: 300rpx;
-  height: 75rpx;
-  line-height: 75rpx;
-  display: flex;
-  justify-content:flex-start;
-}
-.tab>view:nth-child(1) view{
-  text-align: right;
+/* pages/mine/myintegral/detail/detail.wxss */
+.lists-item{
+  padding-top: 20rpx !important;
 }
 .item{
   padding: 0 20rpx;
@@ -44,7 +22,7 @@ image{
 }
 .line{
   margin-left:24rpx;
-  width:2px;
+  width:1px;
   min-height:54rpx;
   background-color:#f0f0f0;
 }
@@ -69,16 +47,4 @@ image{
   right: 0;
   padding-top:6rpx;
   color:#646464;
-}
-.go-publish{
-  width: 110rpx;
-  height: 110rpx;
-  position: fixed;
-  right: 30rpx;
-  bottom:200rpx;
-  z-index: 666;
-}
-.go-publish image{
-  width: 110rpx;
-  height: 110rpx;
 }

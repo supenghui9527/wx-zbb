@@ -63,12 +63,12 @@ Page({
       }
     }).then(({ data }) => {
       this.goComment();
-      // this.onLoad(this.data.option);
+      this.getDetail(this.data.cID);
     });
   },
   // 确认评论
   sureComment(e) {
-    e.detail.value ? this.userDo(e.detail.value) : wx.showToast({
+    e.detail.value ? this.saveComment(e.detail.value) : wx.showToast({
       title: '请输入评论内容'
     })
   },

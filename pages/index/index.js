@@ -13,6 +13,9 @@ Page({
     showSelect: true,
     currentTab: 0,
     communityCount: 0,
+    stopScroll: true,
+    showPrompt: false,
+    isFinish: false,
     nav: [
       {
         item: '全部',
@@ -45,11 +48,13 @@ Page({
     this.goSelect();
     this.getPostings(currentTab);
   },
-  getListData(){
+  getListData() {
     this.getPostings(this.data.currentTab);
   },
   onLoad: function (options) {
     this.getData(20, 0, -1);
+  },
+  onShow() {
     wx.getSystemInfo({
       success: (res) => {
         this.setData({
@@ -58,19 +63,37 @@ Page({
         });
       }
     });
+    this.getRank();
     // 月末25号提示未完成任务
-    if (new Date().getDate() >= 25) this.getUnfinished();
-    if (new Date().getDate() >= 1 && new Date().getDate() <= 5) wx.showModal({
-      title: '请及时添加近期工作',
-      content: '',
-      showCancel: false,
-      confirmText: '我知道了'
-    })
+    this.getUnfinished();
+    // if (new Date().getDate() >= 25) this.getUnfinished();
+    // if (new Date().getDate() >= 1 && new Date().getDate() <= 5) wx.showModal({
+    //   title: '请及时添加近期工作',
+    //   content: '',
+    //   showCancel: false,
+    //   confirmText: '我知道了'
+    // })
   },
   // 筛选
-  goSelect(){
+  goSelect() {
     this.setData({
-      showSelect: !this.data.showSelect
+      showSelect: !this.data.showSelect,
+      stopScroll: !this.data.stopScroll
+    })
+  },
+  // 获取首页积分排名
+  getRank(){
+    getApp().$ajax({
+      httpUrl: getApp().api.getRankListUrl,
+      data: {
+        orgID: wx.getStorageSync('userInfo').orgID
+      }
+    }).then(({ data }) => {
+      wx.setStorageSync('pointDetail', data);
+      this.setData({
+        pointDetail:data,
+        point: Math.abs(data.theMonthPoint - data.LastMonthPoint)
+      })
     })
   },
   // 分享
@@ -91,19 +114,11 @@ Page({
     getApp().$ajax({
       httpUrl: getApp().api.getUnfinishedUrl,
       data: {
-        orgID: this.data.userID
+        orgID: wx.getStorageSync('userInfo').orgID,
+        theTime: '2018-05'
       }
     }).then(({ data }) => {
-      let newList = [];
-      if (data.state == 0) {
-        if (data.orgList && data.orgList.length >= 10) newList = data.orgList.slice(0, 10);
-        this.setData({
-          Unfinished: data.content,
-          UnfinishedLists: newList,
-          showUnfinished: true
-        })
-      }
-      wx.hideLoading();
+      data == null || data.length == 0 ? this.setData({ isFinish: false }) : this.setData({ isFinish: true });
     })
   },
   hideUnfinished() {
@@ -204,17 +219,29 @@ Page({
       this.getData(20, 0, 0)
     }
   },
-  //点击+显示发帖
-  onAnimate() {
-    this.setData({
-      show: !this.data.show
-    })
-  },
   //发帖
   goPublish(e) {
-    wx.navigateTo({
-      url: `/pages/index/publish/publish?cType=0`
-    })
+    if (this.data.isFinish) {
+      this.setData({
+        showPrompt: !this.data.showPrompt,
+        stopScroll: !this.data.stopScroll
+      });
+    } else {
+      wx.navigateTo({
+        url: `/pages/index/publish/publish?cType=0`
+      })
+    }
+  },
+  // 取消显示未完成提示
+  cancelPublic() {
+    this.setData({
+      showPrompt: !this.data.showPrompt,
+      stopScroll: !this.data.stopScroll
+    });
+  },
+  isShowPrompt(e) {
+    const btn = e.currentTarget.dataset.btn;
+    btn == '0' ? wx.navigateTo({ url: `/pages/index/publish/publish?cType=0`, success: () => { this.cancelPublic() } }) : wx.navigateTo({ url: `/pages/mine/mywork/mywork`, success: () => { this.cancelPublic() } });
   },
   // 点击进入详情
   goDetail(e) {
@@ -234,8 +261,14 @@ Page({
       url: '/pages/index/search/search?cType=0'
     })
   },
+  // 进入我的积分
+  gointegral() {
+    wx.navigateTo({
+      url: "/pages/mine/myintegral/myintegral",
+    })
+  },
   // 收缴党费
-  collected(){ 
+  collected() {
     wx.scanCode({
       onlyFromCamera: true,
       success: (res) => {

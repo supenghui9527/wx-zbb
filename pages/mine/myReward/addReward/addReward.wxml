@@ -1,0 +1,38 @@
+<!--pages/mine/myReward/addReward/addReward.wxml-->
+<view class='public'>
+  <form bindsubmit="saveRewards">
+    <view>
+      <label>通报对象：</label>
+      <input disabled='{{true}}' name="beOrgName" value='{{orgName}}' placeholder='请选择发布对象'></input>
+      <image catchtap='goLists' src='/images/@.png'></image>
+    </view>
+    <view>
+      <label>通报性质：</label>
+      <picker bindchange="bindPickerChange" name="pointType" value="{{index}}" range="{{array}}">
+        <text class="picker {{rewards=='请选择通报性质'?'active':''}}">{{rewards}}</text>
+      </picker>
+    </view>
+    <view>
+      <label>积分奖励/扣取：</label>
+      <text wx:if="{{rewards=='奖励'}}">+</text>
+      <text wx:if="{{rewards=='惩罚'}}">-</text>
+      <input name="point" placeholder='请填写积分'></input>
+    </view>
+    <view>
+      <label>通报内容：</label>
+      <textarea name="content" placeholder='请输入通报内容'></textarea>
+    </view>
+    <view style='border:none'>
+      <input hidden='{{true}}' name="orgID" value='{{orgID}}'></input>
+      <input hidden='{{true}}' name="beOrgID" value='{{beOrgID}}'></input>
+    </view>
+    <view class='ispublish'>
+      <checkbox-group name="isPublic">
+        <label>
+          <checkbox style='zoom:60%' value="1" checked="" />不公开发布
+        </label>
+      </checkbox-group>
+    </view>
+    <button form-type='submit' class='btn'>发布</button>
+  </form>
+</view>

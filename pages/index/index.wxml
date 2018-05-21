@@ -1,5 +1,14 @@
 <!--index.wxml-->
-<view class="index {{showSelect?'':'stop-scroll'}}">
+<view class="index {{stopScroll?'':'stop-scroll'}}">
+  <view wx:if="{{showPrompt}}" class='complete-work'>
+    <view class='prompt'>
+      <icon class='cancel' catchtap='cancelPublic' type="clear" size="20" color="#868686" />
+      <view class='prompt-title'>您本月还有未完成工作</view>
+      <view class='prompt-btn'>
+        <text catchtap='isShowPrompt' data-btn='{{index}}' wx:for="{{2}}">{{index==0?'忽略':'去完成'}}</text>
+      </view>
+    </view>
+  </view>
   <view class='nav'>
     <navigator url='/pages/mine/mywork/mywork' open-type='navigate' hover-class="none" class='nav-item'>
       <view>
@@ -38,22 +47,22 @@
     </view>
     <view>
       <view>总积分</view>
-      <view>680分</view>
+      <view>{{pointDetail.totalPoint}}</view>
     </view>
     <view>
       <view>总排名</view>
-      <view>10</view>
+      <view>{{pointDetail.ranking}}</view>
     </view>
     <view>
       <view>本月积分</view>
-      <view>120分</view>
+      <view>{{pointDetail.theMonthPoint}}</view>
     </view>
-    <view>
+    <view catchtap='gointegral'>
       <view>比上月</view>
       <view>
-        <image wx:if="{{true}}" class='up-down' src='/images/up.png'></image>
-        <image wx:if="{{false}}" class='up-down' src='/images/down.png'></image>
-        <text>10分</text>
+        <image wx:if="{{pointDetail.theMonthPoint-pointDetail.LastMonthPoint>0}}" class='up-down' src='/images/up.png'></image>
+        <image wx:else class='up-down' src='/images/down.png'></image>
+        <text>{{point}}</text>
       </view>
       <image class='arrow' src='/images/left.png'></image>
     </view>

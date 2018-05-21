@@ -15,12 +15,13 @@ Page({
       cType: options.cType,
       orgID: wx.getStorageSync('userInfo').orgID
     });
+    this.leaveSave(0);
   },
   onReady: function () {
 
   },
   onShow: function () {
-    this.leaveSave(0);
+    
   },
   onHide: function () {
   },
@@ -95,8 +96,8 @@ Page({
       this.setData({
         cID: data.data.cID,
         signNames: signNames,
-        oldSignName: name,
         title: data.data.title,
+        oldSignName: name,
         meetingLocation: data.data.meetingLocation,
         active:data.data.meetingType,
         preside: data.data.preside,
@@ -161,7 +162,6 @@ Page({
   },
   //发布帖子
   save(e) {
-    console.log(e.detail.value)
     let successUp = 0, //成功个数
       failUp = 0, //失败个数
       length = this.data.tempFilePaths.length, //总共个数
@@ -169,7 +169,12 @@ Page({
       data = e.detail.value;
     for (let i in data) {
       if (data[i] == '' || data[i].indexOf('请') != -1) {
-        if (i == 'isPublic') continue;
+        if (i == 'isPublic') {
+          if (data.isPublic.length == 0) {
+            data.isPublic = 0;
+          }
+          continue;
+        }
         wx.showToast({
           title: '请确认信息是否填写完整',
           icon: 'none'
@@ -178,7 +183,6 @@ Page({
       }
     };
     getApp().$ajax({
-      isShowLoading: false,
       hideLoading: false,
       httpUrl: getApp().api.pushPostingsUrl,
       data: data
@@ -191,24 +195,6 @@ Page({
         })
       }
     })
-    // wx.request({
-    //   url: getApp().api.pushPostingsUrl,
-    //   method: 'post',
-    //   header: { "Content-Type": "application/x-www-form-urlencoded" },
-    //   data: data,
-    //   success: (res) => {
-    //     if (res.data.state == 1) {
-    //       if (length) {
-    //         this.getData(this.data.tempFilePaths, successUp, failUp, i, length, res.data.data);
-    //       } else {
-    //         wx.navigateTo({
-    //           url: '/pages/home/home'
-    //         })
-    //       }
-    //     } else {
-    //     }
-    //   }
-    // })
   },
   //删除预览图片
   delPictrue(e) {
@@ -230,11 +216,13 @@ Page({
             cID: this.data.cID
           }
         }).then(({ data, message }) => {
-          console.log(data)
+          
           this.setData({
+            oldSignName: data.signNames.toString(),
             signNames: data.signNames,
             signCount: data.countSign
           })
+          console.log(data)
           wx.showToast({
             title: message,
             icon: 'none'

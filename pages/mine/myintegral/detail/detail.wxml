@@ -1,0 +1,21 @@
+<!--pages/mine/myintegral/detail/detail.wxml-->
+<view wx:for="{{lists}}" wx:key="index" class='lists-item'>
+  <view wx:if="{{index+1==lists.length}}" class='line'></view>
+  <view class='year'>{{item.year}}</view>
+  <view wx:for="{{item.month}}" wx:for-item="month" wx:key="idx" wx:for-index="idx" class='month'>
+    <view class='line'></view>
+    <view class='days'>
+      <image src='/images/offer.png'></image>
+      <view class='content'>
+        <view>{{month.date}}</view>
+        <view>{{month.content}}</view>
+      </view>
+      <view wx:if="{{month.masType==1&&month.meetingType==0}}" class="time">+10</view>
+      <view wx:if="{{month.masType==1&&month.meetingType==1}}" class="time">+5</view>
+      <view wx:if="{{month.masType==1&&month.meetingType==2}}" class="time">+10</view>
+      <view wx:if="{{month.masType==1&&month.meetingType==3}}" class="time">+5</view>
+      <view wx:if="{{month.masType==2}}" class="time">+{{month.point}}</view>
+      <view wx:if="{{month.masType==3}}" class="time">-{{month.point}}</view>
+    </view>
+  </view>
+</view>

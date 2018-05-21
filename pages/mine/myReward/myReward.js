@@ -1,55 +1,55 @@
 // pages/mine/myReward/myReward.js
 const util = require('../../../utils/util.js');
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-    active: 0,
-    tab: ['奖励', '惩罚'],
-    lists: [
+    active: 1,
+    tab: [
       {
-        content:"张三获得红旗手称号",
-        create_date_time: 1523932550000,
-        title: "张三获得红旗手称号"
+        text:'奖励',
+        index:1
       },
       {
-        content: "张三获得红旗手称号",
-        create_date_time: 1523932550000,
-        title: "张三获得红旗手称号"
-      },
-      {
-        content: "张三获得红旗手称号",
-        create_date_time: 1523932550000,
-        title: "张三获得红旗手称号"
-      },
-    ]
+        text: '惩罚',
+        index: 0
+      }
+    ],
+    lists: []
   },
   onLoad: function (options) {
-    this.setData({
-      lists: this.recombinedData(this.data.lists)
-    })
   },
   changeNav(e) {
-    console.log(e.currentTarget.dataset.index)
     this.setData({
-      active: e.currentTarget.dataset.index
-    })
+      active: e.currentTarget.dataset.index,
+      lists:[]
+    });
+    this.getRewardLists(this.data.active);
   },
   onReady: function () {
 
   },
   onShow: function () {
-
+    this.getRewardLists(this.data.active);
+  },
+  getRewardLists(pointType) {
+    getApp().$ajax({
+      httpUrl: getApp().api.getRewarListdUrl,
+      data: {
+        orgID: wx.getStorageSync('userInfo').orgID,
+        pointType: pointType
+      }
+    }).then(({ data }) => {
+      this.setData({
+        lists: this.recombinedData(data)
+      })
+    })
   },
   // 组装数据
   recombinedData(data) {
     let yearArr = [];
-    data.map(({ content, create_date_time }) => {
-      let year = util.formatTime(new Date(create_date_time)).substring(0, 4);
+    data.map(({ content, creataTime, point, meetingType }) => {
+      let year = util.formatTime(new Date(creataTime)).substring(0, 4);
       let index = -1;
-      let date = util.formatTime(new Date(create_date_time)).substring(5, 10);
+      let date = util.formatTime(new Date(creataTime)).substring(5, 10);
       yearArr.forEach((e, i) => {
         if (e.year === year) {
           index = i;
@@ -57,9 +57,9 @@ Page({
         }
       });
       if (index === -1) {
-        yearArr.push({ year, month: [{ content, date }] });
+        yearArr.push({ year, month: [{ content, date, point, meetingType }] });
       } else {
-        yearArr[index].month.push({ content, date });
+        yearArr[index].month.push({ content, date, point, meetingType });
       }
     });
     return yearArr;
@@ -67,20 +67,17 @@ Page({
   onHide: function () {
 
   },
+  goPublish(){
+    wx.navigateTo({
+      url: "/pages/mine/myReward/addReward/addReward"
+    })
+  },
   onPullDownRefresh: function () {
 
   },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
   onReachBottom: function () {
 
   },
-
-  /**
-   * 用户点击右上角分享
-   */
   onShareAppMessage: function () {
 
   }

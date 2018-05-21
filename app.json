@@ -1,7 +1,18 @@
 {
   "pages": [
-    "pages/login/login",
+    "pages/mine/myintegral/myintegral",
+    "pages/mine/myintegral/detail/detail",
     "pages/index/index",
+
+    "pages/mine/mine",
+    "pages/mine/mymessage/mymessage",
+    "pages/mine/mywork/mywork",
+    "pages/mine/mywork/public/public",
+    "pages/login/login",
+    "pages/mine/mywork/lists/lists",
+    "pages/mine/myReward/myReward",
+    "pages/mine/myReward/addReward/addReward",
+    "pages/mine/myReward/lists/lists",
     "pages/mine/mypostings/mypostings",
     "pages/mine/parties/parties",
     "pages/mine/member/member",
@@ -11,19 +22,14 @@
     "pages/index/publish/publish",
     "pages/activity/activity",
     "pages/index/search/search",
-    "pages/mine/mine",
     "pages/mine/myintegral/giftdetail/giftdetail",
     "pages/mine/myintegral/gift/gift",
-    "pages/mine/myintegral/myintegral",
     "pages/mine/set/changepwd/changepwd",
     "pages/mine/set/changeinfo/changeinfo",
     "pages/mine/set/set",
     "pages/mine/about/about",
-    "pages/mine/mywork/mywork",
-    "pages/mine/myReward/myReward",
     "pages/mine/exportdata/exportdata",
-    "pages/detail/detail",
-    "pages/mine/mymessage/mymessage"
+    "pages/detail/detail"
   ],
   "window": {
     "backgroundTextStyle": "light",

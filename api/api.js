@@ -1,4 +1,4 @@
-const HOST = 'http://47.104.6.174:8091/zzb/'; // https://www.jshhfl.com/xwdj/http://47.104.6.174:8091/zzb/  
+const HOST = 'http://192.168.8.52:8080/'; // https://www.jshhfl.com/xwdj/http://47.104.6.174:8091/zzb/
 module.exports = {
   loginUrl: `${HOST}login.do`,  // 登录接口
   getPostingsUrl: `${HOST}findCommunityHomePage.do`,  // 获取帖子列表
@@ -21,11 +21,16 @@ module.exports = {
   savePostingsCommentUrl: `${HOST}releaseCommentToCommunity.do`,  // 保存评论帖子内容
   deletePostingsUrl: `${HOST}deleteComunity.do`,  // 删除帖子
   upLoadPicUrl: `${HOST}publicPic.do`,  // 上传图片
+  getDownOrgUrl: `${HOST}findLowOrg.do`,// 获取下级组织列表
   pushPostingsUrl: `${HOST}publicCommunity.do`,  // 发布帖子
   getAllOrgNameUrl: `${HOST}findAllOrgName.do`,  // 获取所有组织名称
   getMapMarkesUrl: `${HOST}findAllPosition.do`,  // 获取地图markes
   markeDetailUrl: `${HOST}findPositionDetail.do`,  // 地图marke点详情
-  addWorkUrl: `${HOST}addWork.do`,  // 添加近期工作
+  getWorkListsUrl: `${HOST}findRecentWork.do`, //查看近期工作任务
+  // addWorkUrl: `${HOST}addWork.do`,  // 添加近期工作
+  addWorkUrl: `${HOST}saveRecentWork.do`,  // 添加近期工作
+  saveRewardsUrl: `${HOST}toPointreOrPu.do`, // 发布奖惩
+  getRewarListdUrl:`${HOST}findreOrPuRecord.do`,//奖惩记录列表
   findMyPointUrl: `${HOST}findMyPoint.do`,  // 个人积分信息
   partyDeusPayUrl: `${HOST}partyDeusPay.do`,//缴纳党费
   pointListUrl: `${HOST}findOrgOrder.do`,  // 积分列表
@@ -34,7 +39,12 @@ module.exports = {
   changePasswordUrl: `${HOST}modifyPassword.do`,  // 修改密码
   getMyWorkUrl: `${HOST}findMyWork.do`,  // 查看我的近期工作
   deleteWorkUrl: `${HOST}deleteWork.do`,  // 删除近期工作
-  getUnfinishedUrl: `${HOST}findUnfinishOrg.do`,  // 获取未完成工作的组织
+  getRankListUrl: `${HOST}pointRanking.do`,//获取积分
+  slectRankUrl: `${HOST}filtratePointRanking.do`,// 筛选积分排名
+  rankDetailUrl: `${HOST}myPointDetail.do`,// 积分详情
+  // getUnfinishedUrl: `${HOST}findUnfinishOrg.do`,  // 获取未完成工作的组织
+  getUnfinishedUrl: `${HOST}findTheMonthWork.do`,// 获取未完成工作的组织
+  getMessageUrl: `${HOST}findNotification.do`,// 消息通知
   getAlreadyPostingsUrl: `${HOST}findMeetingByOrgID.do`,  // 获取已发帖子列表
   saveUserInfoUrl: `${HOST}modifyOrg.do`,  // 保存党组织信息
   changeWorkUrl: `${HOST}modifyWork.do`,  // 修改近期工作

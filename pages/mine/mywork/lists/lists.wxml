@@ -1,0 +1,16 @@
+<!--pages/mine/mywork/lists/lists.wxml-->
+<view class='lists'>
+  <view class='title'>请选择发布对象</view>
+  <view>
+    <view catchtap='select' wx:for="{{lists}}" data-org='{{item}}' data-index='{{index}}' wx:key="{{item.orgID}}" class='item'>
+      <image style="margin-right:20rpx" src='/images/person.png'></image>
+      <text>{{item.orgName}}</text>
+      <image wx:if="{{item.isSelect}}" class='select' src='/images/yes1.png'></image>
+    </view>
+    <!-- 无下级组织 -->
+    <view wx:if="{{lists==''}}" wx:key="index" class='item'>
+      <view>无下级组织</view>
+    </view>
+  </view>
+  <view catchtap='sure' class='btn'>确认</view>
+</view>

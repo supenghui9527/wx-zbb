@@ -1,0 +1,27 @@
+<!--pages/mine/mywork/public/public.wxml-->
+<view class='public'>
+  <form bindsubmit="save">
+    <view>
+      <label>任务主题：</label>
+      <input name="workTitle" placeholder='请输入任务主题'></input>
+    </view>
+    <view>
+      <label>发布对象：</label>
+      <input hidden='{{true}}' name="orgID" value='{{orgID}}'></input>
+      <input hidden='{{true}}' name="orgIDs" value='{{orgIDs}}' placeholder='请选择发布对象'></input>
+      <view style='width:500rpx;padding:0;border:none;color:#323232;display:flex;align-items:center' class="{{orgNames=='请选择任务最后期限'?'active':''}}">{{orgNames}}</view>
+      <image catchtap='goLists' src='/images/@.png'></image>
+    </view>
+    <view>
+      <label>完成时限：</label>
+      <picker name="finishTime" style='width:70%' mode="date" value="{{date}}" start="{{start}}" end="2100-09-01" bindchange="bindDateChange">
+        <text class="picker {{date=='请选择任务最后期限'?'active':''}}">{{date}}</text>
+      </picker>
+    </view>
+    <view>
+      <label>任务要求：</label>
+      <textarea name="workContent" placeholder='请输入任务要求'></textarea>
+    </view>
+    <button form-type='submit' class='btn'>发布</button>
+  </form>
+</view>

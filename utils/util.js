@@ -33,10 +33,7 @@ function $ajax({ isShowLoading = true, hideLoading = true, wxApp = true, httpUrl
       },
       fail: (err) => {
         wx.hideLoading();
-        wx.showToast({
-          title: '网络请求超时，请检查您的网络',
-          icon: 'none'
-        })
+        wx.showToast({title: '网络请求超时，请检查您的网络',icon: 'none'});
       }
     })
   })

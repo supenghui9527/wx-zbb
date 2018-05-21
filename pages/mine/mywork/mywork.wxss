@@ -43,14 +43,14 @@
   margin-bottom: 20rpx;
 }
 .lists-item>view:nth-child(1){
-  width: 100rpx;
+  width: 130rpx;
   padding-top: 30rpx;
   font-size: 34rpx;
   color: #323232;
   font-weight: bold;
 }
 .lists-item>view:nth-child(2){
-  width: 610rpx;
+  width: 570rpx;
   height: 150rpx;
   position: relative;
   padding: 15rpx;
