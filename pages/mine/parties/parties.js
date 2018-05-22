@@ -8,8 +8,8 @@ Page({
   onLoad: function (options) {
     let userinfo = wx.getStorageSync('members');
     this.setData({
-      userName: userinfo.userName,
-      uid: userinfo.uid,
+      userName: userinfo.username,
+      uid: '411***************',
       userID: userinfo.userID
     })
   },

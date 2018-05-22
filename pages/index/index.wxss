@@ -2,6 +2,7 @@
 .index{
   width: 100%;
   height: 100%;
+  border-top: 2px solid #f0f0f0;
 }
 .stop-scroll{
   overflow-y: hidden;
@@ -28,7 +29,7 @@
 .myintegral{
   width:100%;
   height: 120rpx;
-   padding: 0 20rpx; 
+  padding: 0 20rpx; 
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
@@ -38,19 +39,17 @@
 .myintegral>view:nth-child(1){
   display: flex;
   align-items: center;
-  font-size: 32rpx;
-  font-weight: 500;
 }
-.myintegral>view:nth-child(1) text{
-  width: 100%;
-  padding-right: 20rpx;
-  border-right:1px solid #f0f0f0;
+.myintegral>view:nth-child(1) image{
+  width: 80rpx;
+  height: 80rpx;
+  margin-left: 30rpx;
 }
 .myintegral>view:nth-child(2) view:nth-child(2),.myintegral>view:nth-child(3) view:nth-child(2),.myintegral>view:nth-child(4) view:nth-child(2),.myintegral>view:nth-child(5) view:nth-child(2){
   font-size:28rpx;
-  color:#d45625;
-  text-align: center;
+  color:#df2810;
   display: flex;
+  justify-content: center;
   align-items: center;
 }
 .myintegral>view:nth-child(5) {
@@ -140,7 +139,7 @@
 }
 .search>view:nth-child(2){
   width: 500rpx;
-  height: 65rpx;
+  height: 55rpx;
   border: 1px solid #f0f0f0;
   border-radius: 10rpx;
   display: flex;
@@ -172,7 +171,7 @@
 }
 .title{
   display: flex;
-  height: 44rpx;
+  /* height: 44rpx; */
   align-items: center;
   justify-content: space-between;
   font-size:30rpx;
@@ -180,37 +179,37 @@
 }
 .title view:nth-child(1){
   width: 400rpx;
-  font-weight: 500;
+  font-weight: bold;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
   overflow: hidden;
 }
 .title view:nth-child(2){
-  width: 150rpx;
-  height: 44rpx;
-  border-radius: 6rpx;
-  line-height: 44rpx;
+  width: 130rpx; 
+  height: 40rpx;
+  line-height: 40rpx;
   text-align: center;
-  font-size:24rpx;
-  color: #bccee2;
+  border-radius: 8rpx;
+  font-size:22rpx;
+  color: #fff;
 }
 .meeting-type{
-  background-color: #f0f4ff;
+  background-color: #e8df7c;
 }
 .meeting-type1{
-  background-color: #effffa;
-  color:#aae3b8 !important;
+  background-color: #eebf97;
 }
 .meeting-type2{
-  background-color: #fffdf0;
-  color:#cab389 !important;
+  background-color: #e8add0;
 }
 .meeting-type3{
-  background-color: #ffeffc;
-  color:#ee9cc0 !important;
+  background-color: #f3afb6;
 }
 .content{
+  width: 100%;
+  height: 45rpx;
+  line-height: 45rpx;
   font-size: 28rpx;
   color:#646464;
   display: -webkit-box;
@@ -255,6 +254,8 @@
 }
 .orgname view{
   width: 450rpx;
+  height: 40rpx;
+
   font-size: 26rpx;
   color: #323232;
   display: -webkit-box;
@@ -268,16 +269,16 @@
   padding-right: 6rpx;
 }
 .go-publish{
-  width: 110rpx;
-  height: 110rpx;
+  width: 100rpx;
+  height: 100rpx;
   position: fixed;
   right: 30rpx;
   bottom:200rpx;
   z-index: 666;
 }
 .go-publish image{
-  width: 110rpx;
-  height: 110rpx;
+  width: 100rpx;
+  height: 100rpx;
 }
 .complete-work{
   width: 100%;

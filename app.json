@@ -1,14 +1,13 @@
 {
   "pages": [
+    "pages/index/index",
+    "pages/login/login",
     "pages/mine/myintegral/myintegral",
     "pages/mine/myintegral/detail/detail",
-    "pages/index/index",
-
     "pages/mine/mine",
     "pages/mine/mymessage/mymessage",
     "pages/mine/mywork/mywork",
     "pages/mine/mywork/public/public",
-    "pages/login/login",
     "pages/mine/mywork/lists/lists",
     "pages/mine/myReward/myReward",
     "pages/mine/myReward/addReward/addReward",
@@ -33,8 +32,8 @@
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#ca4341",
-    "navigationBarTextStyle": "#fff",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
     "navigationBarTitleText": "WeChat"
   },
   "tabBar": {

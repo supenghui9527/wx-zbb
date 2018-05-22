@@ -8,9 +8,9 @@
   </view>
   <view class='select'>
     <view>
-      <view catchtap='goSelect' class="{{active1==7?'active1':''}}" data-index='7'>综合</view>
-      <view catchtap='goSelect' class="{{active1==8?'active1':''}}" data-index='8'>评论</view>
-      <view catchtap='goSelect' class="{{active1==9?'active1':''}}" data-index='9'>
+      <view catchtap='clickSelect' class="{{active1==7?'active1':''}}" data-index='7'>综合</view>
+      <view catchtap='clickSelect' class="{{active1==8?'active1':''}}" data-index='8'>评论</view>
+      <view catchtap='clickSelect' class="{{active1==9?'active1':''}}" data-index='9'>
         <text>热度</text>
         <image style='width:40rpx;height:40rpx;' src='/images/paixu01.png'></image>
       </view>
@@ -20,7 +20,7 @@
       </view>
     </view>
     <view hidden='{{showSelect}}' class='go-select'>
-      <view catchtap='goSelect' data-index='{{item.index}}' wx:for="{{selectLists}}" wx:key="{{item.index}}">
+      <view catchtap='clickSelect' data-index='{{item.index}}' wx:for="{{selectLists}}" wx:key="{{item.index}}">
         <text class="{{active==item.index?'active':''}}">{{item.text}}</text>
         <image hidden='{{item.index!=active}}' src='/images/yes1.png'></image>
       </view>
@@ -38,9 +38,9 @@
       <view class='content'>{{item.content}}</view>
       <image catchtap='clickLikes' data-actid="{{item.cID}}" wx:if="{{item.isLike==0}}" class='likes' src='/images/zan02.png'></image>
       <image wx:else catchtap='clickLikes' data-actid="{{item.cID}}" class='likes' src='/images/zan01.png'></image>
-      <button class='share'>
+      <!-- <button class='share'>
         <image src='/images/share1.png'></image>
-      </button>
+      </button> -->
     </view>
   </view>
   <view catchtap='goPublish' class='go-publish'>

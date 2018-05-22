@@ -21,7 +21,7 @@ Page({
 
   },
   onShow: function () {
-    
+
   },
   onHide: function () {
   },
@@ -85,7 +85,7 @@ Page({
       let name = data.data.signUserNames;
       let signNames = '';
       let arr = [];
-      if (name != ''&&name!=null) {
+      if (name != '' && name != null) {
         if (name.indexOf(',') != -1) {
           signNames = name.split(',')
         } else {
@@ -99,7 +99,7 @@ Page({
         title: data.data.title,
         oldSignName: name,
         meetingLocation: data.data.meetingLocation,
-        active:data.data.meetingType,
+        active: data.data.meetingType,
         preside: data.data.preside,
         shouldAttendance: data.data.shouldAttendance,
         content: data.data.content
@@ -115,6 +115,7 @@ Page({
   //选择本地相册中的图片
   upLoad() {
     wx.chooseImage({
+      count: 6,
       success: (res) => {
         let tempFilePaths = res.tempFilePaths;
         if (this.data.tempFilePaths == '') {
@@ -182,6 +183,13 @@ Page({
         return;
       }
     };
+    if (length == 0) {
+      wx.showToast({
+        title: '请必须上传图片',
+        icon: 'none'
+      });
+      return;
+    };
     getApp().$ajax({
       hideLoading: false,
       httpUrl: getApp().api.pushPostingsUrl,
@@ -216,7 +224,7 @@ Page({
             cID: this.data.cID
           }
         }).then(({ data, message }) => {
-          
+
           this.setData({
             oldSignName: data.signNames.toString(),
             signNames: data.signNames,

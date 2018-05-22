@@ -10,7 +10,7 @@ Page({
     pageCount: '',
     show: false,
     current: 0,
-    showSelect: true,
+    hideSelect: true,
     currentTab: 0,
     communityCount: 0,
     stopScroll: true,
@@ -42,9 +42,7 @@ Page({
   //点击对应切换调取对应的数据
   changeNav(e) {
     let currentTab = e.currentTarget.dataset.index;
-    this.setData({
-      currentTab: currentTab
-    });
+    this.setData({currentTab: currentTab});
     this.goSelect();
     this.getPostings(currentTab);
   },
@@ -74,16 +72,23 @@ Page({
     //   confirmText: '我知道了'
     // })
   },
+  onHide: function () {
+    this.setData({
+      hideSelect: true,
+      stopScroll: true
+    })
+  },
   // 筛选
   goSelect() {
     this.setData({
-      showSelect: !this.data.showSelect,
+      hideSelect: !this.data.hideSelect,
       stopScroll: !this.data.stopScroll
     })
   },
   // 获取首页积分排名
   getRank(){
     getApp().$ajax({
+      isShowLoading: false,
       httpUrl: getApp().api.getRankListUrl,
       data: {
         orgID: wx.getStorageSync('userInfo').orgID
@@ -112,6 +117,7 @@ Page({
   //获取未完成工作
   getUnfinished() {
     getApp().$ajax({
+      isShowLoading: false,
       httpUrl: getApp().api.getUnfinishedUrl,
       data: {
         orgID: wx.getStorageSync('userInfo').orgID,
@@ -149,6 +155,7 @@ Page({
   //下拉刷新
   onPullDownRefresh: function () {
     let currentTab = this.data.currentTab;
+    console.log(currentTab)
     this.getPostings(currentTab);
   },
   //上拉加载更多
@@ -208,7 +215,7 @@ Page({
   getPostings(currentTab) {
     // 获取全部帖子
     if (currentTab == 0) {
-      this.getData(20, -1, -1)
+      this.getData(20, 0, -1)
     } else if (currentTab == 1) {//党员大会
       this.getData(20, 0, 2)
     } else if (currentTab == 2) {//支委会
@@ -249,12 +256,6 @@ Page({
       url: `/pages/detail/detail?cid=${e.currentTarget.dataset.actid}&cType=0`
     })
   },
-  // 获取组件传递id
-  toIndexActid(e) {
-    this.setData({
-      actID: e.detail
-    })
-  },
   // 搜索
   goSearch() {
     wx.navigateTo({
@@ -273,6 +274,7 @@ Page({
       onlyFromCamera: true,
       success: (res) => {
         wx.setStorageSync('members', JSON.parse(res.result));
+        console.log(JSON.parse(res.result))
         wx.navigateTo({
           url: "/pages/mine/parties/parties"
         })

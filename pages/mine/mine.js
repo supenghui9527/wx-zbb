@@ -69,9 +69,9 @@ Page({
           url: getApp().api.changeAvatarUrl,
           header: { "Content-Type": "multipart/form-data" },
           filePath: tempFilePaths[0],
-          name: 'image',
+          name: 'headThumb',
           formData: {
-            userID: wx.getStorageSync('userinfo').id
+            orgID: wx.getStorageSync('userInfo').orgID
           },
           success: ({ data }) => {
             let datas = JSON.parse(data);

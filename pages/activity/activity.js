@@ -22,8 +22,13 @@ Page({
   getLists() {
 
   },
-  onPullDownRefresh(){
+  onPullDownRefresh: function() {
     this.getData({ orderType: this.data.orderType, dateType: this.data.dateType, orgType: this.data.orgType });
+  },
+  onHide: function () {
+    this.setData({
+      showSelect:true
+    })
   },
   //获取数据方法
   getData({ orderType, dateType, orgType }) {
@@ -99,9 +104,6 @@ Page({
     }).then(({ data }) => {
       this.getData({ orderType: 0, dateType: '', orgType: '' });
     })
-  },
-  onPullDownRefresh() {
-
   },
   loadMoreList(pageIndex, orderType, dateType, orgType) {
     getApp().$ajax({

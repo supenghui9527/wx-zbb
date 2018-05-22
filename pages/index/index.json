@@ -1,7 +1,7 @@
 {
-  "navigationBarTitleText": "支部宝",
-  "navigationBarBackgroundColor": "#ca4341",
-  "navigationBarTextStyle": "#fff",
+  "navigationBarTitleText": "玄武支部宝",
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black",
   "enablePullDownRefresh": true,
   "backgroundColor": "#ccc",
   "usingComponents": {

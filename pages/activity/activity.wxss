@@ -95,7 +95,7 @@
 }
 .lists-item{
   width: 350rpx;
-  height: 450rpx;
+  height: 460rpx;
   position: relative;
   box-sizing: border-box;
   margin-bottom:15rpx;
@@ -127,6 +127,7 @@
 }
 .orgname{
   width: 210rpx;
+  font-size: 26rpx;
   padding-top: 30rpx;
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -137,6 +138,7 @@
   width: 290rpx;
   font-size: 32rpx;
   margin: 0 auto;
+  padding-top: 10rpx;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;

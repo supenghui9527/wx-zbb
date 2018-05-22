@@ -43,7 +43,7 @@
   </view>
   <view class='myintegral'>
     <view>
-      <text>我的积分</text>
+      <image src='/images/danghui.png'></image>
     </view>
     <view>
       <view>总积分</view>
@@ -62,7 +62,8 @@
       <view>
         <image wx:if="{{pointDetail.theMonthPoint-pointDetail.LastMonthPoint>0}}" class='up-down' src='/images/up.png'></image>
         <image wx:else class='up-down' src='/images/down.png'></image>
-        <text>{{point}}</text>
+        <text wx:if="{{pointDetail.theMonthPoint-pointDetail.LastMonthPoint>0}}">{{point}}</text>
+        <text style='color:#4ad425' wx:else>{{point}}</text>
       </view>
       <image class='arrow' src='/images/left.png'></image>
     </view>
@@ -76,8 +77,8 @@
       <image src='/images/search.png'></image>
       <input placeholder-style='color:#e4e4e4' placeholder='请输入要搜索内容'></input>
     </view>
-    <view catchtap='goSelect' hidden='{{showSelect}}' class='fixed'></view>
-    <view hidden='{{showSelect}}' class='select'>
+    <view catchtap='goSelect' hidden='{{hideSelect}}' class='fixed'></view>
+    <view hidden='{{hideSelect}}' class='select'>
       <view catchtap='changeNav' data-index="{{idx}}" class="{{current==index?'active':''}}" wx:for="{{nav}}" wx:for-index="idx" wx:key="idx">{{item.item}}</view>
     </view>
   </view>

@@ -25,8 +25,14 @@
         <view class="name">党支部</view>
       </view>
     </view>
-    <view data-phonenub="{{userinfo.orgBean.contactTel}}" catchtap="calling" class='tel'>{{userinfo.orgBean.contactTel}}</view>
-    <view class='address'>{{userinfo.orgBean.orgAddress}}</view>
+    <view data-phonenub="{{userinfo.orgBean.contactTel}}" catchtap="calling" class='tel'>
+    <image style='width:40rpx;height:40rpx;' src='/images/phone.png'></image>
+    <text>{{userinfo.orgBean.contactTel}}</text>
+    </view>
+    <view class='address'>
+      <image style='width:40rpx;height:40rpx;' src='/images/address.png'></image>
+      <text>{{userinfo.orgBean.orgAddress}}</text>
+    </view>
   </view>
   <view class="nav">
     <navigator url='/pages/mine/mymessage/mymessage' open-type='navigate' hover-class="none">
