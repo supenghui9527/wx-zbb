@@ -1,5 +1,5 @@
 <!--pages/activity/activity.wxml-->
-<view class='activity'>
+<view class="activity {{showSelect?'':'stop-scroll'}}">
   <view catchtap='goSearch' class='search'>
     <view>
       <image src='/images/search.png'></image>

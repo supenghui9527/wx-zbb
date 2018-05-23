@@ -123,9 +123,16 @@ Page({
             tempFilePaths: tempFilePaths
           })
         } else {
-          this.setData({
-            tempFilePaths: this.data.tempFilePaths.concat(tempFilePaths)
-          })
+          if (this.data.tempFilePaths.concat(tempFilePaths).length<=6){
+            this.setData({
+              tempFilePaths: this.data.tempFilePaths.concat(tempFilePaths)
+            })
+          }else{
+            wx.showToast({
+              title: '图片最多为6张',
+              icon:'none'
+            })
+          }
         }
       }
     })
@@ -212,6 +219,18 @@ Page({
       tempFilePaths: tempFilePaths
     })
   },
+  // 通过url地址截取参数
+  resetUrl(url) {
+    let i = url.indexOf('?') + 1;
+    let str = url.substring(i);
+    let arr = str.split('&');
+    let userinfo = {};
+    arr.map(item => {
+      let key = item.substring(0, item.indexOf('='));
+      userinfo[key] = item.substring(item.indexOf('=') + 1);
+    })
+    return userinfo;
+  },
   // 扫码签到
   sign() {
     wx.scanCode({
@@ -220,7 +239,7 @@ Page({
         getApp().$ajax({
           httpUrl: getApp().api.actSignUrl,
           data: {
-            userID: JSON.parse(res.result).userID, // JSON.parse(res.result).userID
+            userID: this.resetUrl(res.result).userID, // JSON.parse(res.result).userID
             cID: this.data.cID
           }
         }).then(({ data, message }) => {

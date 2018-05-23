@@ -3,11 +3,15 @@ const util = require('./utils/util.js');
 const api = require('./api/api.js');
 App({
   onLaunch: function () {
+    if (wx.getStorageSync('userInfo')) {
+      wx.redirectTo({
+        url: '/pages/index/publish/publish'
+      })
+    }
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
-
     // 登录
     // wx.login({
     //   success: res => {

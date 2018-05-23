@@ -35,6 +35,7 @@ module.exports = {
   partyDeusPayUrl: `${HOST}partyDeusPay.do`,//缴纳党费
   pointListUrl: `${HOST}findOrgOrder.do`,  // 积分列表
   userInfoUrl: `${HOST}fingByOrgID.do`,  // 个人中心信息
+  exportDataUrl:`${HOST}exportCommunityData.do`,//数据导出
   changeAvatarUrl: `${HOST}modifyAvatar.do`,  // 修改个人头像
   changePasswordUrl: `${HOST}modifyPassword.do`,  // 修改密码
   getMyWorkUrl: `${HOST}findMyWork.do`,  // 查看我的近期工作

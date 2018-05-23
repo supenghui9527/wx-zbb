@@ -1,7 +1,8 @@
 {
   "pages": [
-    "pages/index/index",
     "pages/login/login",
+    "pages/index/index",
+    "pages/mine/exportdata/exportdata",
     "pages/mine/myintegral/myintegral",
     "pages/mine/myintegral/detail/detail",
     "pages/mine/mine",
@@ -27,7 +28,6 @@
     "pages/mine/set/changeinfo/changeinfo",
     "pages/mine/set/set",
     "pages/mine/about/about",
-    "pages/mine/exportdata/exportdata",
     "pages/detail/detail"
   ],
   "window": {
@@ -35,6 +35,10 @@
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "WeChat"
+  },
+  "networkTimeout": {
+    "request": 50000,
+    "downloadFile": 50000
   },
   "tabBar": {
     "backgroundColor": "#f0f0f0",

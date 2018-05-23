@@ -1,4 +1,11 @@
 /* pages/activity/activity.wxss */
+.activity{
+  width: 100%;
+  height: 100%;
+}
+.stop-scroll{
+  overflow-y: hidden;
+}
 .search{
   width: 100%;
   height: 90rpx;
@@ -41,19 +48,18 @@
 }
 .go-select{
   width: 100% !important;
-  height: 490rpx;
-  padding:0 25rpx;
-  box-sizing: border-box;
-  background-color: #f8f8f8;
+  height: 530rpx;
   position: absolute;
   left: 0;
-  bottom: -489rpx;
+  bottom: -529rpx;
   z-index: 6666;
 }
 .go-select>view{
-  padding: 20rpx 0 10rpx 0;
+  padding: 20rpx 25rpx 10rpx 25rpx;
+  box-sizing: border-box;
   display: flex;
   justify-content: space-between;
+  background-color: #f8f8f8;
   font-size:30rpx;
   color:#323232;
   border-bottom: 1px solid #f0f0f0;

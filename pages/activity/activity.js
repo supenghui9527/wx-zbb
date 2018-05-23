@@ -54,7 +54,7 @@ Page({
     this.setData({ showSelect: !this.data.showSelect })
   },
   // 筛选
-  goSelect(e) {
+  clickSelect(e) {
     const index = e.currentTarget.dataset.index;
     this.setData({ active: index });
     if (index == 0) {

@@ -4,6 +4,13 @@ Page({
   data: {
   
   },
+  onLoad(){
+    if (wx.getStorageSync('userInfo')) {
+      wx.switchTab({
+        url: '/pages/index/index'
+      })
+    }
+  },
   login(e) {
     getApp().$ajax({
       httpUrl: getApp().api.loginUrl,

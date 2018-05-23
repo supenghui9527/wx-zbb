@@ -16,9 +16,9 @@
     <view class="section">
       <view class="section__title">导出内容</view>
       <picker bindchange="bindPickerChange" value="{{type}}" range="{{array}}">
-        <view class="picker">{{type}}</view>
+        <view class="picker">{{meetingType}}</view>
       </picker>
     </view>
-    <button class='btn'>导出</button>
+    <button catchtap='exportData' class='btn'>导出</button>
   </form>
 </view>

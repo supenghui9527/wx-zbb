@@ -50,7 +50,7 @@ Page({
     this.getPostings(this.data.currentTab);
   },
   onLoad: function (options) {
-    this.getData(20, 0, -1);
+    
   },
   onShow() {
     wx.getSystemInfo({
@@ -62,6 +62,7 @@ Page({
       }
     });
     this.getRank();
+    this.getData(20, 0, -1);
     // 月末25号提示未完成任务
     this.getUnfinished();
     // if (new Date().getDate() >= 25) this.getUnfinished();
@@ -84,6 +85,18 @@ Page({
       hideSelect: !this.data.hideSelect,
       stopScroll: !this.data.stopScroll
     })
+  },
+  // 通过url地址截取参数
+  resetUrl(url){
+    let i = url.indexOf('?') + 1;
+    let str = url.substring(i);
+    let arr = str.split('&');
+    let userinfo = {};
+    arr.map(item => {
+      let key = item.substring(0, item.indexOf('='));
+      userinfo[key] = item.substring(item.indexOf('=') + 1);
+    })
+    return userinfo;
   },
   // 获取首页积分排名
   getRank(){
@@ -273,8 +286,7 @@ Page({
     wx.scanCode({
       onlyFromCamera: true,
       success: (res) => {
-        wx.setStorageSync('members', JSON.parse(res.result));
-        console.log(JSON.parse(res.result))
+        wx.setStorageSync('members', this.resetUrl(res.result));
         wx.navigateTo({
           url: "/pages/mine/parties/parties"
         })
