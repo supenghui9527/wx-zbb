@@ -8,7 +8,7 @@ Page({
     orgNames:'请选择任务最后期限'
   },
   onLoad: function (options) {
-
+    
   },
   onReady: function () {
 
@@ -45,7 +45,7 @@ Page({
     })
   },
   goLists() {
-    wx.navigateTo({
+    wx.redirectTo({
       url: "/pages/mine/mywork/lists/lists"
     })
   },

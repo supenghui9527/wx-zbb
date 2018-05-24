@@ -20,16 +20,16 @@ Page({
         password: utilMd5.hexMD5(e.detail.value.password)
       }
     }).then(({ data }) => {
-      console.log(data)
       wx.setStorageSync('userInfo', data);
       wx.showToast({
         title: '登陆成功',
-        icon: 'none'
+        icon: 'none',
+        success:()=>{
+          wx.switchTab({
+            url: '/pages/index/index'
+          })
+        }
       })
-      wx.switchTab({
-        url: '/pages/index/index'
-      })
-      wx.hideLoading();
     })
   }
 })

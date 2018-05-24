@@ -8,6 +8,7 @@
     <view>
       <label>发布对象：</label>
       <input hidden='{{true}}' name="orgID" value='{{orgID}}'></input>
+      <input hidden='{{true}}' name="workID" value='{{workID}}'></input>
       <input hidden='{{true}}' name="orgIDs" value='{{orgIDs}}' placeholder='请选择发布对象'></input>
       <view style='width:500rpx;padding:0;border:none;color:#323232;display:flex;align-items:center' class="{{orgNames=='请选择任务最后期限'?'active':''}}">{{orgNames}}</view>
       <image catchtap='goLists' src='/images/@.png'></image>

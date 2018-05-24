@@ -34,6 +34,7 @@ Page({
   onHide: function () {
   
   },
+  // 发布活动
   goPublish(e) {
     getApp().$ajax({
       isShowLoading: false,
@@ -54,8 +55,11 @@ Page({
       })
     })
   },
-  publicWork(){
-
+  //发布帖子
+  goPosting(e){
+    wx.redirectTo({
+      url: `/pages/index/publish/publish?cType=0&workID=${e.currentTarget.dataset.workid}`
+    })
   },
   onUnload: function () {
   

@@ -11,6 +11,7 @@ Page({
     actType: [{ text: '党员大会', index: 2 }, { text: '支委会', index: 1 }, { text: '党小组会', index: 3 }, { text: '党课', index: 0 }]
   },
   onLoad: function (options) {
+    options.workID && this.setData({ workID: options.workID });
     this.setData({
       cType: options.cType,
       orgID: wx.getStorageSync('userInfo').orgID

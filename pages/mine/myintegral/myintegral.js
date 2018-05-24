@@ -14,7 +14,7 @@ Page({
       orgName: wx.getStorageSync('userInfo').orgName,
       pointDetail: wx.getStorageSync('pointDetail')
     });
-    this.getPointList(this.data.rankType, this.data.startTime, this.data.endTime)
+    this.getPointList(this.data.rankType, '', '');
   },
   onReady: function () {
   

@@ -7,7 +7,6 @@ module.exports = {
   likesUrl: `${HOST}likeCommunity.do`,  // 帖子点赞
   searchUrl: `${HOST}vagueSearch.do`,  // 帖子搜索
   actSignUrl: `${HOST}communitySign.do`,//扫码签到
-  // postingsDetailUrl: `${HOST}findCommunityByCID.do`,  // 帖子详情
   postingsDetailUrl: `${HOST}toCommunityDetails.do`,  // 帖子详情
   shareUrl: `${HOST}communityToShare.do`,// 分享
   hideAddUrl: `${HOST}checkIsAddCommunity.do`, //临时退出保存

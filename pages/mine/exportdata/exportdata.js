@@ -5,17 +5,17 @@ Page({
   data: {
     startDate: util.formatTime(date).substring(0, 10),
     endDate: util.formatTime(date).substring(0, 10),
-    array: ['党课', '支委会','党员大会','党小组会'],
+    array: ['党课', '支委会', '党员大会', '党小组会'],
     meetingType: '请选择导出类型'
   },
   onLoad: function (options) {
-  
+
   },
   onReady: function () {
-  
+
   },
   onShow: function () {
-  
+
   },
   startDateChange(e) {
     this.setData({
@@ -34,13 +34,12 @@ Page({
     })
   },
   onHide: function () {
-  
+
   },
   onUnload: function () {
-  
+
   },
-  exportData(){
-    console.log(this.data.meetingIndex)
+  exportData() {
     if (Date.parse(this.data.startDate) >= Date.parse(this.data.endDate)) {
       wx.showToast({
         title: '开始时间不能大于或等于结束时间',
@@ -49,11 +48,15 @@ Page({
       })
       return;
     }
+    if (!this.data.meetingIndex){
+      wx.showToast({title: '请选择导出类型',icon:'none'});
+      return;
+    }
     getApp().$ajax({
       httpUrl: getApp().api.exportDataUrl,
       data: {
         orgID: wx.getStorageSync('userInfo').orgID,
-        startTime:this.data.startDate,
+        startTime: this.data.startDate,
         endTime: this.data.endDate,
         meetingType: this.data.meetingIndex
       }
@@ -62,18 +65,23 @@ Page({
         url: data,
         success: function (res) {
           var filePath = res.tempFilePath
-          wx.openDocument({
-            filePath: filePath,
+          wx.saveFile({
+            tempFilePath: filePath,
             success: function (res) {
-              console.log('打开文档成功')
+              var savedFilePath = res.savedFilePath
+              wx.openDocument({
+                filePath: savedFilePath,
+                success: function (res) {
+                  console.log('打开文档成功')
+                }
+              })
             }
           })
         }
       })
     })
-
   },
   onShareAppMessage: function () {
-  
+
   }
 })

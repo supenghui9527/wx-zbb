@@ -11,8 +11,8 @@
         <view>{{item.date}}</view>
         <view>
           <view>{{item.workContent}}</view>
-          <view wx:if="{{item.isFinish==0}}" class='complete' catchtap='goPublish'>去完成</view>
-          <view wx:else class='complete' catchtap='goPublish'>去完成</view>
+          <view wx:if="{{item.isFinish==0}}" data-workid="{{item.workID}}" class='complete' catchtap='goPosting'>去完成</view>
+          <view wx:else class='complete'>已完成</view>
         </view>
       </view>
     </view>

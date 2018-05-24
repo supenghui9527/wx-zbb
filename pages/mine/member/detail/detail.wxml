@@ -34,9 +34,9 @@
       <text>手机号</text>
       <text>{{tel||'暂无'}}</text>
     </view>
-    <view>
+    <!-- <view>
       <text>党内职务</text>
-      <text>{{position=='null'&&'暂无'}}</text>
-    </view>
+      <text>{{position||'暂无'}}</text>
+    </view> -->
   </view>
 </view>

@@ -100,28 +100,25 @@
   overflow: hidden;
 }
 .lists .title view:nth-child(2){
-  width: 150rpx;
-  height: 44rpx;
-  border-radius: 6rpx;
-  line-height: 44rpx;
+  width: 130rpx; 
+  height: 40rpx;
+  line-height: 42rpx;
   text-align: center;
-  font-size:24rpx;
-  color: #bccee2;
+  border-radius: 8rpx;
+  font-size:22rpx;
+  color: #fff;
 }
 .meeting-type{
-  background-color: #f0f4ff;
+  background-color: #e8df7c;
 }
 .meeting-type1{
-  background-color: #effffa;
-  color:#aae3b8 !important;
+  background-color: #eebf97;
 }
 .meeting-type2{
-  background-color: #fffdf0;
-  color:#cab389 !important;
+  background-color: #e8add0;
 }
 .meeting-type3{
-  background-color: #ffeffc;
-  color:#ee9cc0 !important;
+  background-color: #f3afb6;
 }
 .lists .content{
   font-size: 28rpx;
