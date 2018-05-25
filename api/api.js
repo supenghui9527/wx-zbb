@@ -1,4 +1,4 @@
-const HOST = 'http://47.104.6.174:8091/zbb/'; // https://www.jshhfl.com/xwdj/http://47.104.6.174:8091/zzb/
+const HOST = 'http://47.104.6.174:8091/zbb/'; // https://www.jshhfl.com/xwdj/http://47.104.6.174:8091/zbb/
 module.exports = {
   loginUrl: `${HOST}login.do`,  // 登录接口
   getPostingsUrl: `${HOST}findCommunityHomePage.do`,  // 获取帖子列表

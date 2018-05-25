@@ -10,6 +10,9 @@ Page({
   
   },
   onShow: function () {
+    this.setData({
+      isOne: wx.getStorageSync('userInfo').higherOrgID
+    });
     this.getUserinfo();
   },
   onHide: function () {

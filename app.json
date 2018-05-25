@@ -11,6 +11,7 @@
     "pages/mine/mywork/public/public",
     "pages/mine/mywork/lists/lists",
     "pages/mine/myReward/myReward",
+    "pages/mine/memberActivity/memberActivity",
     "pages/mine/myReward/addReward/addReward",
     "pages/mine/myReward/lists/lists",
     "pages/mine/mypostings/mypostings",

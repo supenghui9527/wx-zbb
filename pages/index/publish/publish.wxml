@@ -4,6 +4,7 @@
     <input hidden="true" name="orgID" value="{{orgID}}" />
     <input hidden="true" name="cID" value="{{cID}}" />
     <input hidden="true" name="cType" value="{{cType}}" />
+    <input hidden="true" name="workID" value="{{workID}}" />
     <input hidden="true" name="actuaAttendance" value="{{signNames.length}}" />
     <input hidden="true" name="signUserNames" value="{{oldSignName}}" />
     <input hidden="true" name="meetingTime" value="{{date+' '+time}}"/>

@@ -8,26 +8,30 @@
   </view>
   <view class='org-list'>
     <view>
-      <view catchtap='goMembers'>
+      <view wx:if="{{isOne!=-1}}" catchtap='goMembers'>
+        <view class='nub'>{{userinfo.DangYuan}}</view>
+        <view class="name">党员</view>
+      </view>
+      <view wx:else>
         <view class='nub'>{{userinfo.DangYuan}}</view>
         <view class="name">党员</view>
       </view>
       <view>
-        <view class='nub'>{{userinfo.DangGW}}</view>
+        <view class="nub {{userinfo.DangGW==0?'active-no':''}}">{{userinfo.DangGW}}</view>
         <view class="name">党工委</view>
       </view>
       <view>
-        <view class='nub'>{{userinfo.DangW}}</view>
+        <view class="nub {{userinfo.DangW==0?'active-no':''}}">{{userinfo.DangW}}</view>
         <view class="name">党委</view>
       </view>
       <view>
-        <view class='nub'>{{userinfo.DangZB}}</view>
+        <view class="nub {{userinfo.DangZB==0?'active-no':''}}">{{userinfo.DangZB}}</view>
         <view class="name">党支部</view>
       </view>
     </view>
     <view data-phonenub="{{userinfo.orgBean.contactTel}}" catchtap="calling" class='tel'>
-    <image style='width:40rpx;height:40rpx;' src='/images/phone.png'></image>
-    <text>{{userinfo.orgBean.contactTel}}</text>
+      <image style='width:40rpx;height:40rpx;' src='/images/phone.png'></image>
+      <text>{{userinfo.orgBean.contactTel}}</text>
     </view>
     <view class='address'>
       <image style='width:40rpx;height:40rpx;' src='/images/address.png'></image>
@@ -40,14 +44,19 @@
       <view>消息通知</view>
       <image class='arrow' src='/images/left.png'></image>
     </navigator>
-    <navigator url='/pages/mine/set/set' open-type='navigate' hover-class="none">
-      <image src='/images/sz.png'></image>
-      <view>设置</view>
+    <navigator url='pages/mine/memberActivity/memberActivity' open-type='navigate' hover-class="none">
+      <image src='/images/zzshh.png'></image>
+      <view>双重组织生活会</view>
       <image class='arrow' src='/images/left.png'></image>
     </navigator>
     <navigator url='/pages/mine/about/about' open-type='navigate' hover-class="none">
       <image src='/images/gyzbb.png'></image>
       <view>关于支部宝</view>
+      <image class='arrow' src='/images/left.png'></image>
+    </navigator>
+    <navigator url='/pages/mine/set/set' open-type='navigate' hover-class="none">
+      <image src='/images/sz.png'></image>
+      <view>设置</view>
       <image class='arrow' src='/images/left.png'></image>
     </navigator>
   </view>

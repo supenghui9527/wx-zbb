@@ -168,7 +168,6 @@ Page({
   //下拉刷新
   onPullDownRefresh: function () {
     let currentTab = this.data.currentTab;
-    console.log(currentTab)
     this.getPostings(currentTab);
   },
   //上拉加载更多
@@ -243,8 +242,8 @@ Page({
   goPublish(e) {
     if (this.data.isFinish) {
       this.setData({
-        showPrompt: !this.data.showPrompt,
-        stopScroll: !this.data.stopScroll
+        showPrompt: true,
+        stopScroll: false
       });
     } else {
       wx.navigateTo({
@@ -255,8 +254,8 @@ Page({
   // 取消显示未完成提示
   cancelPublic() {
     this.setData({
-      showPrompt: !this.data.showPrompt,
-      stopScroll: !this.data.stopScroll
+      showPrompt: false,
+      stopScroll: true
     });
   },
   isShowPrompt(e) {

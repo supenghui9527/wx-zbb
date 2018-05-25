@@ -19,6 +19,6 @@
         <view class="picker">{{meetingType}}</view>
       </picker>
     </view>
-    <button catchtap='exportData' class='btn'>导出</button>
+    <button catchtap='exportData' class='btn'>预览</button>
   </form>
 </view>

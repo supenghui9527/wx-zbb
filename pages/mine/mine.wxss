@@ -24,6 +24,9 @@
   right: 60rpx;
   top:30rpx;
 }
+.active-no{
+  color:#969696 !important;
+}
 .org-list{
   width: 660rpx;
   height: 330rpx;
