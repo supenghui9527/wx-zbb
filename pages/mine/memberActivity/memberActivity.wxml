@@ -1,2 +1,38 @@
 <!--pages/mine/memberActivity/memberActivity.wxml-->
-<text>pages/mine/memberActivity/memberActivity.wxml</text>
+<view class='member'>
+  <view class="nav">
+    <picker class='name' bindchange="bindNameChange" value="{{name}}" range="{{nameList}}">
+      <text>姓名</text>
+      <image src='/images/arrow_down.png'></image>
+    </picker>
+    <picker class='type' bindchange="bindNameChange" value="{{name}}" range="{{typeList}}">
+      <text>活动类型</text>
+      <image src='/images/arrow_down.png'></image>
+    </picker>
+    <view class='title'>
+      <text>活动主题</text>
+      <image catchtap='goSelect' src='/images/shaixuan1.png'></image>
+    </view>
+  </view>
+  <view hidden='{{showSelect}}' capture-bind:touchstart="goSelect" class='select-container'>
+    <view capture-bind:touchstart="goSelect" hidden='{{showSelect}}' class='time-select'>
+      <view catchtap='clickSelect' data-index='{{index}}' wx:for="{{selectLists}}" wx:key="index">
+        <text class="{{active==index?'active':''}}">{{item}}</text>
+        <image hidden='{{index!=active}}' src='/images/yes1.png'></image>
+      </view>
+    </view>
+  </view>
+  <view class='lists'>
+    <view wx:for="{{6}}" class='item'>
+      <view>
+        <text>王建军</text>
+      </view>
+      <view>
+        <text>党小组会</text>
+      </view>
+      <view>
+        <text>19大大师傅地方反对反对反对反对法反对法</text>
+      </view>
+    </view>
+  </view>
+</view>

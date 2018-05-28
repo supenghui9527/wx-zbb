@@ -18,15 +18,15 @@
       </view>
       <view>
         <view class="nub {{userinfo.DangGW==0?'active-no':''}}">{{userinfo.DangGW}}</view>
-        <view class="name">党工委</view>
+        <view class="name {{userinfo.DangGW==0?'active-no':''}}">党工委</view>
       </view>
       <view>
         <view class="nub {{userinfo.DangW==0?'active-no':''}}">{{userinfo.DangW}}</view>
-        <view class="name">党委</view>
+        <view class="name {{userinfo.DangW==0?'active-no':''}}">党委</view>
       </view>
       <view>
         <view class="nub {{userinfo.DangZB==0?'active-no':''}}">{{userinfo.DangZB}}</view>
-        <view class="name">党支部</view>
+        <view class="name {{userinfo.DangZB==0?'active-no':''}}">党支部</view>
       </view>
     </view>
     <view data-phonenub="{{userinfo.orgBean.contactTel}}" catchtap="calling" class='tel'>
@@ -44,7 +44,7 @@
       <view>消息通知</view>
       <image class='arrow' src='/images/left.png'></image>
     </navigator>
-    <navigator url='pages/mine/memberActivity/memberActivity' open-type='navigate' hover-class="none">
+    <navigator wx:if="{{isOne==-1}}" url='/pages/mine/memberActivity/memberActivity' open-type='navigate' hover-class="none">
       <image src='/images/zzshh.png'></image>
       <view>双重组织生活会</view>
       <image class='arrow' src='/images/left.png'></image>

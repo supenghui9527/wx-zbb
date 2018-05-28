@@ -1,1 +1,111 @@
 /* pages/mine/memberActivity/memberActivity.wxss */
+.member{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow-y: hidden;
+}
+.nav{
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  font-size: 32rpx;
+  background-color: rgba(235, 235, 235, 1)
+}
+.select-container{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top:100rpx;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 66;
+}
+.time-select{
+  width: 100%;
+  background-color: #fff;
+  position: absolute;
+  top:0;
+  left: 0;
+  z-index: 666;
+}
+.time-select>view{
+  width: 100%;
+  height: 80rpx;
+  padding: 0 30rpx;
+  color:#323232;
+  border-bottom: 1px solid #f0f0f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  font-size: 32rpx;
+}
+.time-select>view:nth-child(4){
+  border-bottom: none;
+}
+.time-select>view image{
+  width: 40rpx;
+  height: 40rpx;
+}
+.active{
+  color:#417fee;
+}
+.name,.type{
+  width: 25%;
+  justify-content: center;
+}
+.name,.type,.title{
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.title{
+  width: 50%;
+  position: relative;
+}
+.name image,.type image{
+  width: 30rpx;
+  height: 30rpx;
+}
+.title text{
+  padding-left: 80rpx;
+}
+.title image{
+  width: 50rpx;
+  height: 50rpx;
+  position: absolute;
+  bottom: 20rpx;
+  right: 30rpx;
+}
+.item{
+  width: 100%;
+  display: flex;
+  font-size: 30rpx;
+  color:#646464;
+}
+.item view:nth-child(1),.item view:nth-child(2){
+  width: 25%;
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+}
+.item view:nth-child(3){
+  width: 50%;
+  height: 80rpx;
+  line-height: 80rpx;
+  padding-left: 30rpx;
+  box-sizing: border-box;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+.item view:nth-child(1) text,.item view:nth-child(2) text{
+  width: 100%;
+  text-align: center;
+  border-right: 1px solid #f0f0f0;
+}
+.lists>view:nth-child(even){
+  background-color: rgba(255, 248, 246, 1)
+}

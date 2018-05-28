@@ -1,7 +1,8 @@
 {
   "pages": [
-    "pages/login/login",
     "pages/index/index",
+    "pages/mine/memberActivity/memberActivity",
+    "pages/login/login",
     "pages/mine/exportdata/exportdata",
     "pages/mine/myintegral/myintegral",
     "pages/mine/myintegral/detail/detail",
@@ -11,7 +12,6 @@
     "pages/mine/mywork/public/public",
     "pages/mine/mywork/lists/lists",
     "pages/mine/myReward/myReward",
-    "pages/mine/memberActivity/memberActivity",
     "pages/mine/myReward/addReward/addReward",
     "pages/mine/myReward/lists/lists",
     "pages/mine/mypostings/mypostings",

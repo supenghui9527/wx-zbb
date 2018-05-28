@@ -178,7 +178,7 @@ Page({
       data = e.detail.value;
     for (let i in data) {
       if (data[i] == '' || data[i].indexOf('请') != -1) {
-        if (i == 'isPublic') {
+        if (i == 'isPublic' || i == 'workID') {
           if (data.isPublic.length == 0) {
             data.isPublic = 0;
           }
