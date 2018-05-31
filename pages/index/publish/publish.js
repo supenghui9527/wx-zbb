@@ -5,8 +5,8 @@ Page({
   data: {
     active: 2,
     signCount: 0,
-    date: '请选择会议日期',//util.formatTime(date).substring(0, 10)
-    time: '请选择会议时间',//util.formatTime(date).substring(10)
+    date: util.formatTime(date).substring(0, 10),
+    time: util.formatTime(date).substring(10),
     tempFilePaths: [],
     actType: [{ text: '党员大会', index: 2 }, { text: '支委会', index: 1 }, { text: '党小组会', index: 3 }, { text: '党课', index: 0 }]
   },
@@ -59,7 +59,6 @@ Page({
   onUnload: function () {
     const meetingTime = '';
     if (this.data.date == '请选择会议日期' && this.data.time == '请选择会议时间') {
-
     }
     this.leaveSave(1);
   },
@@ -73,7 +72,7 @@ Page({
         isOut: isOut,
         orgID: this.data.orgID,
         cType: this.data.cType,
-        meetingTime: util.formatTime(date),
+        meetingTime: `${this.data.date} ${this.data.time}`,
         meetingType: this.data.active,
         isPublic: 2,
         title: this.data.title || '',
@@ -94,16 +93,26 @@ Page({
           signNames = arr;
         }
       }
+      if (this.data.cType==0){
+        this.setData({
+          meetingLocation: data.data.meetingLocation,
+        })
+      }else{
+        this.setData({
+          geo: data.data.meetingLocation,
+        })
+      }
       this.setData({
         cID: data.data.cID,
         signNames: signNames,
         title: data.data.title,
         oldSignName: name,
-        meetingLocation: data.data.meetingLocation,
         active: data.data.meetingType,
         preside: data.data.preside,
         shouldAttendance: data.data.shouldAttendance,
-        content: data.data.content
+        content: data.data.content,
+        date: data.data.meetingTime.substring(0, 10),
+        time: data.data.meetingTime.substring(10, 16)
       });
     })
   },
@@ -124,14 +133,14 @@ Page({
             tempFilePaths: tempFilePaths
           })
         } else {
-          if (this.data.tempFilePaths.concat(tempFilePaths).length<=6){
+          if (this.data.tempFilePaths.concat(tempFilePaths).length <= 6) {
             this.setData({
               tempFilePaths: this.data.tempFilePaths.concat(tempFilePaths)
             })
-          }else{
+          } else {
             wx.showToast({
               title: '图片最多为6张',
-              icon:'none'
+              icon: 'none'
             })
           }
         }
@@ -159,9 +168,15 @@ Page({
         if (i == length) {
           // console.log('总共' + successUp + '张上传成功,' + failUp + '张上传失败！');
           wx.hideLoading();
-          wx.switchTab({
-            url: '/pages/index/index'
-          })
+          if(this.data.cType==0){
+            wx.switchTab({
+              url: `/pages/index/index?isReload=1`
+            })
+          }else{
+            wx.switchTab({
+              url: 'pages/activity/activity'
+            })
+          }
         }
         else {
           this.getData(tempFilePaths, successUp, failUp, i, length, this.data.cID);

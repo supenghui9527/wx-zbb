@@ -1,15 +1,19 @@
 <!--pages/mine/mymessage/mymessage.wxml-->
 <view class='messages'>
-  <view wx:for="{{lists}}" class='item'>
+  <view wx:for="{{lists}}" wx:key="index" class='item'>
     <view class='title'>
       <image src='/images/news.png'></image>
       <view wx:if="{{item.masType==1}}" class='title-content'>近期工作通知</view>
       <view wx:elif="{{item.masType==2}}" class='title-content'>奖励通知</view>
       <view wx:elif="{{item.masType==3}}" class='title-content'>惩罚通知</view>
+      <view wx:elif="{{item.masType==4}}" class='title-content'>完成近期工作通知</view>
       <view class='time'>{{item.creataTime}}</view>
     </view>
-    <view class='content'>
+    <view wx:if="{{item.masType!=4}}" class='content'>
       <view>{{item.content}}</view>
+    </view>
+    <view wx:if="{{item.masType==4}}" class='content'>
+      <view>{{item.beOrgName}}完成了{{item.title}}的工作任务</view>
     </view>
   </view>
 </view>

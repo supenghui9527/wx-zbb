@@ -1,4 +1,6 @@
 //index.js
+const util = require('../../utils/util.js');
+const date = new Date();
 //获取应用实例
 const app = getApp();
 Page({
@@ -49,29 +51,17 @@ Page({
   getListData() {
     this.getPostings(this.data.currentTab);
   },
-  onLoad: function (options) {
-    
-  },
-  onShow() {
-    wx.getSystemInfo({
-      success: (res) => {
-        this.setData({
-          scrollHeight: res.windowHeight,
-          userID: wx.getStorageSync('userInfo').orgID
-        });
-      }
-    });
+  onLoad (options) {
+    options.isReload && this.setData({isReload: true});
     this.getRank();
     this.getData(20, 0, -1);
-    // 月末25号提示未完成任务
+  },
+  onShow() {
     this.getUnfinished();
-    // if (new Date().getDate() >= 25) this.getUnfinished();
-    // if (new Date().getDate() >= 1 && new Date().getDate() <= 5) wx.showModal({
-    //   title: '请及时添加近期工作',
-    //   content: '',
-    //   showCancel: false,
-    //   confirmText: '我知道了'
-    // })
+    if(this.data.isReload){
+      this.getRank();
+      this.getData(20, 0, -1);
+    }
   },
   onHide: function () {
     this.setData({
@@ -102,6 +92,7 @@ Page({
   getRank(){
     getApp().$ajax({
       isShowLoading: false,
+      hideLoading: false,
       httpUrl: getApp().api.getRankListUrl,
       data: {
         orgID: wx.getStorageSync('userInfo').orgID
@@ -131,18 +122,14 @@ Page({
   getUnfinished() {
     getApp().$ajax({
       isShowLoading: false,
+      hideLoading: false,
       httpUrl: getApp().api.getUnfinishedUrl,
       data: {
         orgID: wx.getStorageSync('userInfo').orgID,
-        theTime: '2018-05'
+        theTime: util.formatTime(date).substring(0, 10)
       }
     }).then(({ data }) => {
       data == null || data.length == 0 ? this.setData({ isFinish: false }) : this.setData({ isFinish: true });
-    })
-  },
-  hideUnfinished() {
-    this.setData({
-      showUnfinished: false
     })
   },
   //获取数据方法
@@ -219,7 +206,6 @@ Page({
         this.setData({
           community: publishs
         })
-        wx.hideLoading();
       })
     }
   },
@@ -238,7 +224,7 @@ Page({
       this.getData(20, 0, 0)
     }
   },
-  //发帖
+  //发布活动
   goPublish(e) {
     if (this.data.isFinish) {
       this.setData({

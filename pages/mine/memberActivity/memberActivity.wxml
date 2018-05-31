@@ -1,11 +1,11 @@
 <!--pages/mine/memberActivity/memberActivity.wxml-->
 <view class='member'>
   <view class="nav">
-    <picker class='name' bindchange="bindNameChange" value="{{name}}" range="{{nameList}}">
+    <picker class='name' bindchange="bindNameChange" range-key="username" value="{{idx}}" range="{{nameList}}">
       <text>姓名</text>
       <image src='/images/arrow_down.png'></image>
     </picker>
-    <picker class='type' bindchange="bindNameChange" value="{{name}}" range="{{typeList}}">
+    <picker class='type' bindchange="bindTypeChange" value="{{name}}" range="{{typeList}}">
       <text>活动类型</text>
       <image src='/images/arrow_down.png'></image>
     </picker>
@@ -23,15 +23,15 @@
     </view>
   </view>
   <view class='lists'>
-    <view wx:for="{{6}}" class='item'>
+    <view wx:for="{{lists}}" wx:key="index" class='item'>
       <view>
-        <text>王建军</text>
+        <text>{{item.username}}</text>
       </view>
       <view>
-        <text>党小组会</text>
+        <text>{{typeList[item.meetingType]}}</text>
       </view>
       <view>
-        <text>19大大师傅地方反对反对反对反对法反对法</text>
+        <text>{{item.title||'暂无'}}</text>
       </view>
     </view>
   </view>

@@ -17,6 +17,7 @@
   width:170rpx;
 }
 .info input{
+  width: 70%;
   padding-left:30rpx;
 }
 .btn{

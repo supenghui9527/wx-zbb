@@ -80,12 +80,13 @@ Page({
             let datas = JSON.parse(data);
             if (datas.state == 1) {
               let userinfo = wx.getStorageSync('userInfo');
-              userinfo.avatar = datas.data;
+              userinfo.headThumb = datas.data.headThumb;
               wx.setStorageSync('userInfo', userinfo);
               ctx.getUserinfo();
               wx.showToast({
                 title: '头像修改成功',
-                icon: 'none'
+                icon: 'none',
+                duration:2000
               });
             }
           }

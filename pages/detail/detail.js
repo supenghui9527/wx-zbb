@@ -25,12 +25,15 @@ Page({
     getApp().$ajax({
       httpUrl: getApp().api.postingsDetailUrl,
       data: {
-        cID: cID
+        cID: cID,
+        orgID:wx.getStorageSync('userInfo').orgID
       }
     }).then(({ data }) => {
-      data.community.type = ['党课', '支委会', '党员大会', '党小组会'];
+      let detail = data.community;
+      detail.type = ['党课', '支委会', '党员大会', '党小组会'];
+      detail.meetingTime = detail.meetingTime.substring(0, 16);
       this.setData({
-        item: data.community
+        item: detail
       })
     });
   },

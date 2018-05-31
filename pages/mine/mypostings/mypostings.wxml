@@ -7,8 +7,8 @@
       <text>{{item.month}}月</text>
     </view>
     <view>
-      <image wx:if="{{item.org.headThumb}}" class='item-img' src='{{item.thumbnailPic+item.picNames[0]}}'></image>
-      <image wx:else class='item-img' src='/images/people.png'></image>
+      <image wx:if="{{item.org.headThumb}}" mode='aspectFill' class='item-img' src='{{item.thumbnailPic+item.picNames[0]}}'></image>
+      <image wx:else mode='aspectFill' class='item-img' src='/images/people.png'></image>
     </view>
     <view>
       <view class='content'>{{item.content}}</view>

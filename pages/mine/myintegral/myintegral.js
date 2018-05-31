@@ -4,7 +4,7 @@ const date = new Date();
 let sortFlag = true;
 Page({
   data: {
-    startTime: util.formatTime(date).substring(0, 10),
+    startTime: util.formatTime(new Date(Date.parse(date) - 1000 * 3600 * 24 * 30)).substring(0, 10),
     endTime: util.formatTime(date).substring(0, 10),
     rankType:1
   },
@@ -59,28 +59,26 @@ Page({
   
   },
   bindStartChange(e){
-    this.setData({
-      startTime:e.detail.value
-    })
-    if (Date.parse(this.data.startTime) >= Date.parse(this.data.endTime)){
+    if (Date.parse(e.detail.value) >= Date.parse(this.data.endTime)){
       wx.showToast({
         title: '开始时间不能大于或等于结束时间',
-        icon:'none'
+        icon:'none',
+        duration:3000
       })
     }else{
+      this.setData({startTime: e.detail.value});
       this.getPointList(this.data.rankType, this.data.startTime, this.data.endTime)
     }
   },
   bindEndChange(e) {
-    this.setData({
-      endTime: e.detail.value
-    })
-    if (Date.parse(this.data.endTime) <= Date.parse(this.data.startTime)) {
+    if (Date.parse(e.detail.value) <= Date.parse(this.data.startTime)) {
       wx.showToast({
         title: '结束时间不能小于或等于开始时间',
-        icon: 'none'
+        icon: 'none',
+        duration: 3000
       })
     } else {
+      this.setData({endTime: e.detail.value});
       this.getPointList(this.data.rankType, this.data.startTime, this.data.endTime)
     }
   },

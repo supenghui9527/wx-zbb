@@ -1,0 +1,12 @@
+<!--pages/mine/studyArticle/studyArticle.wxml-->
+<view class='articlelists'>
+  <view class='item' wx:for="{{1}}" catchtap='goDetail'>
+    <view>
+      <view class='title'>学习这首党建顺口溜通俗易懂！果断收藏！</view>
+      <view class='from'>
+        <text>来源：党建网微平台</text>
+        <text>2018-05-30</text>
+      </view>
+    </view>
+  </view>
+</view>

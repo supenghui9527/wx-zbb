@@ -20,15 +20,22 @@ Page({
     let data = e.detail.value;
     getApp().$ajax({
       httpUrl: getApp().api.saveUserInfoUrl,
+      isShowLoading:false,
+      hideLoading:false,
       data: data
     }).then(({data,message})=>{
       wx.showToast({
         title: message,
         mask: true,
+        icon:'none',
+        duration: 3000,
         success: (res) => {
-          wx.navigateBack({
-            delta: 2
-          })
+          wx.setStorageSync('userInfo', data);
+          setTimeout(()=>{
+            wx.navigateBack({
+              delta: 2
+            })
+          },2000)
         }
       })
     })

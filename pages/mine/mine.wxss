@@ -80,7 +80,7 @@
 }
 .nav navigator{
   width: 100%;
-  padding: 50rpx 0 25rpx 0;
+  padding: 40rpx 0 20rpx 0;
   border-bottom:1px solid #f0f0f0;
   display: flex;
   align-items: center;

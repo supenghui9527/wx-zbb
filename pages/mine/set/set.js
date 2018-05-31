@@ -64,11 +64,9 @@ Page({
   
   },
   signOut(){
-    wx.navigateTo({
-      url: '/pages/login/login',
-      success(){
-        wx.clearStorageSync();
-      }
+    wx.clearStorageSync();
+    wx.reLaunch({
+      url: '/pages/login/login'
     })
   }
 })

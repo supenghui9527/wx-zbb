@@ -1,4 +1,4 @@
-const HOST = 'http://47.104.6.174:8091/zbb/'; // https://www.jshhfl.com/xwdj/http://47.104.6.174:8091/zbb/
+const HOST = 'http://47.104.6.174:8091/zbb/'; // http://47.104.6.174:8091/zbb/
 module.exports = {
   loginUrl: `${HOST}login.do`,  // 登录接口
   getPostingsUrl: `${HOST}findCommunityHomePage.do`,  // 获取帖子列表
@@ -52,5 +52,7 @@ module.exports = {
   getMessagesUrl: `${HOST}findAllMessage.do`,  // 获取消息
   sureMessageUrl: `${HOST}backMessage.do`, // 确认是否同意删除党员
   deleteMesageUrl: `${HOST}deleteMesage.do`,  // 删除消息
-  alreadyLookUrl: `${HOST}readMessage.do`  // 消息已读未读
+  alreadyLookUrl: `${HOST}readMessage.do`,  // 消息已读未读
+  emphasisUserUrl: `${HOST}findEmphasisUser.do`,//双重组织生活会
+  userListsUrl:`${HOST}nameEmphasisUser.do`
 }

@@ -15,13 +15,13 @@
     <view class="section">
       <view class="section__title">日期:</view>
       <picker style='width:80%' mode="date" value="{{date}}" start="2015-09-01" end="2100-09-01" bindchange="bindDateChange">
-        <view class="picker">{{date}}</view>
+        <view class="picker">{{date||'请选择日期'}}</view>
       </picker>
     </view>
     <view class="section">
       <view class="section__title">时间:</view>
       <picker style='width:80%' mode="time" value="{{time}}" start="02:01" end="23:59" bindchange="bindTimeChange">
-        <view class="picker">{{time}}</view>
+        <view class="picker">{{time||'请选择时间'}}</view>
       </picker>
     </view>
     <view wx:if="{{cType==0}}" class='tit'>
@@ -60,7 +60,7 @@
     </view>
     <view class='place'>
       <image catchtap='getPlace' src='/images/place.png'></image>
-      <input bindinput='getAddress' class='font-color' name="{{cType==0?'geo':'meetingLocation'}}" value='{{cType==0?geo:meetingLocation}}' placeholder='我的位置'></input>
+      <input bindinput='getAddress' class='font-color' name="{{cType==0?'meetingLocation':'geo'}}" value='{{cType==0?meetingLocation:geo}}' placeholder='我的位置'></input>
     </view>
     <view class='ispublish'>
       <checkbox-group name="isPublic">

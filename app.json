@@ -1,8 +1,10 @@
 {
   "pages": [
+    "pages/login/login",
+    "pages/mine/studyArticle/studyDetail/studyDetail",
+    "pages/mine/studyArticle/studyArticle",
     "pages/index/index",
     "pages/mine/memberActivity/memberActivity",
-    "pages/login/login",
     "pages/mine/exportdata/exportdata",
     "pages/mine/myintegral/myintegral",
     "pages/mine/myintegral/detail/detail",

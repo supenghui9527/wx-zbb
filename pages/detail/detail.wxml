@@ -6,7 +6,7 @@
       <view class='title'>{{item.orgName||'暂无'}}</view>
       <view class='time'>
         <text>{{item.createTime||'暂无'}}</text>
-        <text>{{item.type[item.meetingType]||'暂无'}}</text>
+        <text>{{item.type[item.meetingType]||'党日活动'}}</text>
       </view>
       <view>
         <text>时间：</text>
@@ -28,7 +28,7 @@
         <text>主题：</text>
         <text>{{item.title||'无'}}</text>
       </view>
-      <view>
+      <view wx:if="{{item.isPublic==0}}">
         <text>内容：</text>
         <text>{{item.content||'无'}}</text>
       </view>
@@ -46,9 +46,7 @@
     <view>
       <image src='/images/sign.png'></image>
     </view>
-    <view>
-      <text>{{item.signUserNames||'无'}}</text>
-    </view>
+    <view>{{item.signUserNames||'无'}}</view>
   </view>
   <view class='share-comment'>
     <view class='share-comment-title'>
@@ -80,7 +78,7 @@
         <image class='avatar-img' wx:else src="/images/img.png"></image>
         <view>
           <view class='user-name'>{{i.orgName||'暂无'}}</view>
-          <view class='user-comment'>{{i.comments||'暂无'}}</view>
+          <view class='user-comment'>{{i.content||'暂无'}}</view>
           <view class='comment-time'>
             <text>{{i.createTime||'暂无'}}</text>
           </view>
@@ -114,17 +112,17 @@
         </view>
       </button>
     </view>
-    <view data-actid="{{item.id}}" data-islike="{{item.islike}}" catchtap='goComment'>
+    <view data-actid="{{item.id}}" data-islike="{{item.isLike}}" catchtap='goComment'>
       <view>
         <image src='/images/comment.png'></image>
         <text>评论</text>
         <text>{{item.comments}}</text>
       </view>
     </view>
-    <view data-id="{{item.id}}" data-islike="{{item.islike}}" catchtap='clickLikes'>
+    <view data-id="{{item.id}}" data-islike="{{item.isLike}}" catchtap='clickLikes'>
       <view>
-        <image src="/images/fabulous_normal.png"></image>
-        <image wx:if="{{item.islike==1}}" src='/images/fabulous_selected.png'></image>
+        <image wx:if="{{item.isLike==0||item.isLike==null}}" src="/images/fabulous_normal.png"></image>
+        <image wx:else src='/images/fabulous_selected.png'></image>
         <text>赞</text>
         <text>{{item.likes}}</text>
       </view>

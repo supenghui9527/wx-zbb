@@ -49,6 +49,11 @@
       <view>双重组织生活会</view>
       <image class='arrow' src='/images/left.png'></image>
     </navigator>
+    <navigator url='/pages/mine/studyArticle/studyArticle' open-type='navigate' hover-class="none">
+      <image src='/images/xxb.png'></image>
+      <view>学习宝</view>
+      <image class='arrow' src='/images/left.png'></image>
+    </navigator>
     <navigator url='/pages/mine/about/about' open-type='navigate' hover-class="none">
       <image src='/images/gyzbb.png'></image>
       <view>关于支部宝</view>

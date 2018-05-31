@@ -1,0 +1,93 @@
+<!--pages/mine/studyArticle/studyDetail/studyDetail.wxml-->
+<view style='text-align:center;line-height:60rpx;'>
+  <view>学习这首党建顺口溜通俗易懂！果断收藏！</view>
+  <view style='border-bottom:2px solid rgb(197, 36, 36)'>
+    <view class='title'>基本组织标准化</view>
+    <view>3人以上设支部</view>
+    <view>不足100设总支</view>
+    <view>超过100设党委</view>
+    <view>谁批谁管看隶属</view>
+    <view>支委班子应配强</view>
+    <view>一般3到5个人</view>
+    <view>任满3至5年换</view>
+    <view>届满提前4月报</view>
+    <view>委员空缺需补充</view>
+    <view>确保组织标准化</view>
+  </view>
+  <view style='border-bottom:2px solid rgb(197, 36, 36)'>
+    <view class='title'>基本队伍标准化</view>
+    <view>政治标准放首位</view>
+    <view>五段二十五步骤</view>
+    <view>（发展党员5阶段25个步骤）</view>
+    <view>积极分子须监测</view>
+    <view>半年一次要考察</view>
+    <view>积分管理看日常</view>
+    <view>党员每月己申报</view>
+    <view>支委每月须初评</view>
+    <view>党员大会季评定</view>
+    <view>并且还要有公示</view>
+    <view>每月有个“党费日”</view>
+    <view>重点节日需激励</view>
+    <view>确保队伍标准化  </view>
+  </view>
+  <view style='border-bottom:2px solid rgb(197, 36, 36)'>
+    <view class='title'>基本活动标准化</view>
+    <view>支部活动常坚持</view>
+    <view>主题党日须牢记</view>
+    <view>每月1天有主题</view>
+    <view>季度还需有安排</view>
+    <view>按照年度计划开</view>
+    <view>形式多样效果显</view>
+    <view>确保活动标准化</view>
+  </view>
+  <view style='border-bottom:2px solid rgb(197, 36, 36)'>
+    <view class='title'>基本制度标准化</view>
+    <view>组织生活要健全</view>
+    <view>“三会一课”是常态</view>
+    <view>支委小组按月开</view>
+    <view>（支委会、党小组会）</view>
+    <view>大会党课按季来</view>
+    <view>（党员大会、党课）</view>
+    <view>三定一报一纪实</view>
+    <view>（定频次、定责任、计划报备、活动纪实）</view>
+    <view>支部书记带头讲</view>
+    <view>也可请人专题讲</view>
+    <view>每年要讲1、2次</view>
+    <view>（党组织书记）</view>
+    <view>党委“头雁”讲1次</view>
+    <view>半年组织生活会</view>
+    <view>双重组织要严格</view>
+    <view>谈心谈话要经常</view>
+    <view>1年之中有评议</view>
+    <view>（党支部每年开展一次民主评议党员工作）</view>
+    <view>民主议事应坚持</view>
+    <view>（认真执行民主集中制，集体讨论“三重一大”事项）</view>
+    <view>公开运行受监督</view>
+    <view>内容程序和时限</view>
+    <view>联系群众要紧密</view>
+    <view>挂包帮还转走访</view>
+    <view>党员先锋见行动</view>
+    <view>确保建设标准化</view>
+  </view>
+  <view>
+    <view class='title'>基本保障标准化</view>
+    <view>党务干部要配强</view>
+    <view>总数1%-2%</view>
+    <view>（机关专职党务工作者一般按工作人员总数的1%——2%比例配备）</view>
+    <view>工作经费须列项</view>
+    <view>（机关单位基层党组织活动经费，列入单位经费预算，保障工作需要）</view>
+    <view>活动阵地很重要</view>
+    <view>“六有”标准要齐备</view>
+    <view>（有设施、有标志、有党旗、有书报、有电教设备、有制度）</view>
+    <view>重要制度要上墙</view>
+    <view>宣传设置需规范</view>
+    <view>干好工作建台账</view>
+    <view>确保保障标准化</view>
+    <view>广大党员看过来</view>
+    <view>五个标准应记牢</view>
+    <view>状态常在敢担当</view>
+    <view>纪律规矩立起来</view>
+    <view>心静如水淡名利</view>
+    <view>硬仗面前坚如钢</view>
+  </view>
+</view>

@@ -5,7 +5,7 @@ Page({
   data: {
     date: '请选择任务最后期限',
     start: util.formatTime(date).substring(0, 10),
-    orgNames:'请选择任务最后期限'
+    orgNames:'请选择发布对象'
   },
   onLoad: function (options) {
     
@@ -45,7 +45,7 @@ Page({
     })
   },
   goLists() {
-    wx.redirectTo({
+    wx.navigateTo({
       url: "/pages/mine/mywork/lists/lists"
     })
   },
@@ -68,12 +68,14 @@ Page({
       wx.showToast({
         title: '发布成功',
         icon: 'none',
-        duration: 2000,
+        duration: 3000,
         success: () => {
           wx.removeStorageSync('works');
-          wx.redirectTo({
-            url: "/pages/mine/mywork/mywork"
-          })
+          setTimeout(() => {
+            wx.redirectTo({
+              url: "/pages/mine/mywork/mywork"
+            })
+          }, 2000)
         }
       })
     })

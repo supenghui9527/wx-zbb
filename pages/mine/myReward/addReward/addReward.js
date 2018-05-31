@@ -56,9 +56,11 @@ Page({
         duration: 2000,
         success: () => {
           wx.wx.removeStorageSync('rewardsID');
-          wx.redirectTo({
-            url: "/pages/mine/myReward/myReward"
-          })
+          setTimeout(() => {
+            wx.redirectTo({
+              url: "/pages/mine/myReward/myReward"
+            })
+          }, 2000)
         }
       })
     })

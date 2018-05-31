@@ -22,12 +22,12 @@ Page({
   getLists() {
 
   },
-  onPullDownRefresh: function() {
+  onPullDownRefresh: function () {
     this.getData({ orderType: this.data.orderType, dateType: this.data.dateType, orgType: this.data.orgType });
   },
   onHide: function () {
     this.setData({
-      showSelect:true
+      showSelect: true
     })
   },
   //获取数据方法
@@ -56,21 +56,20 @@ Page({
   // 筛选
   clickSelect(e) {
     const index = e.currentTarget.dataset.index;
-    this.setData({ active: index });
     if (index == 0) {
-      this.setData({ dateType: this.selectTime(7), showSelect: !this.data.showSelect });
+      this.setData({ active: index, dateType: this.selectTime(7), showSelect: !this.data.showSelect });
     } else if (index == 1) {
-      this.setData({ dateType: this.selectTime(30), showSelect: !this.data.showSelect });
+      this.setData({ active: index, dateType: this.selectTime(30), showSelect: !this.data.showSelect });
     } else if (index == 2) {
-      this.setData({ dateType: this.selectTime(90), showSelect: !this.data.showSelect });
+      this.setData({ active: index, dateType: this.selectTime(90), showSelect: !this.data.showSelect });
     } else if (index == 3) {
-      this.setData({ dateType: this.selectTime(365), showSelect: !this.data.showSelect });
+      this.setData({ active: index, dateType: this.selectTime(365), showSelect: !this.data.showSelect });
     } else if (index == 4) {
-      this.setData({ orgType: '党工委', showSelect: !this.data.showSelect });
+      this.setData({ active: index, orgType: '党工委', showSelect: !this.data.showSelect });
     } else if (index == 5) {
-      this.setData({ orgType: '党委', showSelect: !this.data.showSelect });
+      this.setData({ active: index, orgType: '党委', showSelect: !this.data.showSelect });
     } else if (index == 6) {
-      this.setData({ orgType: '党支部', showSelect: !this.data.showSelect });
+      this.setData({ active: index, orgType: '党支部', showSelect: !this.data.showSelect });
     } else if (index == 7) {
       this.setData({ orderType: 0, active1: 7 });
     } else if (index == 8) {

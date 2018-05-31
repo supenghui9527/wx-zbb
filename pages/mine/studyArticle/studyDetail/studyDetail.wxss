@@ -1,0 +1,8 @@
+/* pages/mine/studyArticle/studyDetail/studyDetail.wxss */
+.title{
+  font-size:34rpx !important;
+  font-weight: bold;
+}
+view{
+  font-size:32rpx;
+}

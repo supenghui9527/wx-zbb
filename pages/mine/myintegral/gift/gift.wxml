@@ -12,11 +12,11 @@
     </view>
   </view>
   <view class='giftlist'>
-    <view wx:for="{{5}}" class='item'>
+    <view wx:for="{{5}}" wx:key="index" class='item'>
       <image src='/images/about.jpg'></image>
       <view class='bookname'>书籍新时代面对面</view>
       <view class='number'>300积分</view>
-      <view class='btn'>去兑换</view>
+      <view catchtap='goDetail' class='btn'>去兑换</view>
     </view>
   </view>
 </view>

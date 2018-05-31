@@ -5,8 +5,9 @@
 }
 .sign-list{
   width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
   padding: 0 25rpx;
-  padding-bottom: 10rpx;
   box-sizing: border-box;
   display: flex;
   justify-content:space-between;
@@ -21,20 +22,20 @@
   -webkit-line-clamp:100;
   overflow: auto !important;
 }
-.sign-list text{
-  color: #323232;
-  font-size: 28rpx;
-}
 .sign-list>view:nth-child(1){
   width: 95rpx;
-  height: 60rpx;
+  height: 100%;
   display: flex;
   align-items:center;
   justify-content: center;
 }
 .sign-list>view:nth-child(2){
   width:600rpx;
-  text-align: left;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  color: #323232;
+  font-size: 28rpx;
 }
 .sign-list image{
   width: 50rpx;
@@ -106,6 +107,14 @@
   font-weight: bold;
   padding-top: 4rpx;
   padding-bottom: 20rpx;
+}
+.address{
+  display: flex;
+  align-items: center;
+}
+.address image{
+  margin: 0;
+  margin-right: 20rpx;
 }
 .user-comment,.comment-time{
   font-size: 30rpx;
@@ -249,4 +258,6 @@
 }
 .like-name{
   padding-left: 20rpx;
+  color:#323232;
+  font-size: 30rpx;
 }

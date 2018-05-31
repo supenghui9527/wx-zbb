@@ -9,7 +9,7 @@ Page({
     let userinfo = wx.getStorageSync('members');
     this.setData({
       userName: userinfo.username,
-      uid: '411***************',
+      uid: `${userinfo.idNumber.substring(0, 3)}*************${userinfo.idNumber.substring(16)}`,
       userID: userinfo.userID
     })
   },
@@ -31,8 +31,15 @@ Page({
       httpUrl: getApp().api.partyDeusPayUrl,
       data: e.detail.value
     }).then(({ data }) => {
-      wx.switchTab({
-        url: '/pages/index/index'
+      wx.showToast({
+        title: '缴费成功',
+        duration: 2000,
+        icon:'none',
+        success:()=>{
+          wx.switchTab({
+            url: '/pages/index/index'
+          })
+        }
       })
     })
   },

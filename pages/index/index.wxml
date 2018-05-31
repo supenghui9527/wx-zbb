@@ -5,7 +5,7 @@
       <icon class='cancel' catchtap='cancelPublic' type="clear" size="20" color="#868686" />
       <view class='prompt-title'>您本月还有未完成工作</view>
       <view class='prompt-btn'>
-        <text catchtap='isShowPrompt' data-btn='{{index}}' wx:for="{{2}}">{{index==0?'忽略':'去完成'}}</text>
+        <text catchtap='isShowPrompt' data-btn='{{index}}' wx:key="index" wx:for="{{2}}">{{index==0?'忽略':'去完成'}}</text>
       </view>
     </view>
   </view>
@@ -70,7 +70,7 @@
   </view>
   <view class='search'>
     <view catchtap='goSelect'>
-      <text>全部</text>
+      <text>筛选</text>
       <image src='/images/zk.png'></image>
     </view>
     <view catchtap='goSearch'>
@@ -79,7 +79,7 @@
     </view>
     <view catchtap='goSelect' hidden='{{hideSelect}}' class='fixed'></view>
     <view hidden='{{hideSelect}}' class='select'>
-      <view catchtap='changeNav' data-index="{{idx}}" class="{{current==index?'active':''}}" wx:for="{{nav}}" wx:for-index="idx" wx:key="idx">{{item.item}}</view>
+      <view catchtap='changeNav' data-index="{{idx}}" class="{{currentTab==idx?'active':''}}" wx:for="{{nav}}" wx:for-index="idx" wx:key="idx">{{item.item}}</view>
     </view>
   </view>
   <view class='lists'>
@@ -101,7 +101,7 @@
         <view class='place'>
           <view>
             <image src="/images/pin.png"></image>
-            <view>{{item.meetingLocation||'无'}}</view>
+            <view>{{item.geo||item.meetingLocation}}</view>
           </view>
           <view>{{item.createTime}}</view>
         </view>
