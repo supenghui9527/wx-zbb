@@ -1,11 +1,11 @@
 <!--pages/mine/studyArticle/studyArticle.wxml-->
 <view class='articlelists'>
-  <view class='item' wx:for="{{1}}" catchtap='goDetail'>
+  <view class='item' wx:for="{{lists}}" wx:key="index" data-content="{{item.content}}" catchtap='goDetail'>
     <view>
-      <view class='title'>学习这首党建顺口溜通俗易懂！果断收藏！</view>
+      <view class='title'>{{item.title}}</view>
       <view class='from'>
-        <text>来源：党建网微平台</text>
-        <text>2018-05-30</text>
+        <text>来源：{{item.source}}</text>
+        <text>{{item.create_date_time}}</text>
       </view>
     </view>
   </view>

@@ -5,7 +5,20 @@ Page({
   
   },
   onLoad: function (options) {
-  
+    getApp().$ajax({
+      httpUrl: getApp().api.getStudyListUrl,
+      data: {
+        id:''
+      }
+    }).then(({ data }) => {
+      let d = data
+      d.map(item=>{
+        item.create_date_time = item.create_date_time.substring(0,16);
+      })
+      this.setData({
+        lists: data
+      })
+    })
   },
   onReady: function () {
   
@@ -13,9 +26,10 @@ Page({
   onShow: function () {
   
   },
-  goDetail(){
+  goDetail(e){
+    wx.setStorageSync('content', e.currentTarget.dataset.content);
     wx.navigateTo({
-      url: '/pages/mine/studyArticle/studyDetail/studyDetail'
+      url: `/pages/mine/studyArticle/studyDetail/studyDetail`
     })
   }
 })

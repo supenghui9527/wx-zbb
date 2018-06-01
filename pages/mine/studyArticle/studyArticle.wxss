@@ -1,5 +1,4 @@
 /* pages/mine/studyArticle/studyArticle.wxss */
-@import "../../../wxParse/wxParse.wxss";
 .articlelists{
   width: 100%;
   border-top:3px solid #f0f0f0;

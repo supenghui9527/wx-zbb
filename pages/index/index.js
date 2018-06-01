@@ -44,21 +44,20 @@ Page({
   //点击对应切换调取对应的数据
   changeNav(e) {
     let currentTab = e.currentTarget.dataset.index;
-    this.setData({currentTab: currentTab});
-    this.goSelect();
-    this.getPostings(currentTab);
+    this.setData({ currentTab: currentTab });
+    this.goSelect(),this.getPostings(currentTab);
   },
   getListData() {
     this.getPostings(this.data.currentTab);
   },
-  onLoad (options) {
-    options.isReload && this.setData({isReload: true});
-    this.getRank();
-    this.getData(20, 0, -1);
+  onLoad(options) {
+    options.isReload && this.setData({ isReload: true });
+    this.getRank(),this.getData(20, 0, -1);
+
   },
   onShow() {
     this.getUnfinished();
-    if(this.data.isReload){
+    if (this.data.isReload) {
       this.getRank();
       this.getData(20, 0, -1);
     }
@@ -77,7 +76,7 @@ Page({
     })
   },
   // 通过url地址截取参数
-  resetUrl(url){
+  resetUrl(url) {
     let i = url.indexOf('?') + 1;
     let str = url.substring(i);
     let arr = str.split('&');
@@ -89,7 +88,7 @@ Page({
     return userinfo;
   },
   // 获取首页积分排名
-  getRank(){
+  getRank() {
     getApp().$ajax({
       isShowLoading: false,
       hideLoading: false,
@@ -100,7 +99,7 @@ Page({
     }).then(({ data }) => {
       wx.setStorageSync('pointDetail', data);
       this.setData({
-        pointDetail:data,
+        pointDetail: data,
         point: Math.abs(data.theMonthPoint - data.LastMonthPoint)
       })
     })

@@ -1,4 +1,4 @@
-const HOST = 'http://47.104.6.174:8091/zbb/'; // http://47.104.6.174:8091/zbb/
+const HOST = 'http://47.104.6.174:8091/zbb/'; // https://www.jshhfl.com/xwdj/
 module.exports = {
   loginUrl: `${HOST}login.do`,  // 登录接口
   getPostingsUrl: `${HOST}findCommunityHomePage.do`,  // 获取帖子列表
@@ -26,7 +26,6 @@ module.exports = {
   getMapMarkesUrl: `${HOST}findAllPosition.do`,  // 获取地图markes
   markeDetailUrl: `${HOST}findPositionDetail.do`,  // 地图marke点详情
   getWorkListsUrl: `${HOST}findRecentWork.do`, //查看近期工作任务
-  // addWorkUrl: `${HOST}addWork.do`,  // 添加近期工作
   addWorkUrl: `${HOST}saveRecentWork.do`,  // 添加近期工作
   saveRewardsUrl: `${HOST}toPointreOrPu.do`, // 发布奖惩
   getRewarListdUrl:`${HOST}findreOrPuRecord.do`,//奖惩记录列表
@@ -54,5 +53,6 @@ module.exports = {
   deleteMesageUrl: `${HOST}deleteMesage.do`,  // 删除消息
   alreadyLookUrl: `${HOST}readMessage.do`,  // 消息已读未读
   emphasisUserUrl: `${HOST}findEmphasisUser.do`,//双重组织生活会
-  userListsUrl:`${HOST}nameEmphasisUser.do`
+  userListsUrl:`${HOST}nameEmphasisUser.do`, //双重生活会用户名
+  getStudyListUrl: `${HOST}findStudyList.do` //学习宝 
 }
