@@ -168,13 +168,15 @@ Page({
         if (i == length) {
           // console.log('总共' + successUp + '张上传成功,' + failUp + '张上传失败！');
           wx.hideLoading();
+          console.log(this.data.cType)
           if(this.data.cType==0){
+            wx.setStorageSync('isReload', 1);
             wx.switchTab({
-              url: `/pages/index/index?isReload=1`
+              url: `/pages/index/index`
             })
           }else{
             wx.switchTab({
-              url: 'pages/activity/activity'
+              url: '/pages/activity/activity'
             })
           }
         }

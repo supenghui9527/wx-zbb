@@ -8,13 +8,9 @@
   </view>
   <view class='org-list'>
     <view>
-      <view wx:if="{{isOne!=-1}}" catchtap='goMembers'>
-        <view class='nub'>{{userinfo.DangYuan}}</view>
-        <view class="name">党员</view>
-      </view>
-      <view wx:else>
-        <view class='nub'>{{userinfo.DangYuan}}</view>
-        <view class="name">党员</view>
+      <view data-member="{{userinfo.DangYuan}}" catchtap='goMembers'>
+        <view class="nub {{userinfo.DangYuan==0?'active-no':''}}">{{userinfo.DangYuan}}</view>
+        <view class="name {{userinfo.DangYuan==0?'active-no':''}}">党员</view>
       </view>
       <view>
         <view class="nub {{userinfo.DangGW==0?'active-no':''}}">{{userinfo.DangGW}}</view>

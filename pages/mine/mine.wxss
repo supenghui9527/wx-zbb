@@ -57,13 +57,18 @@
 }
 .tel{
   margin-bottom: 20rpx;
+  align-items: center;
 }
 .tel,.address{
   display: flex;
-  align-items: center;
+  
   justify-content: center;
   font-size: 32rpx;
   color:#646464;
+}
+.address{
+  width: 90%;
+  margin: 0 auto;
 }
 .nub{
   color:#323232;

@@ -51,13 +51,12 @@ Page({
     this.getPostings(this.data.currentTab);
   },
   onLoad(options) {
-    options.isReload && this.setData({ isReload: true });
     this.getRank(),this.getData(20, 0, -1);
-
   },
   onShow() {
     this.getUnfinished();
-    if (this.data.isReload) {
+    if (wx.getStorageSync('isReload')==1) {
+      wx.removeStorageSync('isReload');
       this.getRank();
       this.getData(20, 0, -1);
     }

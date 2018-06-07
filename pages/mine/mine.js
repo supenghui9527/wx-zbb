@@ -57,10 +57,11 @@ Page({
       url: '/pages/mine/set/set'
     })
   },
-  goMembers(){
-    wx.navigateTo({
-      url: "/pages/mine/member/member"
-    })
+  goMembers(e){
+    if (this.data.isOne != -1){
+      let member = e.currentTarget.dataset.member;
+      member != 0 && wx.navigateTo({ url: "/pages/mine/member/member" });
+    }
   },
   //上传头像
   changeAvatar (e) {

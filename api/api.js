@@ -1,4 +1,4 @@
-const HOST = 'http://47.104.6.174:8091/zbb/'; // https://www.jshhfl.com/xwdj/
+const HOST = 'https://www.jshhfl.com/xwdj/'; // https://www.jshhfl.com/xwdj/
 module.exports = {
   loginUrl: `${HOST}login.do`,  // 登录接口
   getPostingsUrl: `${HOST}findCommunityHomePage.do`,  // 获取帖子列表
@@ -36,6 +36,7 @@ module.exports = {
   exportDataUrl:`${HOST}exportCommunityData.do`,//数据导出
   changeAvatarUrl: `${HOST}modifyAvatar.do`,  // 修改个人头像
   changePasswordUrl: `${HOST}modifyPassword.do`,  // 修改密码
+  changePasswordUrl1:`${HOST}backstagePassword.do`,//修改后台管理密码
   getMyWorkUrl: `${HOST}findMyWork.do`,  // 查看我的近期工作
   deleteWorkUrl: `${HOST}deleteWork.do`,  // 删除近期工作
   getRankListUrl: `${HOST}pointRanking.do`,//获取积分

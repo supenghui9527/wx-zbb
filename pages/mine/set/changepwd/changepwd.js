@@ -1,3 +1,4 @@
+let utilMd5 = require('../../../../utils/md5.js');
 Page({
   data: {
 
@@ -18,7 +19,7 @@ Page({
 
   },
   submit(e) {
-    let data = e.detail.value, userinfo = wx.getStorageSync('userinfo');
+    let data = e.detail.value, userinfo = wx.getStorageSync('userInfo');
     for (let i in data) {
       if (data[i] == '') {
         wx.showToast({
@@ -26,7 +27,9 @@ Page({
           icon: 'none'
         })
       } else {
-        if (data.oldPassword != userinfo.personCard) {
+        console.log(utilMd5.hexMD5(data.oldPassword));
+        console.log(userinfo.password);
+        if (utilMd5.hexMD5(data.oldPassword) != userinfo.password) {
           wx.showToast({
             title: '请确认原密码是否正确',
             icon: 'none'
@@ -43,20 +46,32 @@ Page({
       }
     }
     getApp().$ajax({
-      httpUrl: getApp().api.resetPasswordUrl,
+      httpUrl: getApp().api.changePasswordUrl,
       data: {
-        userId: userinfo.id,
-        password: data.password
+        orgNumber: userinfo.orgNumber,
+        oldPassword: userinfo.password,
+        newPassword: utilMd5.hexMD5(data.password)
       }
-    }).then(({ data }) => {
-      wx.showToast({
-        title: '密码修改成功',
-        icon: 'none',
-        success() {
-          wx.redirectTo({
-            url: '/pages/login/login'
-          })
+    }).then(({ res }) => {
+      getApp().$ajax({
+        httpUrl: getApp().api.changePasswordUrl1,
+        data: {
+          orgNumber: userinfo.orgNumber,
+          newPassword: data.password
         }
+      }).then(({ ress }) => {
+        wx.clearStorageSync();
+        setTimeout(() => {
+          wx.showToast({
+            title: '密码修改成功',
+            icon: 'none',
+            success() {
+              wx.reLaunch({
+                url: '/pages/login/login'
+              })
+            }
+          })
+        }, 2000)
       })
     })
   }
