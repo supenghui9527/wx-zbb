@@ -39,3 +39,9 @@ picker{
   color:#fff;
   border-radius: 10rpx;
 }
+.prompt{
+  padding-top: 30rpx;
+  text-align:justify;
+  font-size: 34rpx;
+  color:#323232;
+}

@@ -11,6 +11,10 @@ Page({
       userID: wx.getStorageSync('userInfo').orgID,
       cType: options.cType
     });
+    if (options.orgName){
+      this.setData({ content: options.orgName});
+      this.getData(options.orgName, 1);
+    }
   },
   // 取消搜索
   hideSearch() {

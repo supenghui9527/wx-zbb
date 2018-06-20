@@ -40,7 +40,7 @@
       <label>实到:</label>
       <view wx:if="{{signNames.length==0}}" class='nosign'>请扫码签到</view>
       <view wx:if="{{signNames.length!=0}}" class='signname'>
-         <text wx:for="{{signNames}}" wx:key="index">{{item}};</text> 
+         <text catchtap='delSignName' wx:for="{{signNames}}" data-idx="{{index}}" data-userid='{{item.userID}}' wx:key="index">{{item.username}};</text> 
       </view>
       <view class='number'>{{signNames.length}}</view>
       <image catchtap='sign' class='gosign' src='/images/scanning.png'></image>

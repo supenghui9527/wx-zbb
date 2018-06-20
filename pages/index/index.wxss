@@ -171,7 +171,7 @@
 }
 .title{
   display: flex;
-  /* height: 44rpx; */
+  /* height: 40rpx; */
   align-items: center;
   justify-content: space-between;
   font-size:30rpx;
@@ -208,8 +208,8 @@
 }
 .content{
   width: 100%;
-  height: 45rpx;
-  line-height: 45rpx;
+  height: 40rpx;
+  line-height: 40rpx;
   font-size: 28rpx;
   color:#646464;
   display: -webkit-box;
@@ -223,38 +223,42 @@
 }
 .place{
   width: 100%;
+  height: 30rpx;
   display: flex;
   align-items: center;
   justify-content: space-between; 
 }
-.place>view{
-  display: flex;
-  align-items: center;
-  color:#646464;
-  font-size: 24rpx;
-}
 .place>view:nth-child(1){
   width: 280rpx;
-}
-.place>view:nth-child(1) view{
-  width: 100%;
+  height: 30rpx;
+  padding-left: 36rpx;
+  box-sizing: border-box;
+  line-height: 30rpx;
+  background: url('http://www.wsspha.cn/images/IconPin.png') no-repeat 5rpx center;
+  background-size: 20rpx 30rpx;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
   overflow: hidden;
+  color:#646464;
+  font-size: 24rpx;
 }
-.place image{
-  width:30rpx;
+.place>view:nth-child(2){
   height: 30rpx;
-  padding-right: 6rpx;
+  line-height: 30rpx;
+  color:#646464;
+  font-size: 24rpx;
 }
 .orgname{
+  width: 100%;
+  height: 40rpx;
   display: flex;
   align-items: center;
 }
 .orgname view{
   width: 450rpx;
   height: 40rpx;
+  line-height: 40rpx;
   font-size: 26rpx;
   color: #323232;
   display: -webkit-box;

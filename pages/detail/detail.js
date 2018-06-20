@@ -37,6 +37,17 @@ Page({
       })
     });
   },
+  goMineLists(e){
+    if (this.data.cType==0){
+      wx.navigateTo({
+        url: `/pages/index/search/search?cType=0&orgName=${e.currentTarget.dataset.orgname}`
+      })
+    }else{
+      wx.navigateTo({
+        url: `/pages/index/search/search?cType=1&orgName=${e.currentTarget.dataset.orgname}`
+      })
+    }
+  },
   changeTab(e) {
     this.setData({
       active: e.currentTarget.dataset.index

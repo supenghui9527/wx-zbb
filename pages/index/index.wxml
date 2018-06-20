@@ -99,10 +99,7 @@
           <view>{{item.org.orgName||'无'}}</view>
         </view>
         <view class='place'>
-          <view>
-            <image src="/images/pin.png"></image>
-            <view>{{item.geo||item.meetingLocation}}</view>
-          </view>
+          <view>{{item.geo||item.meetingLocation}}</view>
           <view>{{item.createTime}}</view>
         </view>
       </view>

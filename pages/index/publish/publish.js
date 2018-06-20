@@ -82,17 +82,6 @@ Page({
         meetingLocation: this.data.address || ''
       }
     }).then(({ data }) => {
-      let name = data.data.signUserNames;
-      let signNames = '';
-      let arr = [];
-      if (name != '' && name != null) {
-        if (name.indexOf(',') != -1) {
-          signNames = name.split(',')
-        } else {
-          arr.push(name);
-          signNames = arr;
-        }
-      }
       if (this.data.cType==0){
         this.setData({
           meetingLocation: data.data.meetingLocation,
@@ -104,9 +93,9 @@ Page({
       }
       this.setData({
         cID: data.data.cID,
-        signNames: signNames,
+        signNames: data.data.signUserNamesList,
         title: data.data.title,
-        oldSignName: name,
+        oldSignName: JSON.stringify(data.data.signUserNamesList),
         active: data.data.meetingType,
         preside: data.data.preside,
         shouldAttendance: data.data.shouldAttendance,
@@ -193,6 +182,13 @@ Page({
       length = this.data.tempFilePaths.length, //总共个数
       i = 0, //第几个
       data = e.detail.value;
+    let signUserNames = JSON.parse(data.signUserNames);
+    let signUserNamesStr = '';
+    signUserNames.map(item=>{
+      signUserNamesStr += item.username+','
+    })
+    data.signUserNames = signUserNamesStr;
+    console.log(data);
     for (let i in data) {
       if (data[i] == '' || data[i].indexOf('请') != -1) {
         if (i == 'isPublic' || i == 'workID') {
@@ -258,16 +254,16 @@ Page({
           httpUrl: getApp().api.actSignUrl,
           data: {
             userID: this.resetUrl(res.result).userID, // JSON.parse(res.result).userID
-            cID: this.data.cID
+            cID: this.data.cID,
+            signType:1
           }
         }).then(({ data, message }) => {
-
           this.setData({
             oldSignName: data.signNames.toString(),
             signNames: data.signNames,
             signCount: data.countSign
           })
-          console.log(data)
+          console.log(this.data.signNames)
           wx.showToast({
             title: message,
             icon: 'none'
@@ -277,6 +273,30 @@ Page({
       fail: () => {
         console.log(1)
       }
+    })
+  },
+  //删除签到
+  delSignName(e){
+    console.log(e.currentTarget.dataset.idx)
+    getApp().$ajax({
+      httpUrl: getApp().api.actSignUrl,
+      data: {
+        userID: e.currentTarget.dataset.userid, // JSON.parse(res.result).userID
+        cID: this.data.cID,
+        signType: 0
+      }
+    }).then(({ data, message }) => {
+      let signNames = this.data.signNames;
+      signNames.splice(e.currentTarget.dataset.idx, 1);
+      this.setData({
+        oldSignName: JSON.parse(signNames),
+        signNames: signNames
+      })
+      console.log(this.data.signNames)
+      wx.showToast({
+        title: message,
+        icon: 'none'
+      })
     })
   }
 })

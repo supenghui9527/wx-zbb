@@ -21,4 +21,5 @@
     </view>
     <button catchtap='exportData' class='btn'>预览</button>
   </form>
+  <view class="prompt">"请用电脑登录管理系统导出并下载，网址：http://xwdj.gov.cn:8080/zbb登录账号同支部宝小程序，密码在“设置>密码修改”中设置密码。</view>
 </view>

@@ -32,6 +32,7 @@
   width:600rpx;
   height: 100%;
   display: flex;
+  padding-top: 6rpx;
   align-items: center;
   color: #323232;
   font-size: 28rpx;
@@ -109,11 +110,13 @@
 }
 .address{
   display: flex;
-  align-items: center;
+  font-size:28rpx;
 }
 .address image{
-  margin: 0;
-  margin-right: 20rpx;
+  width: 20rpx;
+  height: 30rpx;
+  margin-top: 10rpx;
+  margin-right: 10rpx;
 }
 .user-comment,.comment-time{
   font-size: 30rpx;

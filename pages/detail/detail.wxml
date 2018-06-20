@@ -1,7 +1,7 @@
 <!--pages/detail/detail.wxml-->
 <view class='item'>
   <view>
-    <image src="{{community.org.headThumb==null||community.org.headThumb==''?'/images/people.png':community.org.headThumb}}" class='avatar'></image>
+    <image catchtap='goMineLists' data-orgname="{{item.orgName}}" src="{{item.headThumb==null||item.headThumb==''?'/images/people.png':item.headThumb}}" class='avatar'></image>
     <view class='content'>
       <view class='title'>{{item.orgName||'暂无'}}</view>
       <view class='time'>
