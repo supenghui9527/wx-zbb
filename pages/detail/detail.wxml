@@ -105,7 +105,7 @@
   </view>
   <view class='user-do'>
     <view>
-      <button class='postings-share' catchtap='getActid' data-actid="{{item.cID}}" open-type='share'>
+      <button class='postings-share' data-actid="{{item.cID}}" open-type='share'>
         <view>
           <image src='/images/share.png'></image>
           <text>分享{{item.shares}}</text>

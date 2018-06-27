@@ -99,9 +99,7 @@ Page({
         active: data.data.meetingType,
         preside: data.data.preside,
         shouldAttendance: data.data.shouldAttendance,
-        content: data.data.content,
-        date: data.data.meetingTime.substring(0, 10),
-        time: data.data.meetingTime.substring(10, 16)
+        content: data.data.content
       });
     })
   },
@@ -177,18 +175,27 @@ Page({
   },
   //发布帖子
   save(e) {
+    if (wx.getStorageSync('userInfo').orgNumber == 'visitor') return false;
     let successUp = 0, //成功个数
       failUp = 0, //失败个数
       length = this.data.tempFilePaths.length, //总共个数
       i = 0, //第几个
       data = e.detail.value;
+    console.log(data);
+    // console.log(data.signUserNames);
     let signUserNames = JSON.parse(data.signUserNames);
     let signUserNamesStr = '';
     signUserNames.map(item=>{
-      signUserNamesStr += item.username+','
+      signUserNamesStr += item.username+';'
     })
     data.signUserNames = signUserNamesStr;
-    console.log(data);
+    if (data.content.length<100){
+      wx.showToast({
+        title: '发布内容必须大于100字',
+        icon: 'none'
+      });
+      return;
+    }
     for (let i in data) {
       if (data[i] == '' || data[i].indexOf('请') != -1) {
         if (i == 'isPublic' || i == 'workID') {
@@ -259,7 +266,7 @@ Page({
           }
         }).then(({ data, message }) => {
           this.setData({
-            oldSignName: data.signNames.toString(),
+            oldSignName: JSON.stringify(data.signNames),
             signNames: data.signNames,
             signCount: data.countSign
           })
@@ -289,10 +296,10 @@ Page({
       let signNames = this.data.signNames;
       signNames.splice(e.currentTarget.dataset.idx, 1);
       this.setData({
-        oldSignName: JSON.parse(signNames),
+        oldSignName: JSON.stringify(signNames),
         signNames: signNames
       })
-      console.log(this.data.signNames)
+      console.log(this.data.oldSignName)
       wx.showToast({
         title: message,
         icon: 'none'

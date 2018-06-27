@@ -15,9 +15,10 @@ Page({
   },
   // orderType,dateType,orgType:工委，党委，支部
   onLoad(options) {
+    this.getData({ orderType: this.data.orderType, dateType: this.data.dateType, orgType: this.data.orgType });
   },
   onShow() {
-    this.getData({ orderType: this.data.orderType, dateType: this.data.dateType, orgType: this.data.orgType });
+
   },
   getLists() {
 

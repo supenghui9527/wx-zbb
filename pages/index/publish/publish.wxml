@@ -6,8 +6,8 @@
     <input hidden="true" name="cType" value="{{cType}}" />
     <input hidden="true" name="workID" value="{{workID}}" />
     <input hidden="true" name="actuaAttendance" value="{{signNames.length}}" />
-    <input hidden="true" name="signUserNames" value="{{oldSignName}}" />
-    <input hidden="true" name="meetingTime" value="{{date+' '+time}}"/>
+    <input hidden="true" name="signUserNames" maxlength='100000' value="{{oldSignName}}" />
+    <input hidden="true" name="meetingTime" value="{{date+''+time}}"/>
     <input wx:if="{{cType==0}}" name="meetingType" value="{{active}}" hidden="true" />
     <view wx:if="{{cType==0}}" class='type'>
       <view catchtap='changeNav' class="{{active==item.index?'active':''}}" data-index="{{item.index}}" wx:for="{{actType}}" wx:key="{{item.index}}">{{item.text}}</view>
@@ -46,7 +46,7 @@
       <image catchtap='sign' class='gosign' src='/images/scanning.png'></image>
     </view>
     <view class="content">
-      <textarea bindinput='getContent' class='font-color' name="content" value='{{content}}' placeholder="请输入精彩内容..." />
+      <textarea bindinput='getContent' class='font-color' maxlength="100000" name="content" value='{{content}}' placeholder="请输入精彩内容..." />
       <view class="imgcontainer">
         <block wx:for="{{tempFilePaths}}" wx:key="*this">
           <view class="up">

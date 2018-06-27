@@ -62,6 +62,7 @@ Page({
   },
   // 评论
   goComment() {
+    if (wx.getStorageSync('userInfo').orgNumber == 'visitor') return false;
     this.setData({
       showComment: !this.data.showComment
     })
@@ -88,6 +89,8 @@ Page({
   },
   // 分享
   onShareAppMessage: function (res) {
+    // if (wx.getStorageSync('userInfo').orgNumber == 'visitor') return false;
+    // console.log(1)
     let ctx = this, actId = res.target.dataset.actid;
     return {
       title: '鼓楼党建e生活',
@@ -114,6 +117,8 @@ Page({
   },
    // 点赞
   clickLikes(e) {
+    if(wx.getStorageSync('userInfo').orgNumber =='visitor')return false;
+    // console.log(wx.getStorageSync('userInfo').orgNumber)
     getApp().$ajax({
       httpUrl: getApp().api.likesUrl,
       data: {

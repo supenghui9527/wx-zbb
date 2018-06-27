@@ -1,4 +1,4 @@
-const HOST = 'http://www.jshhfl.com/xwdj/'; // https://www.jshhfl.com/xwdj/
+const HOST = 'https://www.jshhfl.com/xwdj/'; // https://www.jshhfl.com/xwdj/
 module.exports = {
   loginUrl: `${HOST}login.do`,  // 登录接口
   getPostingsUrl: `${HOST}findCommunityHomePage.do`,  // 获取帖子列表
