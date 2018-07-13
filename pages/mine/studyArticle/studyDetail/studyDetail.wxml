@@ -1,5 +1,5 @@
 <!--pages/mine/studyArticle/studyDetail/studyDetail.wxml-->
 <import src="../../../../wxParse/wxParse.wxml"/> 
-<view>
+<view class='detail'>
    <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
 </view>

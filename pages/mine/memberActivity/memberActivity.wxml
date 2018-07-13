@@ -11,7 +11,7 @@
     </picker>
     <view class='title'>
       <text>活动主题</text>
-      <image catchtap='goSelect' src='/images/shaixuan1.png'></image>
+      <image src='/images/shaixuan1.png'></image>
     </view>
   </view>
   <view hidden='{{showSelect}}' capture-bind:touchstart="goSelect" class='select-container'>
@@ -23,7 +23,7 @@
     </view>
   </view>
   <view class='lists'>
-    <view wx:for="{{lists}}" wx:key="index" class='item'>
+    <view catchtap='goDetail' data-userid='{{item.userID}}' wx:for="{{lists}}" wx:key="index" class='item'>
       <view>
         <text>{{item.username}}</text>
       </view>

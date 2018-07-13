@@ -24,12 +24,14 @@ Page({
   onShow: function () {
 
   },
+  //筛选人名
   bindNameChange: function (e) {
     this.setData({
       userID: this.data.nameList[e.detail.value].userID
     });
     this.getLists(this.data.userID, this.data.actType, this.data.dateType);
   },
+  //类型筛选
   bindTypeChange: function (e) {
     this.setData({
       actType: e.detail.value
@@ -61,6 +63,7 @@ Page({
     const time = Date.parse(now) - 1000 * 3600 * 24 * nub;
     return `${util.formatTime(new Date(time))},${util.formatTime(now)}`;
   },
+  // 获取列表
   getLists(userID, actType, dateType) {
     getApp().$ajax({
       httpUrl: getApp().api.emphasisUserUrl,
@@ -73,6 +76,12 @@ Page({
       this.setData({
         lists: data
       })
+    })
+  },
+  // 进入详情
+  goDetail(e){
+    wx.navigateTo({
+      url: `/pages/mine/memberActivity/detail/detail?userID=${e.currentTarget.dataset.userid}`
     })
   }
 })

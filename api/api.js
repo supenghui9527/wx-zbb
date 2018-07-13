@@ -55,5 +55,6 @@ module.exports = {
   alreadyLookUrl: `${HOST}readMessage.do`,  // 消息已读未读
   emphasisUserUrl: `${HOST}findEmphasisUser.do`,//双重组织生活会
   userListsUrl:`${HOST}nameEmphasisUser.do`, //双重生活会用户名
+  userActListsUrl: `${HOST}findEmpPerUser.do`, // 双重生活会个人活动查询
   getStudyListUrl: `${HOST}findStudyList.do` //学习宝 
 }

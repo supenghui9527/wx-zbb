@@ -107,7 +107,7 @@ Page({
     this.setData({ date: e.detail.value })
   },
   bindTimeChange(e) {
-    this.setData({ time: e.detail.value })
+    this.setData({ time: `  ${e.detail.value}` })
   },
   //选择本地相册中的图片
   upLoad() {
@@ -181,7 +181,7 @@ Page({
       length = this.data.tempFilePaths.length, //总共个数
       i = 0, //第几个
       data = e.detail.value;
-    console.log(data);
+      console.log(data);
     // console.log(data.signUserNames);
     let signUserNames = JSON.parse(data.signUserNames);
     let signUserNamesStr = '';
@@ -197,7 +197,7 @@ Page({
       return;
     }
     for (let i in data) {
-      if (data[i] == '' || data[i].indexOf('请') != -1) {
+      if (data[i] == '') {
         if (i == 'isPublic' || i == 'workID') {
           if (data.isPublic.length == 0) {
             data.isPublic = 0;

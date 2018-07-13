@@ -1,0 +1,27 @@
+<!--pages/mine/memberActivity/detail/detail.wxml-->
+<view class='actLists'>
+  <view class='header'>
+    <view class='avatar'>
+      <view>{{firstName}}</view>
+    </view>
+    <view class='name'>{{username}}</view>
+    <view class='place'>{{orgName}}</view>
+  </view>
+  <view class='studycount'>共计参加活动{{studyCount}}次</view>
+  <view class="lists">
+    <view wx:for="{{lists}}" wx:key="index" class='lists-item'>
+      <view wx:if="{{index!=0}}" class='line'></view>
+      <view class='year'>{{item.year}}</view>
+      <view catchtap='goDetail' data-actid="{{month.cID}}" data-ctype='{{month.cType}}' wx:for="{{item.month}}" wx:for-item="month" wx:key="idx" wx:for-index="idx" class='month'>
+        <view class='line'></view>
+        <view class='days'>
+          <image src='/images/offer.png'></image>
+          <view class='content'>
+            <view>{{month.date}}</view>
+            <view>{{month.title||'无'}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,2 +1,10 @@
 /* pages/mine/studyArticle/studyDetail/studyDetail.wxss */
 @import "../../../../wxParse/wxParse.wxss";
+.detail{
+  width: 100%;
+  padding: 20rpx 20rpx 0 20rpx;
+  box-sizing: border-box;
+  font-size: 32rpx;
+  color:#323232;
+  border-top:3px solid #f0f0f0;
+}

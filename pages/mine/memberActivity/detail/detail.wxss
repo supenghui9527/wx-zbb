@@ -1,0 +1,101 @@
+/* pages/mine/memberActivity/detail/detail.wxss */
+.header{
+  width: 680rpx;
+  height: 290rpx;
+  margin: 0 auto;
+  border-radius: 10rpx;
+  background-color: #ca4341;
+}
+.avatar{
+  width: 100%;
+  padding-top: 35rpx;
+  display: flex;
+  justify-content: center;
+}
+.avatar>view{
+  width: 90rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 50%;
+  font-size: 50rpx;
+  color: #000;
+  font-weight: bold;
+}
+.header image{
+  width: 50rpx;
+  height: 50rpx;
+}
+.name{
+  color:#fff;
+  text-align: center;
+  font-size:38rpx;
+  font-weight: bold;
+  padding-top: 30rpx;
+}
+.place{
+  color:#fff;
+  text-align: center;
+  font-size: 30rpx;
+  padding-top: 20rpx;
+}
+.studycount{
+  width: 100%;
+  height: 80rpx;
+  margin-top: 20rpx;
+  line-height: 80rpx;
+  background-color: #f0f0f0;
+  font-size: 32rpx;
+  color: #242424;
+  text-align: center;
+}
+.item{
+  padding: 0 20rpx;
+  font-size: 34rpx;
+}
+.active{
+  color:#323232;
+  font-weight: bold;
+  border-bottom:6rpx solid #ca4341;
+}
+.lists-item{
+  width: 100%;
+  padding: 0 25rpx;
+  box-sizing: border-box;
+}
+image{
+  width: 50rpx;
+  height: 50rpx;
+}
+.line{
+  margin-left:24rpx;
+  width:2px;
+  min-height:54rpx;
+  background-color:#f0f0f0;
+}
+.days{
+  display: flex;
+  font-size:32rpx;
+  position: relative;
+}
+.days .content{
+  width:500rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  padding:6rpx 0 0 40rpx;
+  color:#646464;
+}
+.time{
+  font-size: 28rpx;
+  position: absolute;
+  font-weight: bold;
+  right: 0;
+  padding-top:6rpx;
+  color:#646464;
+}
+.lists{
+  padding-top: 30rpx;
+}

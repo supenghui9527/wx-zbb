@@ -5,6 +5,7 @@
     "pages/mine/studyArticle/studyArticle",
     "pages/index/index",
     "pages/mine/memberActivity/memberActivity",
+    "pages/mine/memberActivity/detail/detail",
     "pages/mine/exportdata/exportdata",
     "pages/mine/myintegral/myintegral",
     "pages/mine/myintegral/detail/detail",
