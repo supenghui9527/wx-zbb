@@ -28,10 +28,11 @@
         <text>{{item.username}}</text>
       </view>
       <view>
-        <text>{{typeList[item.meetingType]}}</text>
+        <text wx:if="{{item.cType==0}}">{{typeList[item.meetingType]}}</text>
+        <text wx:else>党日活动</text>
       </view>
       <view>
-        <text>{{item.title||'暂无'}}</text>
+        <text>{{item.title||''}}</text>
       </view>
     </view>
   </view>

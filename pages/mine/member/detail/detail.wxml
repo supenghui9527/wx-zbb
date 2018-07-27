@@ -24,7 +24,7 @@
     </view>
     <view>
       <text>入党时间</text>
-      <text>{{joindate}}</text>
+      <text>{{joindate==null&&''}}</text>
     </view>
     <view>
       <text>身份证号码</text>

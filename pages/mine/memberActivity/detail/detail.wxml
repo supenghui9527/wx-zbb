@@ -5,7 +5,7 @@
       <view>{{firstName}}</view>
     </view>
     <view class='name'>{{username}}</view>
-    <view class='place'>{{orgName}}</view>
+     <view class='place'>{{orgName}}</view>
   </view>
   <view class='studycount'>共计参加活动{{studyCount}}次</view>
   <view class="lists">
@@ -18,7 +18,7 @@
           <image src='/images/offer.png'></image>
           <view class='content'>
             <view>{{month.date}}</view>
-            <view>{{month.title||'无'}}</view>
+            <view>{{month.title||''}}</view>
           </view>
         </view>
       </view>

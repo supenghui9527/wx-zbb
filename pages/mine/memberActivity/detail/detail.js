@@ -25,7 +25,7 @@ Page({
         lists: this.recombinedData(data.study),
         firstName: data.study[0].username.substring(0, 1),
         username: data.study[0].username,
-        orgName: data.orgName||'暂无',
+        orgName: data.orgName||'',
         studyCount: data.count
       })
     })

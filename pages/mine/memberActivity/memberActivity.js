@@ -9,20 +9,24 @@ Page({
     showSelect: true
   },
   onLoad: function (options) {
-    getApp().$ajax({
-      httpUrl: getApp().api.userListsUrl
-    }).then(({ data }) => {
-      this.setData({
-        nameList:data
-      })
-    })
-    this.getLists()
+    this.getUserNames();
+    this.getLists();
   },
   onReady: function () {
 
   },
   onShow: function () {
 
+  },
+  //获取人员列表
+  getUserNames(){
+    getApp().$ajax({
+      httpUrl: getApp().api.userListsUrl
+    }).then(({ data }) => {
+      this.setData({
+        nameList: data
+      })
+    })
   },
   //筛选人名
   bindNameChange: function (e) {
@@ -43,6 +47,7 @@ Page({
       showSelect: !this.data.showSelect
     })
   },
+  //点击筛选
   clickSelect(e) {
     const index = e.currentTarget.dataset.index;
     this.setData({ active: index });
